@@ -1,7 +1,7 @@
 <template>
   <div class="component">
     <div class="btn">
-      <m-button type="default">Default</m-button>
+      <m-button :clickRes="false" type="default">Default <m-button shape="circle" type="text">M</m-button></m-button>
       <m-button type="primary">Primary</m-button>
       <m-button type="danger">Danger</m-button>
       <m-button type="warning">Warning</m-button>

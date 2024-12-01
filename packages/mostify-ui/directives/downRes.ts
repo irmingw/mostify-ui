@@ -3,10 +3,13 @@ import { Directive } from 'vue';
 
 // 实现点击节点实现响应出现背景色彩
 export const downRes: Directive = {
-  mounted(el: HTMLElement) {
+  mounted(el: HTMLElement, binding) {
+    if (!binding.value) return
     el.addEventListener('mousedown', (event?: MouseEvent) => {
       const parent = el.querySelector('.m-click__res');
-      if (!parent) return;
+      console.log(parent?.getAttribute('data-disabled'), '1');
+
+      if (!parent || parent?.getAttribute('data-disabled') == 'on') return;
       let isUp = false
       let isAnimationEnd = false
       const ripple = document.createElement('span');

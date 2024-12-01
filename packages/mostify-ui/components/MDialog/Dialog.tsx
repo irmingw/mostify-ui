@@ -138,7 +138,7 @@ export default defineComponent({
         <Teleport to={props.target}>
           <MTransition onEnter={onEnter} onLeave={onLeave}>
             <div
-              class={`m-dialog ${props.className}`}
+              class={`m-dialog ${props.className || ""}`}
               v-show={props.visible}
               data-show={props.visible}
               ref={dialogRef}

@@ -1,7 +1,7 @@
 {
   "name": "mostify-ui",
   "description": "一个 Vue 3 UI组件库 | Mostify UI",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": false,
   "files": [
     "dist",

@@ -6,27 +6,20 @@
           <Logo size="36px" />
           <span class="title">Mostify UI</span>
         </m-space>
-
         <m-button type="primary" light :border="false" @click="onSearch">
           <m-icon name="search" style="margin-right: 8px" />
-          组件查找
+          {{ $t("search") }}
         </m-button>
       </m-space>
 
       <div>
         <m-space value="12px">
-          <m-button type="text" @click="$router.push('/start')"
-            >快速上手</m-button
-          >
-          <m-button type="text" @click="$router.push('/components/button')"
-            >组件</m-button
-          >
-          <m-dropdown>
-            <m-button type="text"> 版本</m-button>
-            <template #content>
-              <m-menu-item>0.0.4</m-menu-item>
-            </template>
-          </m-dropdown>
+          <m-button type="text" @click="$router.push('/start')">{{
+            $t("start")
+          }}</m-button>
+          <m-button type="text" @click="$router.push('/components/button')">{{
+            $t("component")
+          }}</m-button>
           <m-dropdown placement="bottomRight">
             <m-button shape="circle" type="text">
               <svg
@@ -50,36 +43,30 @@
               </svg>
             </m-button>
             <template #content>
-              <m-menu-item @click="$switchLocale('zh')">{{ $t('common.zh') }}</m-menu-item>
-              <m-menu-item @click="$switchLocale('en')">{{ $t('common.en') }}</m-menu-item>
+              <m-menu-item @click="$switchLocale('zh')">{{ $t("zh") }}</m-menu-item>
+              <m-menu-item @click="$switchLocale('en')">{{ $t("en") }}</m-menu-item>
             </template>
           </m-dropdown>
 
-          <m-button shape="circle" type="text">
+          <m-button shape="circle" type="text" @click="openGithub">
             <svg viewBox="0 0 1024 1024" width="24" height="24">
               <path
                 d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5 64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9 26.4 39.1 77.9 32.5 104 26 5.7-23.5 17.9-44.5 34.7-60.8-140.6-25.2-199.2-111-199.2-213 0-49.5 16.3-95 48.3-131.7-20.4-60.5 1.9-112.3 4.9-120 58.1-5.2 118.5 41.6 123.2 45.3 33-8.9 70.7-13.6 112.9-13.6 42.4 0 80.2 4.9 113.5 13.9 11.3-8.6 67.3-48.8 121.3-43.9 2.9 7.7 24.7 58.3 5.5 118 32.4 36.8 48.9 82.7 48.9 132.3 0 102.2-59 188.1-200 212.9 23.5 23.2 38.1 55.4 38.1 91v112.5c0.8 9 0 17.9 15 17.9 177.1-59.7 304.6-227 304.6-424.1 0-247.2-200.4-447.3-447.5-447.3z"
-                p-id="4256"
-              ></path>
+              />
             </svg>
           </m-button>
 
           <m-button shape="circle" type="text">
             <svg
-              t="1725174134027"
-              class="icon"
               viewBox="0 0 1024 1024"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              p-id="19561"
               width="32"
               height="32"
             >
               <path
                 d="M439.264 208a16 16 0 0 0-16 16v67.968a239.744 239.744 0 0 0-46.496 26.896l-58.912-34a16 16 0 0 0-21.856 5.856l-80 138.56a16 16 0 0 0 5.856 21.856l58.896 34a242.624 242.624 0 0 0 0 53.728l-58.88 34a16 16 0 0 0-6.72 20.176l0.848 1.68 80 138.56a16 16 0 0 0 21.856 5.856l58.912-34a239.744 239.744 0 0 0 46.496 26.88V800a16 16 0 0 0 16 16h160a16 16 0 0 0 16-16v-67.968a239.744 239.744 0 0 0 46.512-26.896l58.912 34a16 16 0 0 0 21.856-5.856l80-138.56a16 16 0 0 0-4.288-20.832l-1.568-1.024-58.896-34a242.624 242.624 0 0 0 0-53.728l58.88-34a16 16 0 0 0 6.72-20.176l-0.848-1.68-80-138.56a16 16 0 0 0-21.856-5.856l-58.912 34a239.744 239.744 0 0 0-46.496-26.88V224a16 16 0 0 0-16-16h-160z m32 48h96v67.376l28.8 12.576c13.152 5.76 25.632 12.976 37.184 21.52l25.28 18.688 58.448-33.728 48 83.136-58.368 33.68 3.472 31.2a194.624 194.624 0 0 1 0 43.104l-3.472 31.2 58.368 33.68-48 83.136-58.432-33.728-25.296 18.688c-11.552 8.544-24.032 15.76-37.184 21.52l-28.8 12.576V768h-96v-67.376l-28.784-12.576c-13.152-5.76-25.632-12.976-37.184-21.52l-25.28-18.688-58.448 33.728-48-83.136 58.368-33.68-3.472-31.2a194.624 194.624 0 0 1 0-43.104l3.472-31.2-58.368-33.68 48-83.136 58.432 33.728 25.296-18.688a191.744 191.744 0 0 1 37.184-21.52l28.8-12.576V256z m47.28 144a112 112 0 1 0 0 224 112 112 0 0 0 0-224z m0 48a64 64 0 1 1 0 128 64 64 0 0 1 0-128z"
-                fill="#5A626A"
-                p-id="19562"
-              ></path>
+              />
             </svg>
           </m-button>
         </m-space>
@@ -88,7 +75,8 @@
 
     <MDialog
       :visible="dialogShow"
-      :width="760"
+      width="700px"
+      top="100px"
       @close="dialogShow = false"
       :showClose="false"
     >
@@ -123,9 +111,11 @@
         </section>
       </template>
 
-      <div>搜索结果:</div>
+      <div v-if="!list.length">
+        <h4 style="text-align: center; padding: 20px">暂无搜索结果</h4>
+      </div>
 
-      <ul class="search_wrapper">
+      <ul class="search_wrapper" v-else>
         <li v-for="i in list">{{ i }}</li>
       </ul>
 
@@ -143,17 +133,17 @@ import Logo from "~/components/Logo.vue";
 const searchText = ref("");
 const dialogShow = ref(false);
 
-
 const list = computed(() => {
-  return new Array(10)
-    .fill("")
-    .map((_, index) => `${searchText.value || ""}${index + 1}`);
+  return searchText.value
+    ? new Array(10).fill("").map((_, index) => `${searchText.value || ""}${index + 1}`)
+    : [];
 });
-
+const openGithub = () => {
+  window.open("https://github.com/irming46/mostify-ui");
+};
 const onSearch = () => {
   dialogShow.value = true;
 };
-
 </script>
 
 <style lang="scss" scoped>
@@ -161,14 +151,15 @@ const onSearch = () => {
   list-style: none;
   margin: 0;
   padding: 0 12px 0 0;
-  max-height: 400px;
-  min-height: 200px;
+  max-height: 250px;
   overflow-y: auto;
   li {
     margin-bottom: 10px;
     padding: 12px;
     background: #f0f0f0;
     border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
 
     &:hover {
       background-color: #ccc;

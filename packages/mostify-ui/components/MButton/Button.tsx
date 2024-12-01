@@ -17,7 +17,8 @@ export default defineComponent({
     block: Boolean,
     light: Boolean,
     clickResColor: { type: String, default: "" },
-    borderStyle: { type: String, default: "solid" }
+    borderStyle: { type: String, default: "solid" },
+    clickRes: { type: Boolean, default: true },
   },
   emits: ["click", "focus", "blur"],
   directives: { downRes },
@@ -26,18 +27,21 @@ export default defineComponent({
 
     function handleClick(e) {
       e.preventDefault();
+      e.stopPropagation();
       if (props.loading || props.disabled) return;
       emit("click", e);
     }
 
     function onFocus(e: MouseEvent) {
       e.preventDefault();
+      e.stopPropagation();
       if (props.loading || props.disabled) return;
       emit("focus", e);
     }
 
     function onBlur(e: MouseEvent) {
       e.preventDefault();
+      e.stopPropagation();
       if (props.loading || props.disabled) return;
       emit("focus", e);
     }
@@ -47,11 +51,15 @@ export default defineComponent({
         <button
           class={btnClass.value}
           style={btnStyle.value}
-          v-down-res
+          v-down-res={props.clickRes}
           onClick={handleClick}
           onFocus={onFocus}
           onBlur={onBlur}>
           <span class="m-button-content">
+            <div
+              class="m-click__res"
+              data-disabled={props.loading || props.disabled ? "on" : "off"}
+            />
             {props.loading && (
               <span
                 class="m-button__loading_wrapper"
@@ -64,9 +72,6 @@ export default defineComponent({
               </span>
             )}
             {contentShow.value ? slots.default && slots.default() : null}
-            {props.loading || props.disabled ? null : (
-              <div class="m-click__res"></div>
-            )}
           </span>
         </button>
       );

@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "highlight.js": "^11.10.0",
-    "mostify-ui": "^0.0.3",
+    "mostify-ui": "^0.0.4",
     "mostify-ui-icon": "^0.0.1",
     "nuxt": "3.13.0",
     "nuxt-i18n-micro": "^1.34.1",

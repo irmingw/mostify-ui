@@ -6,52 +6,61 @@
       </div>
 
       <div class="home_title">
-        <h1 style="line-height: 3rem;">{{ $t('common.title') }}</h1>
-        <h4>{{ $t('common.description') }}</h4>
+        <h1 style="line-height: 3rem">{{ $t("title") }}</h1>
+        <h4>{{ $t("description") }}</h4>
         <section class="home_h_btn" style="--m-size-large: 48px">
-          <m-button size="large" block type="primary">快速上手</m-button>
-          <m-button size="large" block>组件库哲学</m-button>
-          <m-button size="large" block type="info">Github</m-button>
+          <m-button size="large" block type="primary" @click="$router.push('/start')">{{
+            $t("start")
+          }}</m-button>
+          <m-button size="large" block @click="$router.push('/design')">{{
+            $t("design")
+          }}</m-button>
+          <m-button size="large" block type="info" @click="openGithub">Github</m-button>
         </section>
         <section class="npm_i">
-          <m-button>
-            <m-icon name="right" style="margin-right: 8px"></m-icon>
+          <m-button type="info" light :clickRes="false">
+            <m-icon name="right" style="margin-right: 8px" />
             npm install mostify-ui
-            <m-icon name="copy" style="margin-left: 16px"></m-icon>
+            <MButton type="text" size="mini" shape="circle" style="margin-left: 16px"
+              ><m-icon name="copy"
+            /></MButton>
           </m-button>
         </section>
       </div>
     </section>
-    <h3 class="home_line_title">特性</h3>
+    <h3 class="home_line_title">{{ $t("feature") }}</h3>
     <section>
       <div class="home_c_cards">
         <div>
           <section class="card_bg card_bg1" />
-          <h5>更好用</h5>
-          <p>视觉/交互/体验更好</p>
+          <h5>{{ $t("Simpler") }}</h5>
+          <p>{{ $t("Simpler_tip") }}</p>
         </div>
         <div>
           <section class="card_bg card_bg2" />
-          <h5>更快速</h5>
-          <p>组件设计更好开发者使用，开发效率更高</p>
+          <h5>{{ $t("More_stable") }}</h5>
+          <p>{{ $t("More_stable_tip") }}</p>
         </div>
         <div>
           <section class="card_bg card_bg3" />
-          <h5>更简单</h5>
-          <p>一切的一切，变得更简单！</p>
+          <h5>{{ $t("More_efficient") }}</h5>
+          <p>{{ $t("More_efficient_tip") }}</p>
         </div>
       </div>
     </section>
 
     <section class="footer">
-      <m-button type="primary" light>支持作者</m-button>
-      <h4 style="margin: 68px">让我们一起努力构建好用的Vue组件库</h4>
+      <m-button type="primary" light>{{ $t("Support") }}</m-button>
     </section>
   </div>
 </template>
 
 <script setup lang="ts">
 import Logo from "~/components/Logo.vue";
+
+const openGithub = () => {
+  window.open("https://github.com/irming46/mostify-ui");
+};
 </script>
 
 <style scoped lang="scss">

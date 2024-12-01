@@ -33,6 +33,46 @@ const onClick = (path: string) => {
 };
 </script>
 
-<style scoped lang="scss">
-@import './style';
+<style lang="scss" scoped>
+.my_nav {
+  width: 240px;
+  min-width: 240px;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid var(--m-text-400);
+}
+
+.nav_wrapper {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  width: 240px;
+  height: calc(100% - 68px);
+  overflow: auto;
+  padding: 32px 20px 20px 32px;
+}
+
+.nav_item {
+  padding: 8px 16px 8px 24px;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5f7fa;
+  }
+
+  &:not(last-child) {
+    margin-bottom: 8px;
+  }
+
+  &[data-active="on"] {
+    background: rgb(198, 234, 255);
+  }
+}
+
+.nav_title {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--m-text-700);
+}
 </style>
