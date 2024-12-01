@@ -54,5 +54,4 @@ export default defineNuxtConfig({
     translationDir: 'locales',
     meta: true,
   },
-  buildDir: "dist"
 });
