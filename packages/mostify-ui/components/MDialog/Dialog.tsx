@@ -10,7 +10,6 @@ import {
   dialogAnimationShowTop
 } from "./utils/dialogAnimation";
 import { updateBodyScroll } from "@/mostify-ui/utils/dom";
-import { useClickPosition } from "@/mostify-ui/hooks/useClickPosition";
 
 export default defineComponent({
   name: "MDialog",
@@ -86,13 +85,12 @@ export default defineComponent({
   },
   emits: ["close"],
   setup(props, ctx) {
-    const { x, y } = useClickPosition();
     const { wrapperRef, bodyRef, maskRef, dialogRef } = useDialogRef();
     const { contentStyle, wrapperStyle, bodyStyle } = useDialogStyle(props);
-    const onVisibleHide = (type:string)=>{
-      props._onClose && props._onClose?.(type)
-      ctx.emit('close',type)
-    }
+    const onVisibleHide = (type: string) => {
+      props._onClose && props._onClose?.(type);
+      ctx.emit("close", type);
+    };
     const onHandleEscHideEvent = e => {
       if (
         (e.code === "Escape" || e.keyCode === 27 || e.key === "Escape") &&
@@ -104,10 +102,7 @@ export default defineComponent({
     };
     const onEnter = async (_, done) => {
       await new Promise(resolve => requestAnimationFrame(resolve));
-      const rect = wrapperRef.value.getBoundingClientRect();
-      const transformOrigin = `${-rect.left + x.value}px ${
-        -rect.top + y.value
-      }px`;
+      const transformOrigin = "center";
 
       wrapperRef.value.style.setProperty("transform-origin", transformOrigin);
       bodyRef.value.style.setProperty("transform-origin", transformOrigin);
@@ -154,9 +149,7 @@ export default defineComponent({
               <section class="m-dialog-mask" ref={maskRef} />
               <div
                 class="m-dialog-container"
-                onClick={() =>
-                  props.maskHide && onVisibleHide('cancel')
-                }>
+                onClick={() => props.maskHide && onVisibleHide("cancel")}>
                 <div style={wrapperStyle.value}>
                   <div class="m-dialog-cover" style={contentStyle.value}>
                     <div
@@ -177,9 +170,7 @@ export default defineComponent({
                             shape="rect"
                             size="small"
                             class="m-dialog-content__close"
-                            onClick={() =>
-                              onVisibleHide('cancel')
-                            }>
+                            onClick={() => onVisibleHide("cancel")}>
                             <svg
                               fill="currentColor"
                               class="icon"
@@ -219,18 +210,14 @@ export default defineComponent({
                                 {props.cancelBtnText && (
                                   <MButton
                                     {...props.cancelBtnProps}
-                                    onClick={() =>
-                                      onVisibleHide('cancel')
-                                    }>
+                                    onClick={() => onVisibleHide("cancel")}>
                                     {props.cancelBtnText}
                                   </MButton>
                                 )}
                                 {props.okBtnText && (
                                   <MButton
                                     {...props.okBtnProps}
-                                    onClick={() =>
-                                      onVisibleHide('ok')
-                                    }>
+                                    onClick={() => onVisibleHide("ok")}>
                                     {props.okBtnText}
                                   </MButton>
                                 )}

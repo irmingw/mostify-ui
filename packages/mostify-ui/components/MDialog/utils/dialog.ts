@@ -60,17 +60,10 @@ const createDialog = async (option) => {
   mask = div.querySelector('.m-dialog-mask') as HTMLElement
   content = div.querySelector('.m-dialog-content__wrapper') as HTMLElement
   wrapper = div.querySelector('.m-dialog-content__background') as HTMLElement
-  const rect = content.getBoundingClientRect()
-  const { enterX, enterY } = option
-  let transformOrigin = ''
+  let transformOrigin = 'center'
 
-  if (enterX || enterY) {
-    transformOrigin = `${enterX - rect.x}px ${enterY - rect.y}px`
-  }
-  if (transformOrigin) {
-    wrapper.style.setProperty("transform-origin", transformOrigin);
-    content.style.setProperty("transform-origin", transformOrigin);
-  }
+  wrapper.style.setProperty("transform-origin", transformOrigin);
+  content.style.setProperty("transform-origin", transformOrigin);
   dialogAnimationShow({ mask, content, wrapper })
 }
 

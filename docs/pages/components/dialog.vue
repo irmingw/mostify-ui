@@ -41,7 +41,7 @@
       @close="showS = false"
       title="在人生的漫漫旅途中在人生的漫漫旅途中"
     >
-    <h1>Hello Dialog</h1>
+      <h1>Hello Dialog</h1>
       <MButton type="primary" @click="show2 = true"> 嵌套对话框 </MButton>
     </MDialog>
     <MDialog
@@ -64,13 +64,13 @@
       okBtnText="确认"
       width="600px"
     >
-    <h1>Hello Dialog</h1>
+      <h1>Hello Dialog</h1>
     </MDialog>
   </div>
 </template>
 
 <script setup>
-import { Dialog } from "../../../lib/mostify-ui/dist/mostify-ui";
+import { Dialog } from "mostify-ui";
 const show = ref(false);
 const show2 = ref(false);
 const showS = ref(false);

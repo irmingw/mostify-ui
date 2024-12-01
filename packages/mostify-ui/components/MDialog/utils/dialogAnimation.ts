@@ -1,17 +1,16 @@
 import { animate } from "@/utils/dom";
 
 export const dialogAnimationShow = async ({ mask, content, wrapper }) => {
-  // wrapper.setAttribute("style", "transform-origin: -200px -100px;");
-  animate(mask, [{ opacity: 0 }, { opacity: 1 }], 300);
+  animate(mask, [{ opacity: 0 }, { opacity: 1 }], 240);
   animate(
     wrapper,
     [
       { transform: "scale(0.33)", offset: 0, opacity: 0.66 },
-      { transform: "scale(1)", offset: 0.66, opacity: 1 },
+      { transform: "scale(0.98)", offset: 0.66, opacity: 1 },
       { transform: "scale(1)", offset: 1, opacity: 1 },
     ],
     {
-      duration: 300,
+      duration: 240,
     }
   );
   await animate(
@@ -22,7 +21,7 @@ export const dialogAnimationShow = async ({ mask, content, wrapper }) => {
       { opacity: 1, offset: 1 }
     ],
     {
-      duration: 300,
+      duration: 240,
     }
   );
 }
