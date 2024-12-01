@@ -1,0 +1,118 @@
+.m-dialog {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+  overflow: hidden;
+  z-index: 1000;
+
+  .m-dialog__header {
+    padding: 16px 48px 0 24px;
+  }
+  .m-dialog__body {
+    padding: 20px 24px;
+    flex: 1;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .m-dialog__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 0 12px 12px;
+  }
+
+  .m-dialog__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 48px;
+  }
+
+  .m-dialog-title {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0;
+    font-weight: 600;
+  }
+}
+
+.m-dialog-mask {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--m-dialog__bask_color);
+  z-index: -1;
+}
+
+.m-dialog-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: all;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.m-dialog-cover {
+  pointer-events: all;
+  padding: 0;
+}
+
+.m-dialog-content {
+  border-radius: var(--m-radius-md);
+  position: relative;
+  height: 100%;
+}
+
+.m-dialog-content__background {
+  position: absolute;
+  inset: 0;
+  background-color: var(--m-dialog-background_color, #fff);
+  border-radius: inherit;
+}
+
+.m-dialog-content__wrapper {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  transform-origin: inherit;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  box-shadow:
+    0 0 1px 1px rgba(0, 0, 0, 0.12),
+    0 5px 18px rgba(0, 0, 0, 0.15),
+    0 15px 20px rgba(0, 0, 0, 0.12);
+}
+
+.m-dialog-content__close {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.m-dialog-confirm {
+  .m-dialog__body {
+    padding: 12px 24px;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .m-dialog__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 42px;
+  }
+}

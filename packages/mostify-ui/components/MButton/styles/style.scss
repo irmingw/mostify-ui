@@ -1,0 +1,225 @@
+@mixin shapeBase($btnHeight: 36px) {
+  $w: $btnHeight;
+  max-width: $w;
+  width: $w;
+  height: $w;
+  max-height: $w;
+
+  .m-button-content {
+    padding: 0;
+  }
+}
+
+button,
+.m-button {
+  --h: var(--m-size-small);
+  --pl_pr: 16px;
+  &.m-button__size__mini {
+    --h: var(--m-size-mini);
+    --pl_pr: 8px;
+  }
+  &.m-button__size__large {
+    --h: var(--m-size-large);
+    --pl_pr: 24px;
+  }
+  padding: 0;
+  outline: none;
+  font-size: var(--m-font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 180ms linear;
+  text-align: center;
+  height: var(--h);
+  background-color: var(--m-theme-background);
+  color: var(--m-text-1000);
+  border-width: 1px;
+  border-color: var(--m-text-500);
+  border-style: var(--border_style);
+  border-radius: var(--m-radius-sm);
+
+  &:hover {
+    background-color: var(--m-primary-100);
+    color: var(--m-primary-600);
+    border-color: var(--m_primary_200);
+  }
+
+  @each $type in primary, danger, success, warning, info {
+    &.m-button__type__#{$type} {
+      $key: $type;
+      @if ($key == danger) {
+        $key: "error";
+      }
+      border-width: 0;
+      border-color: var(--m-#{$key}-600);
+      color: var(--m-text-100);
+      background-color: var(--m-#{$key}-600);
+
+      &:hover {
+        border-color: var(--m-#{$key}-700);
+        background-color: var(--m-#{$key}-700);
+      }
+
+      &.is__plain {
+        background-color: var(--m-#{$key}-100);
+        color: var(--m-#{$key}-600);
+        border-color: var(--m-#{$key}-600);
+
+        &:hover {
+          background-color: var(--m-#{$key}-700);
+          color: var(--m-text-100);
+        }
+      }
+
+      &.is__light {
+        background-color: var(--m-#{$key}-100);
+        color: var(--m-#{$key}-700);
+
+        &:hover {
+          background-color: var(--m-#{$key}-200);
+        }
+      }
+    }
+  }
+
+  &.m-button__type__text {
+    background-color: transparent;
+    color: var(--m-text-1000);
+    border: none;
+    &:hover {
+      background-color: var(--m-action-100);
+    }
+  }
+
+  &.m-button__type__link {
+    background-color: transparent;
+    color: var(--m-primary-600);
+    border: none;
+
+    &:hover {
+      background-color: var(--m-primary-100);
+    }
+    
+  }
+
+  &.m-button__shape__round {
+    &.m-button__size__mini {
+      --h: var(--m-size-mini);
+    }
+    &.m-button__size__large {
+      --h: var(--m-size-large);
+    }
+    border-radius: calc(var(--h) / 2);
+  }
+  &.m-button__shape__circle {
+    &.m-button__size__mini {
+      --h: var(--m-size-mini);
+    }
+    &.m-button__size__large {
+      --h: var(--m-size-large);
+    }
+    @include shapeBase(var(--h));
+    border-radius: 50%;
+  }
+  &.m-button__shape__rect {
+    &.m-button__size__mini {
+      --h: var(--m-size-mini);
+    }
+    &.m-button__size__large {
+      --h: var(--m-size-large);
+    }
+    @include shapeBase(var(--h));
+  }
+
+  &.is__block {
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--m-radius-sm);
+  }
+
+  &.is__loading {
+    position: relative;
+    pointer-events: none;
+    &::before {
+      z-index: 1;
+      pointer-events: none;
+      content: "";
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  @mixin btnDisabledBase() {
+    color: var(--m-action-500);
+    background-color: var(--m-action-200);
+    border-color: var(--m-action-300);
+  }
+
+  &.is__disabled {
+    cursor: not-allowed;
+    position: relative;
+    @include btnDisabledBase();
+    &:hover {
+      @include btnDisabledBase();
+    }
+  }
+}
+
+.m-button-content {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--pl_pr);
+  text-align: center;
+  border-radius: inherit;
+  color: inherit;
+  overflow: hidden;
+  z-index: 1;
+  .m-click__res {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
+
+@keyframes btnLoading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m-button__loading_wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  animation: btnLoading 1500ms infinite linear;
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+.m-button-icon__loading {
+  width: 1em;
+  height: 1em;
+}

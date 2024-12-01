@@ -1,0 +1,35 @@
+{
+  "name": "mostify-ui",
+  "description": "一个 Vue 3 UI组件库 | Mostify UI",
+  "version": "0.0.1",
+  "private": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "license": "MIT",
+  "style": "./dist/index.css",
+  "author": "Irming",
+  "homepage": "",
+  "devDependencies": {
+    "vue": "3.4.29"
+  },
+  "main": "dist/mostify-ui.cjs",
+  "module": "dist/mostify-ui.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mostify-ui.js",
+      "require": "./dist/mostify-ui.cjs"
+    },
+    "./dist/*.mjs": "./dist/*.mjs",
+    "./dist/*.js": "./dist/*.js",
+    "./index.css": "./dist/index.css"
+  },
+  "keywords": [
+    "mostify-ui",
+    "Mostify UI",
+    "vue",
+    "Vue Ui"
+  ],
+  "typings": "./dist/mostify-ui.d.ts"
+}

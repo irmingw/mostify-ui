@@ -1,0 +1,32 @@
+{
+  "name": "mostify-ui-icon",
+  "description": "Mostify UI Icon Component for Vue 3",
+  "version": "0.0.1",
+  "private": false,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "license": "MIT",
+  "style": "./dist/index.css",
+  "author": "TMWang",
+  "homepage": "",
+  "devDependencies": {
+    "vue": "3.4.29"
+  },
+  "main": "dist/mostify-ui-icon.cjs",
+  "module": "dist/mostify-ui-icon.js",
+  "exports": {
+    ".": {
+      "import": "./dist/mostify-ui-icon.js",
+      "require": "./dist/mostify-ui-icon.cjs"
+    },
+    "./dist/*.mjs": "./dist/*.mjs",
+    "./dist/*.js": "./dist/*.js"
+  },
+  "keywords": [
+    "mostify-ui-icon",
+    "Mostify UI Icon"
+  ],
+  "typings": "./dist/mostify-ui-icon.d.ts"
+}

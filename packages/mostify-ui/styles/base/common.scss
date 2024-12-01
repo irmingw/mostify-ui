@@ -1,0 +1,135 @@
+@font-face {
+  font-family: "MostifyText";
+  src: url("@/mostify-ui/styles/font/MuiText.woff2") format("woff2");
+}
+@font-face {
+  font-family: "MostifyBoldText";
+  src: url("@/mostify-ui/styles/font/MuiBoldText.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "MostifyBolderText";
+  src: url("@/mostify-ui/styles/font/MuiBolderText.woff2") format("woff2");
+}
+
+$defaultFontFamily:
+  system-ui,
+  -apple-system,
+  sans-serif;
+
+// 字体设置
+$font-family: (
+  "h1": "MostifyBolderText",
+  "h2": "MostifyBolderText",
+  "h3": "MostifyBolderText",
+  "h4": "MostifyBoldText",
+  "h5": "MostifyBoldText",
+  "h6": "MostifyBoldText",
+  "body": "MostifyText",
+  "*": "MostifyText"
+);
+@each $key, $value in $font-family {
+  #{$key} {
+    font-family: $value, $defaultFontFamily;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 1.5rem 0 2rem;
+  line-height: 5.6rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin: 1rem 0 1.5rem;
+  line-height: 4.6rem;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0.8rem 0 1rem;
+  line-height: 3.6rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0 0.8rem;
+  line-height: 2.6rem;
+}
+* {
+  line-height: 22px;
+  box-sizing: border-box;
+  font-size: var(--m-font-size-sm);
+}
+
+#m-inset__body {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+@keyframes ripple-animation {
+  from {
+    transform: scale(0.66);
+  }
+  to {
+    transform: scale(4);
+    opacity: 0.8;
+  }
+}
+
+.m-click__res {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+.m-click__res--ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--m-click-res-color, rgba(255, 255, 255, 0.6));
+  animation: ripple-animation 600ms linear forwards;
+}
+
+.m-box__shadow {
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.2),
+    0px 5px 8px rgba(0, 0, 0, 0.05),
+    0px 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+html[data-overflow="hidden"],
+body[data-overflow="hidden"] {
+  overflow: hidden;
+}
+
+/* 为滚动条整体设置样式 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 为滚动条的轨道设置样式 */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+/* 为滚动条的滑块设置样式 */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+/* 当鼠标悬停在滑块上时改变滑块的颜色 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.45);
+}

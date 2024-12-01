@@ -1,0 +1,33 @@
+$font-sizes: (
+  xs: 12px,
+  sm: 14px,
+  md: 16px,
+  lg: 18px,
+  xl: 20px
+);
+
+$sizes: (
+  mini: 28px,
+  small: 36px,
+  large: 48px
+);
+
+$radius: (
+  xs: 0px,
+  sm: 4px,
+  md: 8px,
+  lg: 16px,
+  xl: 20px
+);
+
+:root {
+  @each $sName, $sValue in $sizes {
+    --m-size-#{$sName}: #{$sValue};
+  }
+  @each $rName, $rValue in $radius {
+    --m-radius-#{$rName}: #{$rValue};
+  }
+  @each $sizeName, $sizeValue in $font-sizes {
+    --m-font-size-#{$sizeName}: #{$sizeValue};
+  }
+}

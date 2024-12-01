@@ -1,0 +1,25 @@
+.m-menu__item {
+  display: flex;
+  padding: 8px 12px;
+  align-items: center;
+  text-align: left;
+  min-width: max-content;
+  width: 100%;
+  border-radius: var(--m-radius-sm);
+  cursor: pointer;
+  background: var(--m-theme-background);
+
+  &:hover {
+    background-color: var(--m-action-100);
+  }
+
+  &.is__disabled {
+    cursor: not-allowed;
+    color: var(--m-action-500);
+    pointer-events: none;
+
+    &:hover {
+      background: var(--m-theme-background);
+    }
+  }
+}

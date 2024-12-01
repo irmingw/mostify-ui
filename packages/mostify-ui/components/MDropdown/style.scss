@@ -1,0 +1,24 @@
+.m-dropdown {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+}
+
+.m-dropdown__content {
+  position: absolute;
+  left: var(--left, -99999px);
+  top: var(--top, -99999px);
+  pointer-events: all;
+  border-radius: 4px;
+  z-index: 1000;
+  background: var(--m-theme-background);
+  transform-origin: center top;
+}
+
+.m-dropdown__body {
+  padding: 4px;
+  border-radius: inherit;
+  min-width: fit-content;
+  overflow-y: auto;
+  transform-origin: inherit;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "mui-ui-project",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build --mode lib",
+    "preview": "vite preview",
+    "build:icon": "vite build --mode icon",
+    "ins": "npm install --no-save"
+  },
+  "dependencies": {
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "vue": "3.4.29"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "20.14.9",
+    "@vitejs/plugin-vue": "5.0.5",
+    "@vue/babel-plugin-jsx": "^1.2.2",
+    "eslint": "8.57.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-promise": "6.4.0",
+    "postcss-load-config": "^6.0.1",
+    "sass": "1.77.6",
+    "terser": "^5.31.6",
+    "typescript": "5.2.2",
+    "vite": "5.3.1",
+    "vite-plugin-dts": "3.9.1",
+    "vue-tsc": "^2.0.24"
+  }
+}
