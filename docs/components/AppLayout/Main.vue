@@ -18,7 +18,7 @@ import Header from "./modules/Header.vue";
 const route = useRoute();
 const showNav = computed(() => {
   console.log(route,'route');
-  return !['/zh','/en','/'].includes(route.path);
+  return !['/zh/','/en/','/'].includes(route.path);
 });
 </script>
 
