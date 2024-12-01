@@ -27,9 +27,6 @@ export default defineNuxtConfig({
     },
     pageTransition: { name: 'layout', mode: 'out-in' },
   },
-  router: {  
-    base: '/dist/',
-  },
 
   imports: {
     autoImport: true,
@@ -41,12 +38,10 @@ export default defineNuxtConfig({
   ssr: false,
   devtools: { enabled: true },
   plugins: ["~/plugins/mostify.ts"],
-
   devServer: {
     port: 3009,
     host: "0.0.0.0",
   },
-
   modules: [
     'nuxt-i18n-micro',
   ],
@@ -59,4 +54,5 @@ export default defineNuxtConfig({
     translationDir: 'locales',
     meta: true,
   },
+  buildDir: "dist"
 });

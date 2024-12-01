@@ -19,10 +19,11 @@ jobs:
         node-version: '20.12.2'  # 设置 Node.js 版本  
 
     - name: Install dependencies  
+      working-directory: ./docs  # 切换到 docs 目录  
       run: npm install  # 安装依赖  
 
     - name: Build documentation  
-      run: npm run build  # 编译文档，确保在 package.json 中定义了此命令  
+      run: npm run generate  # 编译文档，确保在 package.json 中定义了此命令  
 
     - name: Deploy to GitHub Pages  
       uses: peaceiris/actions-gh-pages@v3  # 使用 GH Pages 部署 Action  
