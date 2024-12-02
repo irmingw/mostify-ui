@@ -34,8 +34,8 @@ export const dialogAnimationHide = async ({ mask, wrapper, content }) => {
     content,
     [
       { opacity: 0.25, offset: 0 },
-      { opacity: 0.05, offset: 0.33, },
-      { opacity: 0, offset: 1,transform: "scale(0.33)" }
+      { opacity: 0, offset: 0.33, },
+      { opacity: 0, offset: 1 }
     ],
     {
       duration: 200,

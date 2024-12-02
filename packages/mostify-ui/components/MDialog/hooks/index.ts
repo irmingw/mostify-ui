@@ -24,7 +24,7 @@ export const useDialogStyle = (props) => {
     }
     return {
       width,
-      maxWidth: width,
+      maxWidth: '100%',
       height,
       margin: `${props.top && props.top !== 'center' ? '0 auto' : '24px auto'}`,
     }
