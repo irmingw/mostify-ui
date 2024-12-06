@@ -16,7 +16,7 @@ export const isSameOrChildNode = (parent: HTMLElement, child: HTMLElement): bool
 export const endAnimation = (node: HTMLElement) => {
   return new Promise((resolve) => {
     if (!node) return resolve(false)
-    node.getAnimations().forEach((animation) => {
+    node?.getAnimations()?.forEach((animation) => {
       animation.cancel()
     });
     resolve(true)

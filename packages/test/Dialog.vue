@@ -46,7 +46,7 @@
 
     <MDialog
       :visible="showS"
-      width="80%"
+      width="570px"
       @close="showS = false"
       title="在人生的漫漫旅途中在人生的漫漫旅途中"
     >
