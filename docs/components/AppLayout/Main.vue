@@ -17,8 +17,7 @@ import AppMenu from "~/components/AppMenu";
 import Header from "./modules/Header.vue";
 const route = useRoute();
 const showNav = computed(() => {
-  console.log(route,'route');
-  return !['/zh/','/en/','/'].includes(route.path);
+  return !['localized-index','index'].includes(route.name);
 });
 </script>
 
@@ -42,6 +41,7 @@ body {
 
 .app_layout {
   width: 100%;
+  min-width: 1200px;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -51,6 +51,7 @@ body {
   min-height: 64px;
   max-height: 64px;
   width: 100%;
+  min-width: 1200px;
 }
 
 .header_inner {
@@ -66,6 +67,7 @@ body {
   height: 64px;
   width: 100%;
   z-index: 100;
+  min-width: 1200px;
 }
 
 .main {
