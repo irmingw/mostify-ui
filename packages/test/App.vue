@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="app"
-  >
+  <div class="app">
     <div class="inner">
       <MDialog />
       <Input />
@@ -11,11 +9,9 @@
 </template>
 
 <script setup lang="ts">
-// import Mask from "./Mask.vue";
 import MDialog from "./Dialog.vue";
 import Input from "./Input.vue";
-import Button from './Button.vue'
-
+import Button from "./Button.vue";
 </script>
 
 <style scoped>

@@ -1,8 +1,8 @@
 .m-input {
-  --input_color: var(--m-text-800);
-  --input_border_color: var(--m-text-500);
+  --input_color: var(--m-theme-700);
+  --input_border_color: var(--m-theme-400);
   --input_border_radius: var(--m-radius-sm);
-  --input_placeholder_color: var(--m-text-500);
+  --input_placeholder_color: var(--m-theme-400);
   --input_border_hover_color: var(--m-primary-600);
   --input_border_active_color: var(--m-primary-700);
 
@@ -134,7 +134,7 @@
   min-width: max-content;
   padding: 0 10px;
   background-color: rgba(0,0,0,.08);
-  border: 1px solid var(--m-text-500);
+  border: 1px solid var(--m-theme-500);
 }
 
 .m-input__prepend {

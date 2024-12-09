@@ -6,8 +6,7 @@ $primary: (
   500: #3e93de,
   600: #1976d2,
   700: #0c56ab,
-  800: #033b85,
-  900: #00265e
+  800: #033b85
 );
 
 $warning: (
@@ -18,8 +17,7 @@ $warning: (
   500: #ffb940,
   600: #f29a15,
   700: #cc7708,
-  800: #a65800,
-  900: #804000
+  800: #a65800
 );
 
 $success: (
@@ -30,8 +28,7 @@ $success: (
   500: #68d968,
   600: #41cc45,
   700: #2da635,
-  800: #1c8026,
-  900: #0f5919
+  800: #1c8026
 );
 
 $error: (
@@ -42,93 +39,36 @@ $error: (
   500: #fa6363,
   600: #d44a4f,
   700: #ad343c,
-  800: #87222c,
-  900: #611721
-);
-
-$info: (
-  100: #eeecec,
-  200: #d2cece,
-  300: #bfbebe,
-  400: #9a9999,
-  500: #6d6d6d,
-  600: #484848,
-  700: #383636,
-  800: #232222,
-  900: #0d0d0d
-);
-
-$text: (
-  100: #ffffff,
-  200: #fafafa,
-  300: #f5f5f5,
-  400: #f0f0f0,
-  500: #d9d9d9,
-  600: #bfbfbf,
-  700: #8c8c8c,
-  800: #595959,
-  900: #434343,
-  1000: #262626,
-  1100: #1f1f1f,
-  1200: #141414,
-  1300: #000000
-);
-
-$action: (
-  100: rgba(0, 0, 0, 0.05),
-  200: rgba(0, 0, 0, 0.1),
-  300: rgba(0, 0, 0, 0.15),
-  400: rgba(0, 0, 0, 0.2),
-  500: rgba(0, 0, 0, 0.25),
-  600: rgba(0, 0, 0, 0.3),
-  700: rgba(0, 0, 0, 0.35),
-  800: rgba(0, 0, 0, 0.4),
-  900: rgba(0, 0, 0, 0.45),
-  1000: rgba(0, 0, 0, 0.5),
-  1100: rgba(0, 0, 0, 0.55),
-  1200: rgba(0, 0, 0, 0.6),
-  1300: rgba(0, 0, 0, 0.65),
-  1400: rgba(0, 0, 0, 0.7),
-  1500: rgba(0, 0, 0, 0.75),
-  1600: rgba(0, 0, 0, 0.8),
-  1700: rgba(0, 0, 0, 0.85),
-  1800: rgba(0, 0, 0, 0.9),
-  1900: rgba(0, 0, 0, 0.95)
+  800: #87222c
 );
 
 $theme: (
-  background: #ffffff
+  50: #ffffff,
+  100: #fafafa,
+  200: #f5f5f5,
+  300: #f0f0f0,
+  400: #d9d9d9,
+  500: #bfbfbf,
+  600: #8c8c8c,
+  700: #595959,
+  800: #434343,
+  900: #262626,
+  1000: #000
 );
 
 :root {
   @each $name, $value in $primary {
     --m-primary-#{$name}: #{$value};
   }
-
   @each $name, $value in $warning {
     --m-warning-#{$name}: #{$value};
   }
-
   @each $name, $value in $error {
     --m-error-#{$name}: #{$value};
   }
-
-  @each $name, $value in $info {
-    --m-info-#{$name}: #{$value};
-  }
-
   @each $name, $value in $success {
     --m-success-#{$name}: #{$value};
   }
-
-  @each $name, $value in $text {
-    --m-text-#{$name}: #{$value};
-  }
-
-  @each $name, $value in $action {
-    --m-action-#{$name}: #{$value};
-  }
-
   @each $name, $value in $theme {
     --m-theme-#{$name}: #{$value};
   }
