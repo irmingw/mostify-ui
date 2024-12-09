@@ -90,7 +90,7 @@ export const useBtn = props => {
       [
         {
           offset: 0,
-          transform: `scale(0.75)`,
+          transform: `scale(0.66)`,
           width,
           height,
           top,
@@ -100,7 +100,7 @@ export const useBtn = props => {
         },
         {
           offset: 1,
-          transform: `scale(2)`,
+          transform: `scale(3)`,
           width,
           height,
           top,
