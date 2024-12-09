@@ -1,40 +1,13 @@
 import { computed, inject, ref } from "vue";
 import { providerKey } from "@/mostify-ui/config/config";
 import { animate } from "@/utils/dom";
-
-const primaryColors = [
-  "var(--m-primary-600)",
-  "var(--m-primary-500)",
-  "var(--m-primary-700)"
-];
-
-const dangerColors = [
-  "var(--m-error-600)",
-  "var(--m-error-500)",
-  "var(--m-error-700)"
-];
-
-const warningColors = [
-  "var(--m-warning-600)",
-  "var(--m-warning-500)",
-  "var(--m-warning-700)"
-];
-
-const successColors = [
-  "var(--m-success-600)",
-  "var(--m-success-500)",
-  "var(--m-success-700)"
-];
-const colorMap = new Map([
-  ["primary", primaryColors],
-  ["danger", dangerColors],
-  ["warning", warningColors],
-  ["success", successColors],
-  [
-    "default",
-    ["var(--m-theme-50)", "var(--m-primary-200)", "var(--m-primary-300)"]
-  ]
-]);
+import {
+  bgColorMap,
+  colorMap,
+  bgColorLightMap,
+  colorLightMap,
+  borderColorMap
+} from "../constans";
 
 export const useBtn = props => {
   const rippleRef = ref(null);
@@ -42,23 +15,46 @@ export const useBtn = props => {
   const injectData = inject(providerKey, { size: "" });
   const btnStyle = computed(() => {
     const style = [];
-    let [base, hover, active] = colorMap.get(props.type) || [];
 
-    if (props.text) {
-      base = "";
-      hover = "rgba(0,0,0,.06)";
-      active = "rgba(0,0,0,.25)";
+    // 处理底色
+    let [base, hover, active] = bgColorMap.get(props.type) || [];
+    if (props.light) {
+      [base, hover, active] = bgColorLightMap.get(props.type) || [];
     }
-
     style.push(`--btn-bg-color:${props.btnBgColor || base || ""}`);
     style.push(`--btn-bg-hover-color:${props.btnBgHoverColor || hover || ""}`);
     style.push(
       `--btn-bg-active-color:${props.btnBgActiveColor || active || ""}`
     );
+
+    // 处理尺寸
     const size = props.size || injectData.size;
+    style.push(`--btn-size: var(--m-size-${size ? size : "small"})`);
+
+    // 处理字体色
+    let [tc, tch, tca] = colorMap.get(props.type) || [];
+    if (props.light) {
+      [tc, tch, tca] = colorLightMap.get(props.type) || [];
+    }
+    
+
+    style.push(`--btn-color:${props.textColor || tc || "var(--m-theme-900)"}`);
     style.push(
-      `--btn-size: ${size ? "m-size-" + size : "var(--m-size-small)"}`
+      `--btn-color-hover:${props.textColor || tch || "var(--m-theme-900)"}`
     );
+    style.push(
+      `--btn-color-active:${props.textColor || tca || "var(--m-theme-900)"}`
+    );
+
+    // 处理border
+    const [bdc, bdch, bdca] = borderColorMap.get(props.type) || [];
+    
+    style.push(`--btn-border-color:${props.borderColor || bdc}`);
+    style.push(`--btn-border-color-hover:${props.borderColor || bdch}`);
+    style.push(`--btn-border-color-active:${props.borderColor || bdca}`);
+    style.push(`--btn-border-style:${props.borderStyle || "solid"}`);
+
+      style.push(`--btn-border-width: ${ !['text','link'].includes(props.type) ?props.borderWidth : 0}px`);
 
     return style.join(";");
   });
@@ -76,15 +72,21 @@ export const useBtn = props => {
     () => !(props.loading && ["circle", "rect"].includes(props.shape))
   );
 
+  // User ripple effect
   const setClickXEvent = (e: MouseEvent) => {
     if (!rippleRef.value || !props.ripple) return;
 
     const rect = btnRef.value.getBoundingClientRect();
-    const width = Math.max(rect.width, rect.height).toFixed(0) + "px";
+    const size = Math.max(rect.width, rect.height);
+    const width = size + "px";
     const height = width;
-    const top = (e.clientY - rect.top - parseInt(height) / 2).toFixed(0) + "px";
-    const left =
-      (e.clientX - rect.left - parseInt(width) / 2).toFixed(0) + "px";
+    let top = (e.clientY - rect.top - size / 2).toFixed(0) + "px";
+    let left = (e.clientX - rect.left - size / 2).toFixed(0) + "px";
+
+    if (Math.abs(rect.width - rect.height) < 12) {
+      top = (rect.height - size) * 0.5 + "px";
+      left = (rect.width - size) * 0.5 + "px";
+    }
     animate(
       rippleRef.value,
       [
@@ -95,7 +97,6 @@ export const useBtn = props => {
           height,
           top,
           left,
-          opacity: 0.5,
           borderRadius: "50%"
         },
         {
@@ -104,8 +105,7 @@ export const useBtn = props => {
           width,
           height,
           top,
-          left,
-          opacity: 1
+          left
         }
       ],
       500

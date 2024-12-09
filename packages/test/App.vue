@@ -1,15 +1,14 @@
 <template>
   <div class="app">
     <div class="inner">
-      <!-- <MDialog />
-      <Input /> -->
+      <MDialog />
+      <Input />
       <Button />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import Mask from "./Mask.vue";
 import MDialog from "./Dialog.vue";
 import Input from "./Input.vue";
 import Button from "./Button.vue";

@@ -1,14 +1,16 @@
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
 import type { BtnTypes, BtnSizes, BtnShapes } from "./types";
-import { downRes } from "@/mostify-ui/directives/downRes";
 import "./styles/style.scss";
 import { useBtn } from "./hooks/useBtn";
 
 export default defineComponent({
   name: "MButton",
   props: {
-    type: String as PropType<BtnTypes>,
+    type: {
+      type:String as PropType<BtnTypes>,
+      default: "default",
+    },
     size: String as PropType<BtnSizes>,
     shape: String as PropType<BtnShapes>,
     text: Boolean,
@@ -17,7 +19,12 @@ export default defineComponent({
     btnBgColor: String,
     btnBgHoverColor: String,
     btnBgActiveColor: String,
-    ripple: { type: Boolean, default: true }
+    textColor: String,
+    ripple: { type: Boolean, default: true },
+    light: Boolean, // 开启亮色模式
+    borderWidth: { type: Number, default: 1 },
+    borderStyle: { type: String, default: "solid" },
+    borderColor: String,
   },
   emits: ["click", "focus", "blur"],
   setup(props, { slots, emit }) {
@@ -52,7 +59,7 @@ export default defineComponent({
           onFocus={e => onChangeByType(e, "focus")}
           onBlur={e => onChangeByType(e, "blur")}>
           <span class="m-button-content">
-            {props.ripple && (
+            {props.ripple && !props.loading && !props.disabled && (
               <div class="m-button_inner__ripple" ref={rippleRef} />
             )}
 

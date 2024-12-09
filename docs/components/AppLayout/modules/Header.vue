@@ -9,7 +9,7 @@
           <Logo size="36px" />
           <span class="title">Mostify UI</span>
         </m-space>
-        <m-button type="primary" light :border="false" @click="onSearch">
+        <m-button type="primary" light :border-width="0" @click="onSearch">
           <m-icon name="search" style="margin-right: 8px" />
           {{ $t("search") }}
         </m-button>
@@ -74,7 +74,7 @@
 
     <MDialog
       :visible="dialogShow"
-      width="520px"
+      width="600px"
       top="100px"
       @close="dialogShow = false"
       :showClose="false">
@@ -109,7 +109,7 @@
           style="
             text-align: center;
             padding: 20px;
-            color: var(--m-text-600);
+            color: var(--m-theme-500);
             font-size: 1.2rem;
           ">
           暂无搜索结果
@@ -150,7 +150,7 @@
           <div>
             <span
               style="
-                color: var(--m-text-700);
+                color: var(--m-theme-600);
                 font-size: 0.98rem;
                 line-height: 18px;
               "

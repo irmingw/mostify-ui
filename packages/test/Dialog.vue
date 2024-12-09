@@ -2,10 +2,10 @@
   <div class="component">
     <div class="btn">
       <MButton @click="show = !show">fullscreen</MButton>
-    <MButton @click="showS = !showS">width 80%</MButton>
-    
-    <m-button @click="onClick">显示提示</m-button>
-    <m-button @click="()=> show3 = true">top 8vh</m-button>
+      <MButton @click="showS = !showS">width 80%</MButton>
+
+      <m-button @click="onClick">显示提示</m-button>
+      <m-button @click="() => (show3 = true)">top 8vh</m-button>
     </div>
 
     <MDialog :visible="show" title="设置" fullscreen @close="show = false">
@@ -55,9 +55,7 @@
         src="https://pic.rmb.bdstatic.com/bjh/240730/events/7435420ac46733a6b7a0a6025fb0d4c93216.jpeg"
         alt=""
       />
-      <MButton type="primary" block @click="show2 = true">
-        显示子对话框
-      </MButton>
+      <MButton type="primary" block @click="show2 = true"> 显示子对话框 </MButton>
     </MDialog>
     <MDialog
       :visible="show2"
@@ -68,9 +66,7 @@
       width="600px"
     >
       <m-input placeholder="输入文本"></m-input>
-      <div style="width:100%;height:300px;background:red">
-        
-      </div>
+      <div style="width: 100%; height: 300px; background: red"></div>
     </MDialog>
 
     <MDialog
@@ -107,7 +103,7 @@ const onClick = (e) => {
     title: "梦想宛如一盏璀璨的明灯!",
     content: "梦想宛如一盏璀璨的明灯!",
     width: 420,
-    top: '80px',
+    top: "80px",
     enterX: e.clientX,
     enterY: e.clientY,
     onConfirm: () => {
@@ -125,6 +121,5 @@ const onClick = (e) => {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  
 }
 </style>

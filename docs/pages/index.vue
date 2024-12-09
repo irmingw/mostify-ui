@@ -9,19 +9,37 @@
         <h1 style="line-height: 3rem">{{ $t("title") }}</h1>
         <h4>{{ $t("description") }}</h4>
         <section class="home_h_btn" style="--m-size-large: 48px">
-          <m-button size="large" block type="primary" @click="$router.push('/start')">{{
-            $t("start")
-          }}</m-button>
-          <m-button size="large" block @click="$router.push('/design')">{{
+          <m-button
+            size="large"
+            style="width: 100%"
+            type="primary"
+            @click="$router.push('/start')"
+            >{{ $t("start") }}</m-button
+          >
+          <m-button size="large" style="width: 100%" @click="$router.push('/design')">{{
             $t("design")
           }}</m-button>
-          <m-button size="large" block type="info" @click="openGithub">Github</m-button>
+          <m-button
+            size="large"
+            style="width: 100%"
+            btnBgColor="#595959"
+            btnBgHoverColor="#595959"
+            btnBgActiveColor="#262626"
+            textColor="#fff"
+            @click="openGithub"
+            >Github</m-button
+          >
         </section>
         <section class="npm_i">
-          <m-button type="info" light :clickRes="false">
+          <m-button type="primary" light>
             <m-icon name="right" style="margin-right: 8px" />
             npm install mostify-ui
-            <MButton type="text" size="mini" shape="circle" style="margin-left: 16px"
+            <MButton
+              type="link"
+              :ripple="false"
+              size="mini"
+              shape="circle"
+              style="margin-left: 16px"
               ><m-icon name="copy"
             /></MButton>
           </m-button>
