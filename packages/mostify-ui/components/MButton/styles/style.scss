@@ -12,16 +12,6 @@
 
 button,
 .m-button {
-  --h: var(--m-size-small);
-  --pl_pr: 16px;
-  &.m-button__size__mini {
-    --h: var(--m-size-mini);
-    --pl_pr: 8px;
-  }
-  &.m-button__size__large {
-    --h: var(--m-size-large);
-    --pl_pr: 24px;
-  }
   padding: 0;
   outline: none;
   font-size: var(--m-font-size-sm);
@@ -36,111 +26,34 @@ button,
   -webkit-tap-highlight-color: transparent;
   transition: all 180ms linear;
   text-align: center;
-  height: var(--h);
-  background-color: var(--m-theme-background);
-  color: var(--m-text-1000);
-  border-width: 1px;
-  border-color: var(--m-text-500);
-  border-style: var(--border_style);
+  border: none;
   border-radius: var(--m-radius-sm);
 
-  &:hover {
-    background-color: var(--m-primary-100);
-    color: var(--m-primary-600);
-    border-color: var(--m_primary_200);
-  }
+  height: var(--btn-size, var(--m-size-small));
+  color: var(--m-theme-900);
+  background-color: var(--btn-bg-color);
 
-  @each $type in primary, danger, success, warning, info {
-    &.m-button__type__#{$type} {
-      $key: $type;
-      @if ($key == danger) {
-        $key: "error";
-      }
-      border-width: 0;
-      border-color: var(--m-#{$key}-600);
-      color: var(--m-text-100);
-      background-color: var(--m-#{$key}-600);
-
-      &:hover {
-        border-color: var(--m-#{$key}-700);
-        background-color: var(--m-#{$key}-700);
-      }
-
-      &.is__plain {
-        background-color: var(--m-#{$key}-100);
-        color: var(--m-#{$key}-600);
-        border-color: var(--m-#{$key}-600);
-
-        &:hover {
-          background-color: var(--m-#{$key}-700);
-          color: var(--m-text-100);
-        }
-      }
-
-      &.is__light {
-        background-color: var(--m-#{$key}-100);
-        color: var(--m-#{$key}-700);
-
-        &:hover {
-          background-color: var(--m-#{$key}-200);
-        }
-      }
-    }
-  }
-
-  &.m-button__type__text {
-    background-color: transparent;
-    color: var(--m-text-1000);
-    border: none;
-    &:hover {
-      background-color: var(--m-action-100);
-    }
-  }
-
-  &.m-button__type__link {
-    background-color: transparent;
-    color: var(--m-primary-600);
-    border: none;
-
-    &:hover {
-      background-color: var(--m-primary-100);
-    }
-    
-  }
-
-  &.m-button__shape__round {
-    &.m-button__size__mini {
-      --h: var(--m-size-mini);
-    }
-    &.m-button__size__large {
-      --h: var(--m-size-large);
-    }
-    border-radius: calc(var(--h) / 2);
-  }
   &.m-button__shape__circle {
-    &.m-button__size__mini {
-      --h: var(--m-size-mini);
-    }
-    &.m-button__size__large {
-      --h: var(--m-size-large);
-    }
-    @include shapeBase(var(--h));
-    border-radius: 50%;
-  }
-  &.m-button__shape__rect {
-    &.m-button__size__mini {
-      --h: var(--m-size-mini);
-    }
-    &.m-button__size__large {
-      --h: var(--m-size-large);
-    }
-    @include shapeBase(var(--h));
+    @include shapeBase(var(--btn-size));
+    border-radius: var(--btn-size);
   }
 
-  &.is__block {
-    width: 100%;
-    max-width: 100%;
-    border-radius: var(--m-radius-sm);
+  &.is__text {
+    padding: 0 4px;
+  }
+
+  &:hover {
+    background-color: var(--btn-bg-hover-color);
+  }
+
+  &:active {
+    .m-button_inner__ripple {
+      width: 100%;
+      height: 100%;
+      background-color: var(--btn-bg-active-color);
+      z-index: -1;
+      border-radius: var(--m-radius-sm);
+    }
   }
 
   &.is__loading {
@@ -189,14 +102,13 @@ button,
   color: inherit;
   overflow: hidden;
   z-index: 1;
-  .m-click__res {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
+}
+.m-button_inner__ripple {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all 120ms linear;
 }
 
 @keyframes btnLoading {
@@ -217,9 +129,4 @@ button,
     width: 1em;
     height: 1em;
   }
-}
-
-.m-button-icon__loading {
-  width: 1em;
-  height: 1em;
 }

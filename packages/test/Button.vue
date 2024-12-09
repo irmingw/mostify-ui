@@ -1,17 +1,20 @@
 <template>
   <div class="component">
     <div class="btn">
-      <m-button :clickRes="false" type="default">Default <m-button shape="circle" type="text">M</m-button></m-button>
+      <m-button :clickRes="false" style="width: 100%" type="default"
+        >Default
+        <m-button shape="circle" text :ripple="false">M</m-button></m-button
+      >
+      <m-button shape="circle" type="primary">M</m-button>
       <m-button type="primary">Primary</m-button>
       <m-button type="danger">Danger</m-button>
       <m-button type="warning">Warning</m-button>
       <m-button type="success">Success</m-button>
-      <m-button type="info">Info</m-button>
-      <m-button type="text">Text</m-button>
-      <m-button type="link">Link</m-button>
+      <m-button text>Text</m-button>
+      <m-button type="primary">Link</m-button>
     </div>
 
-    <div class="btn">
+    <!-- <div class="btn">
       <m-button loading type="primary">button</m-button>
     </div>
 
@@ -47,7 +50,7 @@
       <m-button size="large" type="primary">Large</m-button>
     </div>
 
-    <m-button block type="primary">BLOCK</m-button>
+    <m-button block type="primary">BLOCK</m-button> -->
   </div>
 </template>
 

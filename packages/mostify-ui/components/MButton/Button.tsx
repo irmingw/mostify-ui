@@ -1,6 +1,6 @@
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
-import type { MButtonType } from "./types";
+import type { BtnTypes, BtnSizes, BtnShapes } from "./types";
 import { downRes } from "@/mostify-ui/directives/downRes";
 import "./styles/style.scss";
 import { useBtn } from "./hooks/useBtn";
@@ -8,58 +8,54 @@ import { useBtn } from "./hooks/useBtn";
 export default defineComponent({
   name: "MButton",
   props: {
-    type: { type: String as PropType<MButtonType["type"]>, default: "" },
-    size: { type: String as PropType<MButtonType["size"]>, default: "" },
-    shape: { type: String as PropType<MButtonType["shape"]>, default: "" },
-    plain: Boolean,
+    type: String as PropType<BtnTypes>,
+    size: String as PropType<BtnSizes>,
+    shape: String as PropType<BtnShapes>,
+    text: Boolean,
     disabled: Boolean,
     loading: Boolean,
-    block: Boolean,
-    light: Boolean,
-    clickResColor: { type: String, default: "" },
-    borderStyle: { type: String, default: "solid" },
-    clickRes: { type: Boolean, default: true },
+    btnBgColor: String,
+    btnBgHoverColor: String,
+    btnBgActiveColor: String,
+    ripple: { type: Boolean, default: true }
   },
   emits: ["click", "focus", "blur"],
-  directives: { downRes },
   setup(props, { slots, emit }) {
-    const { btnClass, btnStyle, contentShow } = useBtn(props);
+    const {
+      btnClass,
+      btnStyle,
+      contentShow,
+      setClickXEvent,
+      btnRef,
+      rippleRef
+    } = useBtn(props);
 
-    function handleClick(e) {
+    function onChangeByType(e: Event, type: "click" | "focus" | "blur") {
       e.preventDefault();
-      e.stopPropagation();
       if (props.loading || props.disabled) return;
-      emit("click", e);
+      emit(type, e);
     }
 
-    function onFocus(e: MouseEvent) {
+    const onmousedown = (e: MouseEvent) => {
       e.preventDefault();
-      e.stopPropagation();
       if (props.loading || props.disabled) return;
-      emit("focus", e);
-    }
-
-    function onBlur(e: MouseEvent) {
-      e.preventDefault();
-      e.stopPropagation();
-      if (props.loading || props.disabled) return;
-      emit("focus", e);
-    }
-
+      setClickXEvent(e);
+    };
     return () => {
       return (
         <button
           class={btnClass.value}
           style={btnStyle.value}
-          v-down-res={props.clickRes}
-          onClick={handleClick}
-          onFocus={onFocus}
-          onBlur={onBlur}>
+          onMousedown={onmousedown}
+          ref={btnRef}
+          onClick={e => onChangeByType(e, "click")}
+          onFocus={e => onChangeByType(e, "focus")}
+          onBlur={e => onChangeByType(e, "blur")}>
           <span class="m-button-content">
-            <div
-              class="m-click__res"
-              data-disabled={props.loading || props.disabled ? "on" : "off"}
-            />
+            {props.ripple && (
+              <div class="m-button_inner__ripple" ref={rippleRef} />
+            )}
+
             {props.loading && (
               <span
                 class="m-button__loading_wrapper"
