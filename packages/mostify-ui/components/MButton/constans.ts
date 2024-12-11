@@ -18,8 +18,8 @@ const warningColors = [
 
 const successColors = [
   "var(--m-success-600)",
-  "var(--m-success-500)",
-  "var(--m-success-700)"
+  "var(--m-success-700)",
+  "var(--m-success-500)"
 ];
 export const bgColorMap = new Map([
   ["primary", primaryColors],

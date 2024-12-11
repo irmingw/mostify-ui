@@ -92,7 +92,16 @@ export const useBtn = props => {
       [
         {
           offset: 0,
-          transform: `scale(0.66)`,
+          transform: `scale(0.8)`,
+          width,
+          height,
+          top,
+          left,
+          borderRadius: "50%"
+        },
+        {
+          offset: 0.5,
+          transform: `scale(8)`,
           width,
           height,
           top,
@@ -101,14 +110,18 @@ export const useBtn = props => {
         },
         {
           offset: 1,
-          transform: `scale(3)`,
+          transform: `scale(8)`,
           width,
           height,
           top,
-          left
+          left,
+          borderRadius: "50%"
         }
       ],
-      500
+      {
+        duration: 500,
+        easing:"cubic-bezier(0.4, 0, 0, 1)"
+      }
     );
   };
 

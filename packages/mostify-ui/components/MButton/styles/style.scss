@@ -26,6 +26,8 @@ button,
   -webkit-tap-highlight-color: transparent;
   transition: all 180ms linear;
   text-align: center;
+  box-sizing: border-box;
+  border: none!important;
   border-radius: var(--m-radius-sm);
 
   height: var(--btn-size, var(--m-size-small));
