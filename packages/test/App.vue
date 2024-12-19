@@ -1,17 +1,17 @@
 <template>
   <div class="app">
     <div class="inner">
-      <MDialog />
+       <!-- <MDialog /> -->
       <Input />
-      <Button />
+      <!-- <Button /> -->
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import MDialog from "./Dialog.vue";
+// import MDialog from "./Dialog.vue";
 import Input from "./Input.vue";
-import Button from "./Button.vue";
+// import Button from "./Button.vue";
 </script>
 
 <style scoped>

@@ -1,0 +1,184 @@
+@mixin shapeBase($btnHeight: 36px) {
+  $w: $btnHeight;
+  max-width: $w;
+  width: $w;
+  height: $w;
+  max-height: $w;
+}
+@mixin btnSize($btnHeight: 36px) {
+  height: $btnHeight;
+  line-height: $btnHeight;
+  font-size: 14px;
+  padding: 0 16px;
+}
+@mixin btnBase() {
+  padding: 0;
+  outline: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  text-wrap: nowrap;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 120ms linear;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: var(--m-radius-small);
+  position: relative;
+  overflow: hidden;
+  border-style: solid;
+  border-color: var(--m-theme-400);
+  border-width: var(--border-width, 0px);
+}
+@mixin btnDisabled() {
+  color: var(--m-disabled-300);
+  background-color: var(--m-disabled-100);
+  border-color: var(--m-disabled-200);
+}
+button,
+.m-button {
+  --m-btn-ripple-color: var(--m-action-200);
+  --m-btn-size: var(--m-size-small);
+
+  @include btnBase();
+  @include btnSize();
+  &.is-loading {
+    pointer-events: none;
+    opacity: 0.75;
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    @include btnDisabled();
+    &:hover,
+    &:active {
+      @include btnDisabled();
+    }
+  }
+}
+.m-button-type-default {
+  background: var(--m-theme-50);
+  color: var(--m-theme-700);
+  &:hover {
+    background: var(--m-primary-100);
+    color: var(--m-primary-600);
+    border-color: var(--m-primary-500);
+  }
+  &:active {
+    background: var(--m-primary-200);
+    color: var(--m-primary-800);
+    border-color: var(--m-primary-500);
+  }
+}
+.m-button-type-text {
+  background: transparent;
+  color: var(--m-theme-700);
+  border: none;
+
+  &:hover {
+    background: var(--m-action-50);
+  }
+  &:active {
+    background: var(--m-action-100);
+  }
+}
+.m-button-type-link {
+  background: transparent;
+  color: var(--m-primary-600);
+  border: none;
+  --m-btn-ripple-color: var(--m-primary-300);
+
+  &:hover {
+    background: var(--m-primary-100);
+  }
+  &:active {
+    background: var(--m-primary-200);
+  }
+}
+@each $type in (primary, success, warning, danger) {
+  $t: $type;
+  .m-button-type-#{$t} {
+    @if ($type == danger) {
+      $t: error;
+    }
+    background-color: var(--m-#{$t}-600);
+    color: var(--m-theme-50);
+    --m-btn-ripple-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    &:hover {
+      background-color: var(--m-#{$t}-700);
+    }
+    &:active {
+      background-color: var(--m-#{$t}-500);
+    }
+    &[data-light="on"]{
+      background-color: var(--m-#{$t}-200);
+      color: var(--m-#{$t}-600);
+      --m-btn-ripple-color: var(--m-#{$t}-300);
+      &:hover {
+        background-color: var(--m-#{$t}-100);
+      }
+      &:active {
+        background-color: var(--m-#{$t}-200);
+      }
+    }
+  }
+}
+@each $size in (small, mini, large) {
+  .m-button-size-#{$size} {
+    --m-btn-size: var(--m-size-#{$size}, 36px);
+    @include btnSize(var(--m-size-#{$size}));
+  }
+}
+.m-button-shape-circle {
+  @include shapeBase(var(--m-btn-size));
+  border-radius: 50%;
+}
+.m-button-shape-square {
+  @include shapeBase(var(--m-btn-size));
+}
+.m-button-shape-round {
+  border-radius: calc(var(--m-btn-size) / 2);
+}
+.m-button-ripple {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+}
+.m-button-main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  svg {
+    width: 1.1em;
+    height: 1.1em;
+  }
+}
+
+@keyframes alternate-loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.m-button-loading-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  .m-button-icon-loading {
+    animation: alternate-loading 1.2s infinite linear;
+  }
+}

@@ -3,11 +3,11 @@
     <div class="input">
       <MInput
         ref="inputRef"
-        size="small"
         :value="value"
         @change="onChange"
         prefix="$"
         suffix="RMB"
+        size="large"
         placeholder="Please input"
         borderWidth="2px"
       />
@@ -27,6 +27,10 @@
       </m-input>
 
       <m-input v-model="value" clearable placeholder="clearable"> </m-input>
+      <m-input v-model="value" status="error" />
+      <m-input v-model="value" status="success" />
+      <m-input v-model="value" status="warning" />
+      <m-input v-model="value" status="" />
     </div>
   </div>
 </template>

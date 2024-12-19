@@ -62,7 +62,7 @@ h6 {
 * {
   line-height: 22px;
   box-sizing: border-box;
-  font-size: var(--m-font-size-sm);
+  font-size: 14px;
 }
 
 #m-inset__body {
@@ -81,23 +81,7 @@ h6 {
   }
 }
 
-.m-click__res {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-.m-click__res--ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: var(--m-click-res-color, rgba(255, 255, 255, 0.6));
-  animation: ripple-animation 600ms linear forwards;
-}
-
-.m-box__shadow {
+.m-box-shadow {
   box-shadow:
     0px 1px 3px rgba(0, 0, 0, 0.2),
     0px 5px 8px rgba(0, 0, 0, 0.05),
