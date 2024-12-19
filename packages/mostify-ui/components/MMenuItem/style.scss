@@ -1,25 +1,37 @@
+@mixin disabledItem() {
+  cursor: not-allowed;
+  color: var(--m-disabled-400);
+
+  &:hover,
+  &:active {
+    background: var(--m-theme-50);
+  }
+}
+
 .m-menu__item {
   display: flex;
   padding: 8px 12px;
   align-items: center;
   text-align: left;
-  min-width: max-content;
   width: 100%;
-  border-radius: var(--m-radius-sm);
+  border-radius: var(--m-radius-small);
+  color: var(--m-theme-900);
   cursor: pointer;
-  background: var(--m-theme-background);
+  background: var(--m-theme-50);
+  transition: all 120ms ease-in;
 
   &:hover {
-    background-color: var(--m-action-100);
+    background-color: var(--m-action-50);
+  }
+  &:active {
+    background-color: var(--m-primary-200);
+  }
+
+  &[data-disabled="true"] {
+    @include disabledItem();
   }
 
   &.is__disabled {
-    cursor: not-allowed;
-    color: var(--m-action-500);
-    pointer-events: none;
-
-    &:hover {
-      background: var(--m-theme-background);
-    }
+    @include disabledItem();
   }
 }

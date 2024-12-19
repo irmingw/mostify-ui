@@ -8,7 +8,7 @@ import {
   computed,
   onBeforeMount,
   reactive,
-  watch,
+  watch
 } from "vue";
 import { PlacementType } from "@/mostify-ui/types/types";
 import "./style.scss";
@@ -23,24 +23,24 @@ export default defineComponent({
   props: {
     placement: {
       type: String as PropType<PlacementType>,
-      default: "bottomLeft",
+      default: "bottomLeft"
     },
     trigger: {
       type: String,
       default: "click",
-      validator: (value: string) => ["hover", "click"].includes(value),
+      validator: (value: string) => ["hover", "click"].includes(value)
     },
     // 隐藏是否销毁
     destroyOnHide: {
       type: Boolean,
-      default: false,
+      default: false
     },
     disabled: Boolean,
     open: { type: Boolean, default: false },
     toBody: {
       type: Boolean,
-      default: true,
-    },
+      default: true
+    }
   },
   setup(props, { slots }) {
     const triggerRef = ref<HTMLElement>(null);
@@ -51,7 +51,7 @@ export default defineComponent({
       top: "0",
       left: "0",
       waitChange: false,
-      renderToDom: null,
+      renderToDom: null
     });
     const hideState = ref(false);
     let timer = null;
@@ -101,7 +101,7 @@ export default defineComponent({
       }
       // 设置不可触发事件
       state.waitChange = true;
-      await new Promise((resolve) => requestAnimationFrame(resolve));
+      await new Promise(resolve => requestAnimationFrame(resolve));
       renderRect();
       window.addEventListener("scroll", scrollListenHandle, false);
       // 执行动画
@@ -231,35 +231,39 @@ export default defineComponent({
       unBindEvent();
     });
 
-    return () => (
-      <>
-        <div
-          class="m-dropdown"
-          ref={triggerRef}
-          style={{ "pointer-events": state.waitChange ? "none" : "all" }}
-        >
-          {slots.default && slots.default()}
-        </div>
+    return () => {
+      console.log(slots.content());
+      return (
+        <div>
+          <div
+            class="m-dropdown"
+            ref={triggerRef}
+            style={{ "pointer-events": state.waitChange ? "none" : "all" }}>
+            {slots.default && slots.default()}
+          </div>
 
-        <Teleport to={"#m-inset__body"}>
-          {isShow.value && (
-            <div
-              class="m-dropdown__content m-box__shadow"
-              v-show={show.value}
-              ref={dropdownContentRef}
-              style={{
-                "--top": state.top,
-                "--left": state.left,
-                "pointer-events": state.waitChange ? "none" : "all",
-              }}
-            >
-              <div class="m-dropdown__body" ref={bodyRef}>
-                {slots.content && slots.content()}
+          <Teleport to={"#m-inset__body"}>
+            {isShow.value && (
+              <div
+                class="m-dropdown__content m-box-shadow"
+                v-show={show.value}
+                ref={dropdownContentRef}
+                style={{
+                  "--top": state.top,
+                  "--left": state.left,
+                  "pointer-events": state.waitChange ? "none" : "all"
+                }}>
+                <div class="m-dropdown__body" ref={bodyRef}>
+                  {slots.content && slots.content()?.map((item) => {
+                    item.props = { ...item.props};
+                    return item;
+                  })}
+                </div>
               </div>
-            </div>
-          )}
-        </Teleport>
-      </>
-    );
-  },
+            )}
+          </Teleport>
+        </div>
+      );
+    };
+  }
 });
