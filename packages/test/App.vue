@@ -5,7 +5,7 @@
       <!-- <Input /> -->
       <!-- <Button /> -->
       <MDropdown>
-        <MButton>下拉</MButton>
+        <MButton type="link">下拉</MButton>
         <template #content>
           <MMenuItem disabled>我是下拉内容</MMenuItem>
           <MMenuItem>我是下拉内容</MMenuItem>

@@ -45,6 +45,7 @@ export default defineComponent({
   setup(props, { slots }) {
     const triggerRef = ref<HTMLElement>(null);
     const dropdownContentRef = ref<HTMLElement>(null);
+    const bgRef = ref<HTMLElement>(null);
     const bodyRef = ref<HTMLElement>(null);
     const show = ref(false);
     const state = reactive({
@@ -106,7 +107,7 @@ export default defineComponent({
       window.addEventListener("scroll", scrollListenHandle, false);
       // 执行动画
       animateOption.cShow(bodyRef.value);
-      animateOption.bgShow(dropdownContentRef.value);
+      animateOption.bgShow(bgRef.value);
       // 等待执行完成后
       await getAnimateEnd(bodyRef.value).catch(() => {});
       state.waitChange = false;
@@ -138,7 +139,7 @@ export default defineComponent({
         if (hideState.value) {
           state.waitChange = true;
           animateOption.cHide(bodyRef.value);
-          animateOption.bgHide(dropdownContentRef.value);
+          animateOption.bgHide(bgRef.value);
           await delay(0);
           await getAnimateEnd(bodyRef.value).catch(() => {});
           window.removeEventListener("scroll", scrollListenHandle, false);
@@ -245,7 +246,7 @@ export default defineComponent({
           <Teleport to={"#m-inset__body"}>
             {isShow.value && (
               <div
-                class="m-dropdown__content m-box-shadow"
+                class="m-dropdown__content"
                 v-show={show.value}
                 ref={dropdownContentRef}
                 style={{
@@ -253,11 +254,13 @@ export default defineComponent({
                   "--left": state.left,
                   "pointer-events": state.waitChange ? "none" : "all"
                 }}>
+                <div class="m-dropdown-bg m-box-shadow" ref={bgRef}></div>
                 <div class="m-dropdown__body" ref={bodyRef}>
-                  {slots.content && slots.content()?.map((item) => {
-                    item.props = { ...item.props};
-                    return item;
-                  })}
+                  {slots.content &&
+                    slots.content()?.map(item => {
+                      item.props = { ...item.props };
+                      return item;
+                    })}
                 </div>
               </div>
             )}
