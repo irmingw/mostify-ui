@@ -167,7 +167,7 @@ export default defineComponent({
                         {props.showClose && (
                           <MButton
                             type="text"
-                            shape="rect"
+                            shape="square"
                             size="small"
                             class="m-dialog-content__close"
                             onClick={() => onVisibleHide("cancel")}>

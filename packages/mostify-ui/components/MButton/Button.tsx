@@ -19,6 +19,8 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const { btnClass, contentShow, setClickXEvent, btnRef, rippleRef } =
       useBtn(props);
+      console.log('btnClass.value');
+      
 
     function onChangeByType(e: Event, type: "click" | "focus" | "blur") {
       e.preventDefault();
@@ -30,6 +32,7 @@ export default defineComponent({
       e.preventDefault();
       if (props.loading || props.disabled) return;
       setClickXEvent(e);
+      
     };
     return () => {
       return (
@@ -45,7 +48,7 @@ export default defineComponent({
           onFocus={e => onChangeByType(e, "focus")}
           onBlur={e => onChangeByType(e, "blur")}>
           {!props.loading && !props.disabled && (
-            <div class="m-button-ripple" ref={rippleRef} />
+            <div class="m-button-ripple-wrapper" ref={rippleRef} />
           )}
           <span class="m-button-main">
             {props.loading && (

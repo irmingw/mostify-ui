@@ -6,22 +6,22 @@ export const dialogAnimationShow = async ({ mask, content, wrapper }) => {
     wrapper,
     [
       { transform: "scale(0.33)", offset: 0, opacity: 0.66 },
-      { transform: "scale(0.98)", offset: 0.66, opacity: 1 },
+      { transform: "scale(1)", offset: 0.33, opacity: 1 },
       { transform: "scale(1)", offset: 1, opacity: 1 },
     ],
     {
-      duration: 300,
+      duration: 500,
     }
   );
   await animate(
     content,
     [
       { opacity: 0, offset: 0 },
-      { opacity: 0.25, offset: 0.5 },
+      { opacity: 0.25, offset: 0.35 },
       { opacity: 1, offset: 1 }
     ],
     {
-      duration: 300,
+      duration: 500,
     }
   );
 }

@@ -16,27 +16,25 @@
             @click="$router.push('/start')"
             >{{ $t("start") }}</m-button
           >
-          <m-button size="large" style="width: 100%" @click="$router.push('/design')">{{
+          <m-button size="large" type="default" border style="width: 100%" @click="$router.push('/design')">{{
             $t("design")
           }}</m-button>
           <m-button
             size="large"
             style="width: 100%"
-            btnBgColor="#595959"
-            btnBgHoverColor="#595959"
-            btnBgActiveColor="#262626"
-            textColor="#fff"
+            type="default"
+            border
             @click="openGithub"
             >Github</m-button
           >
         </section>
         <section class="npm_i">
-          <m-button type="primary" light>
+          <m-button type="primary" light border>
             <m-icon name="right" style="margin-right: 8px" />
             npm install mostify-ui
             <MButton
-              type="link"
-              :ripple="false"
+              type="text"
+              light
               size="mini"
               shape="circle"
               style="margin-left: 16px"

@@ -10,9 +10,9 @@ export default {
     await animate(
       el,
       [
-        { transform: "scale(0.8)", offset: 0 },
-        { transform: "scale(1)", offset: 0.33 },
-        {transform: "scale(1)", offset: 1},
+        { transform: "scaleY(0.8)", offset: 0 },
+        { transform: "scaleY(1)", offset: 0.33 },
+        {transform: "scaleY(1)", offset: 1},
       ],
       { duration: showTime }
     ).catch(() => { });
@@ -34,7 +34,7 @@ export default {
       [
         { opacity: 1, offset: 0 },
         { opacity: 0.66, offset: 0.33 },
-        { opacity: 0, transform: "scale(0.8)", offset: 1 },
+        { opacity: 0, transform: "scaleY(0.8)", offset: 1 },
       ],
       { duration: hideTime }
     ).catch(() => { });

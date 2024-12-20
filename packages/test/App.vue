@@ -1,15 +1,13 @@
 <template>
   <div class="app">
     <div class="inner">
-      <!-- <MDialog /> -->
+      <MDialog />
       <!-- <Input /> -->
-      <!-- <Button /> -->
-      <MDropdown>
+      <Button />
+      <MDropdown placement="topLeft">
         <MButton type="link">下拉</MButton>
         <template #content>
-          <MMenuItem disabled>我是下拉内容</MMenuItem>
-          <MMenuItem>我是下拉内容</MMenuItem>
-          <MMenuItem>我是下拉内容</MMenuItem>
+          <MMenuItem >我是下拉内容</MMenuItem>
           <MMenuItem>我是下拉内容</MMenuItem>
         </template>
       </MDropdown>
@@ -18,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-// import MDialog from "./Dialog.vue";
+import MDialog from "./Dialog.vue";
 // import Input from "./Input.vue";
-// import Button from "./Button.vue";
+import Button from "./Button.vue";
 </script>
 
 <style scoped>

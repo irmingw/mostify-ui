@@ -1,6 +1,5 @@
 import { computed, inject, ref } from "vue";
 import { providerKey } from "@/mostify-ui/config/config";
-import { animate } from "@/utils/dom";
 
 export const useBtn = props => {
   const rippleRef = ref<HTMLElement | null>(null);
@@ -21,36 +20,30 @@ export const useBtn = props => {
   );
 
   // User ripple effect
-  const setClickXEvent = (e: MouseEvent) => {
+  const rippleCopy = document.createElement("div");
+  rippleCopy.className = "m-button-ripple";
+  const setClickXEvent = async (e: MouseEvent) => {
     if (!rippleRef.value) return;
-
+    const ripple = rippleCopy.cloneNode() as HTMLElement;
+    rippleRef.value.appendChild(ripple);
     const rect = btnRef.value.getBoundingClientRect();
     const size = Math.max(rect.width, rect.height);
     const width = size + "px";
     const height = width;
     let top = (e.clientY - rect.top - size / 2).toFixed(0) + "px";
     let left = (e.clientX - rect.left - size / 2).toFixed(0) + "px";
-
+    top = (rect.height - size) * 0.5 + "px";
     if (Math.abs(rect.width - rect.height) < 12) {
-      top = (rect.height - size) * 0.5 + "px";
       left = (rect.width - size) * 0.5 + "px";
     }
-    rippleRef.value.setAttribute(
+     
+    ripple.setAttribute(
       "style",
       `width:${width};height:${height};top:${top};left:${left};`
     );
-    animate(
-      rippleRef.value,
-      [
-        { transform: "scale(0.8)", background: "var(--m-btn-ripple-color)" },
-        {
-          transform: "scale(5)",
-          background: "var(--m-btn-ripple-color)",
-          opacity: 0.15
-        }
-      ],
-      500
-    );
+    ripple.classList.add("m-button-ripple-active");
+    await new Promise(resolve => setTimeout(resolve, 500));
+    ripple.remove();
   };
 
   return {
