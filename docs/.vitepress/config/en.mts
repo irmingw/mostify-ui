@@ -11,7 +11,7 @@ export default {
 
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Get Start', link: '/config/start' },
+      { text: 'Get Start', link: '/config/start', },
       { text: 'Components', link: '/bases/button' }
     ],
 
@@ -25,14 +25,15 @@ export default {
       },
       {
         text: 'Components',
-
         items: [
           {
             text: 'Bases',
             items: [
               { text: 'Button', link: '/bases/button' },
+              { text: 'ButtonGroup', link: '/bases/button-group' },
               { text: 'Icon', link: '/bases/icon' },
               { text: 'Colors', link: '/bases/colors' },
+              { text: 'Space', link: '/bases/space' },
             ]
           },
           {

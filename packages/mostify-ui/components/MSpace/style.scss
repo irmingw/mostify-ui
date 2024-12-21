@@ -1,27 +1,14 @@
 .m-space {
   display: inline-flex;
+  gap: var(--size,0);
 }
 
 .m-space-x {
   flex-direction: row;
   flex-wrap: wrap;
-  .m-space-item {
-    margin-right: var(--size,0);
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
+  align-items: center;
 }
 
 .m-space-y {
   flex-direction: column;
-
-  .m-space-item {
-    margin-bottom: var(--size,0);
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
 }

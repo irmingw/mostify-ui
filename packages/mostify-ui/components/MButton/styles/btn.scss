@@ -33,7 +33,7 @@
   overflow: hidden;
   border-style: solid;
   border-color: var(--m-theme-400);
-  border-width: var(--border-width, 0px);
+  border-width: 1px;
 }
 @mixin btnDisabled() {
   color: var(--m-disabled-300);
@@ -43,6 +43,7 @@
 @mixin defaultBtn() {
   background: var(--m-theme-50);
   color: var(--m-theme-700);
+  --m-btn-ripple-color: var(--m-primary-400);
   &:hover {
     background: var(--m-primary-100);
     color: var(--m-primary-600);
@@ -50,13 +51,14 @@
   }
   &:active {
     background: var(--m-primary-200);
-    color: var(--m-primary-900);
+    color: var(--m-primary-600);
     border-color: var(--m-primary-500);
   }
 }
 button,
 .m-button {
   --m-btn-ripple-color: var(--m-action-200);
+  --m-btn-ripple-radius: 50%;
   --m-btn-size: var(--m-size-small);
 
   @include btnBase();
@@ -144,6 +146,7 @@ button,
 }
 .m-button-shape-square {
   @include shapeBase(var(--m-btn-size));
+  --m-btn-ripple-radius: var(--m-radius-small);
 }
 .m-button-shape-round {
   border-radius: calc(var(--m-btn-size) / 2);
@@ -171,7 +174,7 @@ button,
 .m-button-ripple {
   position: absolute;
   z-index: 0;
-  border-radius: 50%;
+  border-radius: var(--m-btn-ripple-radius);
 }
 .m-button-ripple-active {
   background-color: var(--m-btn-ripple-color);

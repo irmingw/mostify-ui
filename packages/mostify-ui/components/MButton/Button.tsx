@@ -7,7 +7,10 @@ import "./styles/btn.scss";
 export default defineComponent({
   name: "MButton",
   props: {
-    type: String as PropType<BtnTypes>,
+    type: {
+      type: String as PropType<BtnTypes>,
+      default: "default",
+    },
     size: String as PropType<BtnSizes>,
     shape: String as PropType<BtnShapes>,
     disabled: Boolean,
@@ -19,8 +22,6 @@ export default defineComponent({
   setup(props, { slots, emit }) {
     const { btnClass, contentShow, setClickXEvent, btnRef, rippleRef } =
       useBtn(props);
-      console.log('btnClass.value');
-      
 
     function onChangeByType(e: Event, type: "click" | "focus" | "blur") {
       e.preventDefault();

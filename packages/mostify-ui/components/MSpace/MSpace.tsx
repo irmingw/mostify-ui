@@ -4,7 +4,7 @@ import "./style.scss";
 export default defineComponent({
   name: "MSpace",
   props: {
-    value: {
+    size: {
       type: String,
       default: "",
     },
@@ -13,6 +13,7 @@ export default defineComponent({
       validator: (val: string) => ["x", "y"].includes(val),
       default: "x",
     },
+    alignItems: { type: String, default: "flex-start" },
   },
   setup(props, { slots }) {
     const layoutClass = computed(() =>
@@ -25,7 +26,8 @@ export default defineComponent({
         <div
           class={["m-space", layoutClass.value]}
           style={{
-            "--size": props.value || "",
+            "--size": props.size || "",
+            'align-items': props.alignItems || "",
           }}
         >
           {defaultItems.value?.map((item, index) => {

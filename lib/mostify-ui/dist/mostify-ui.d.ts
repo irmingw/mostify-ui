@@ -8,15 +8,9 @@ import { default as MConfigProvider } from './MConfigProvider';
 import { default as MDialog } from './MDialog';
 import { default as MDivider } from './MDivider';
 import { default as MDropdown } from './MDropdown';
-import { MFooter } from './MLayout';
-import { MHeader } from './MLayout';
 import { default as MIcon } from './MIcon';
 import { MInput } from './MInput';
-import { MLayout } from './MLayout';
-import { MMain } from './MLayout';
-import { default as MMask } from './MMask';
 import { default as MMenuItem } from './MMenuItem';
-import { MSide } from './MLayout';
 import { default as MSpace } from './MSpace';
 
 declare const _default: {
@@ -44,23 +38,11 @@ export { MDivider }
 
 export { MDropdown }
 
-export { MFooter }
-
-export { MHeader }
-
 export { MIcon }
 
 export { MInput }
 
-export { MLayout }
-
-export { MMain }
-
-export { MMask }
-
 export { MMenuItem }
-
-export { MSide }
 
 export { MSpace }
 

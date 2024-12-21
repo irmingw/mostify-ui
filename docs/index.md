@@ -14,7 +14,7 @@ hero:
       text: Get Started
       link: /config/start
     - theme: alt
-      text: Components Documentation
+      text: Components
       link: /bases/button
 
 features:

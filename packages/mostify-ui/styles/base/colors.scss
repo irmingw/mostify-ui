@@ -76,10 +76,14 @@ $theme: (
   --m-action-200: rgba(0,0,0,0.25);
   --m-action-300: rgba(0,0,0,0.45);
 
-  
+  --m-mask-color: rgba(0, 0, 0, 0.35);
+
+  --m-box-shadow-100: rgba(0,0,0,.08);
+  --m-box-shadow-200: rgba(0,0,0,0.12);
+  --m-box-shadow-300: rgba(0,0,0,0.15);
+
   --m-disabled-100: rgba(0, 0, 0, 0.1);
   --m-disabled-200: rgba(0, 0, 0, 0.25);
   --m-disabled-300: rgba(0, 0, 0, 0.35);
   --m-disabled-400: rgba(0, 0, 0, 0.45);
-
 }

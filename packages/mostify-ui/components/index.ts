@@ -2,7 +2,6 @@
 import MButton from './MButton'
 import MSpace from './MSpace'
 import MDivider from './MDivider'
-import { MLayout, MHeader, MSide, MFooter, MMain } from './MLayout';
 import MAnchor from './MAnchor'
 import MConfigProvider from './MConfigProvider'
 import MBreadcrumb from './MBreadcrumb'
@@ -11,7 +10,6 @@ import MDropdown from './MDropdown'
 import MButtonGroup from './MButtonGroup'
 import MMenuItem from './MMenuItem'
 import MDialog, { Dialog } from './MDialog'
-import MMask from './MMask'
 import { MInput } from './MInput'
 import MIcon from './MIcon'
 
@@ -19,11 +17,6 @@ const components = [
   MButton,
   MSpace,
   MDivider,
-  MLayout,
-  MHeader,
-  MSide,
-  MFooter,
-  MMain,
   MAnchor,
   MConfigProvider,
   MBreadcrumb,
@@ -32,9 +25,8 @@ const components = [
   MButtonGroup,
   MMenuItem,
   MDialog,
-  MMask,
   MInput,
-  MIcon
+  MIcon,
 ].map(item => {
   item.install = function (app) {
     app.component(item.name, item)
@@ -54,11 +46,6 @@ export {
   MButton,
   MSpace,
   MDivider,
-  MLayout,
-  MHeader,
-  MSide,
-  MFooter,
-  MMain,
   MAnchor,
   MConfigProvider,
   MBreadcrumb,
@@ -68,7 +55,6 @@ export {
   MMenuItem,
   MDialog,
   Dialog,
-  MMask,
   MInput,
-  MIcon
+  MIcon,
 }

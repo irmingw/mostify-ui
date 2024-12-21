@@ -1,62 +1,53 @@
 {
-  "hash": "8c5f0f44",
+  "hash": "cdc983c9",
   "configHash": "a264d9f1",
-  "lockfileHash": "389f5bb4",
-  "browserHash": "fb259717",
+  "lockfileHash": "8d0e8610",
+  "browserHash": "676d4bdf",
   "optimized": {
     "vue": {
       "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "13003eec",
+      "fileHash": "1320b5a9",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "f48445f0",
+      "fileHash": "21288fb2",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "f5b90808",
+      "fileHash": "e4b122ac",
       "needsInterop": false
     },
     "vitepress > @vueuse/integrations/useFocusTrap": {
       "src": "../../../node_modules/@vueuse/integrations/useFocusTrap.mjs",
       "file": "vitepress___@vueuse_integrations_useFocusTrap.js",
-      "fileHash": "4986788e",
+      "fileHash": "880ed098",
       "needsInterop": false
     },
     "vitepress > mark.js/src/vanilla.js": {
       "src": "../../../node_modules/mark.js/src/vanilla.js",
       "file": "vitepress___mark__js_src_vanilla__js.js",
-      "fileHash": "5ae7dd3d",
+      "fileHash": "552ff1b4",
       "needsInterop": false
     },
     "vitepress > minisearch": {
       "src": "../../../node_modules/minisearch/dist/es/index.js",
       "file": "vitepress___minisearch.js",
-      "fileHash": "50491c10",
+      "fileHash": "4b30828d",
       "needsInterop": false
     },
     "mostify-ui": {
       "src": "../../../node_modules/mostify-ui/dist/mostify-ui.js",
       "file": "mostify-ui.js",
-      "fileHash": "539d1c10",
-      "needsInterop": false
-    },
-    "mostify-ui-icon": {
-      "src": "../../../node_modules/mostify-ui-icon/dist/mostify-ui-icon.js",
-      "file": "mostify-ui-icon.js",
-      "fileHash": "c1568fd7",
+      "fileHash": "08565e77",
       "needsInterop": false
     }
   },
   "chunks": {
-    "iconfont-BJnk61_Z-VIUK5CD5": {
-      "file": "iconfont-BJnk61_Z-VIUK5CD5.js"
-    },
     "chunk-A7UTJUSY": {
       "file": "chunk-A7UTJUSY.js"
     },

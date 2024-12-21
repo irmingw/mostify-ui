@@ -56,13 +56,9 @@ export default defineComponent({
       type: Boolean,
       default: true
     },
-    backgroundColor: {
-      type: String,
-      default: "#fff"
-    },
     maskBackgroundColor: {
       type: String,
-      default: "rgba(0, 0, 0, .35)"
+      default: ""
     },
     fullscreen: {
       type: Boolean,
@@ -143,8 +139,7 @@ export default defineComponent({
               data-show={props.visible}
               ref={dialogRef}
               style={{
-                "--m-dialog-background_color": props.backgroundColor,
-                "--m-dialog__bask_color": props.maskBackgroundColor
+                "--m-dialog-mask-color": props.maskBackgroundColor
               }}>
               <section class="m-dialog-mask" ref={maskRef} />
               <div

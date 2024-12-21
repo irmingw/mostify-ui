@@ -29,8 +29,10 @@ export default {
             text: '通用',
             items: [
               { text: '按钮', link: '/zh-cn/bases/button' },
+              { text: '按钮组', link: '/zh-cn/bases/button-group' },
               { text: '图标', link: '/zh-cn/bases/icon' },
               { text: '色彩', link: '/zh-cn/bases/colors' },
+              { text: '间距', link: '/zh-cn/bases/space' },
             ]
           },
           {

@@ -1,8 +1,8 @@
-.m-button__group {
+.m-button-group {
   display: inline-flex;
 }
 
-.m-button__group_x {
+.m-button-layout-x {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -15,14 +15,14 @@
     margin-left: -1px;
 
     &:first-child {
-      border-top-left-radius: var(--m-radius-sm);
-      border-bottom-left-radius: var(--m-radius-sm);
+      border-top-left-radius: var(--m-radius-small);
+      border-bottom-left-radius: var(--m-radius-small);
       margin-left: 0;
     }
 
     &:last-child {
-      border-top-right-radius: var(--m-radius-sm);
-      border-bottom-right-radius: var(--m-radius-sm);
+      border-top-right-radius: var(--m-radius-small);
+      border-bottom-right-radius: var(--m-radius-small);
     }
 
     &:hover {
@@ -31,7 +31,7 @@
   }
 }
 
-.m-button__group_y {
+.m-button-layout-y {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
@@ -45,14 +45,14 @@
     margin-top: -1px;
 
     &:first-child {
-      border-top-left-radius: var(--m-radius-sm);
-      border-top-right-radius: var(--m-radius-sm);
+      border-top-left-radius: var(--m-radius-small);
+      border-top-right-radius: var(--m-radius-small);
       margin-top: 0;
     }
 
     &:last-child {
-      border-bottom-left-radius: var(--m-radius-sm);
-      border-bottom-right-radius: var(--m-radius-sm);
+      border-bottom-left-radius: var(--m-radius-small);
+      border-bottom-right-radius: var(--m-radius-small);
     }
 
     &:hover {
