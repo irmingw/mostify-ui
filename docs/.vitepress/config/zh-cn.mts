@@ -23,35 +23,30 @@ export default {
         ]
       },
       {
-        text: '组件文档',
+        text: '通用',
         items: [
-          {
-            text: '通用',
-            items: [
-              { text: '按钮', link: '/zh-cn/bases/button' },
-              { text: '按钮组', link: '/zh-cn/bases/button-group' },
-              { text: '图标', link: '/zh-cn/bases/icon' },
-              { text: '色彩', link: '/zh-cn/bases/colors' },
-              { text: '间距', link: '/zh-cn/bases/space' },
-            ]
-          },
-          {
-            text: '表单',
-            items: [
-              { text: '输入框', link: '/zh-cn/form/input' },
-            ]
-          },
-          {
-            text: '数据展示',
-            items: [
-            ]
-          },
-          {
-            text: '反馈',
-            items: [
-              { text: '对话框', link: '/zh-cn/feedback/dialog' },
-            ]
-          }
+          { text: '按钮', link: '/zh-cn/bases/button' },
+          { text: '按钮组', link: '/zh-cn/bases/button-group' },
+          { text: '图标', link: '/zh-cn/bases/icon' },
+          { text: '色彩', link: '/zh-cn/bases/colors' },
+          { text: '间距', link: '/zh-cn/bases/space' },
+        ]
+      },
+      {
+        text: '表单',
+        items: [
+          { text: '输入框', link: '/zh-cn/form/input' },
+        ]
+      },
+      {
+        text: '数据展示',
+        items: [
+        ]
+      },
+      {
+        text: '反馈',
+        items: [
+          { text: '对话框', link: '/zh-cn/feedback/dialog' },
         ]
       }
     ],

@@ -24,36 +24,31 @@ export default {
         ]
       },
       {
-        text: 'Components',
+        text: 'Bases',
         items: [
-          {
-            text: 'Bases',
-            items: [
-              { text: 'Button', link: '/bases/button' },
-              { text: 'ButtonGroup', link: '/bases/button-group' },
-              { text: 'Icon', link: '/bases/icon' },
-              { text: 'Colors', link: '/bases/colors' },
-              { text: 'Space', link: '/bases/space' },
-            ]
-          },
-          {
-            text: 'Forms',
-            items: [
-              { text: 'Input', link: '/form/input' },
-            ]
-          },
-          {
-            text: 'Data',
-            items: [
-              { text: 'Button', link: '/' },
-            ]
-          },
-          {
-            text: 'Feedback',
-            items: [
-              { text: 'Dialog', link: '/feedback/dialog' },
-            ]
-          }
+          { text: 'Button', link: '/bases/button' },
+          { text: 'ButtonGroup', link: '/bases/button-group' },
+          { text: 'Icon', link: '/bases/icon' },
+          { text: 'Colors', link: '/bases/colors' },
+          { text: 'Space', link: '/bases/space' },
+        ]
+      },
+      {
+        text: 'Forms',
+        items: [
+          { text: 'Input', link: '/form/input' },
+        ]
+      },
+      {
+        text: 'Data',
+        items: [
+          { text: 'Button', link: '/' },
+        ]
+      },
+      {
+        text: 'Feedback',
+        items: [
+          { text: 'Dialog', link: '/feedback/dialog' },
         ]
       }
     ],
