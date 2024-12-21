@@ -20,10 +20,14 @@ export const useBtn = props => {
   );
 
   // User ripple effect
-  const rippleCopy = document.createElement("div");
-  rippleCopy.className = "m-button-ripple";
+  let rippleCopy = null;
+
   const setClickXEvent = async (e: MouseEvent) => {
     if (!rippleRef.value) return;
+    if (!rippleCopy) {
+      rippleCopy = document.createElement("div");
+      rippleCopy.className = "m-button-ripple";
+    }
     const ripple = rippleCopy.cloneNode() as HTMLElement;
     rippleRef.value.appendChild(ripple);
     const rect = btnRef.value.getBoundingClientRect();
@@ -36,7 +40,7 @@ export const useBtn = props => {
     if (Math.abs(rect.width - rect.height) < 12) {
       left = (rect.width - size) * 0.5 + "px";
     }
-     
+
     ripple.setAttribute(
       "style",
       `width:${width};height:${height};top:${top};left:${left};`

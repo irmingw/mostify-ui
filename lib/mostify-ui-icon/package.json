@@ -1,8 +1,9 @@
 {
   "name": "mostify-ui-icon",
   "description": "Mostify UI Icon Component for Vue 3",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": false,
+  "type": "module",
   "files": [
     "dist",
     "README.md"

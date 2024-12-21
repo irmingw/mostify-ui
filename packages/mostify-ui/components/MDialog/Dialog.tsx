@@ -77,7 +77,7 @@ export default defineComponent({
       default: true
     },
     target: {
-      type: [String, HTMLElement],
+      type: [String],
       default: "body"
     },
     top: { type: String, default: "center" },

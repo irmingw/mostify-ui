@@ -16,7 +16,6 @@ $defaultFontFamily:
   system-ui,
   -apple-system,
   sans-serif;
-
 // 字体设置
 $font-family: (
   "h1": "MostifyBolderText",
@@ -36,19 +35,16 @@ $font-family: (
 
 h1 {
   font-size: 3rem;
-  margin: 1.5rem 0 2rem;
   line-height: 5.6rem;
 }
 
 h2 {
   font-size: 2.5rem;
-  margin: 1rem 0 1.5rem;
   line-height: 4.6rem;
 }
 
 h3 {
   font-size: 2rem;
-  margin: 0.8rem 0 1rem;
   line-height: 3.6rem;
 }
 
@@ -56,13 +52,11 @@ h4,
 h5,
 h6 {
   font-size: 1.5rem;
-  margin: 0.5rem 0 0.8rem;
   line-height: 2.6rem;
 }
 * {
   line-height: 22px;
   box-sizing: border-box;
-  font-size: 14px;
 }
 
 #m-inset__body {
@@ -101,7 +95,7 @@ body[data-overflow="hidden"] {
 
 /* 为滚动条的轨道设置样式 */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: transparent;
   border-radius: 6px;
 }
 
@@ -109,7 +103,7 @@ body[data-overflow="hidden"] {
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.25);
   border-radius: 6px;
-  transition: background-color 0.3s;
+  transition: background-color 0.2s;
   cursor: pointer;
 }
 
