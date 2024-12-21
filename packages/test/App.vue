@@ -4,6 +4,7 @@
       <MDialog />
       <!-- <Input /> -->
       <Button />
+      <m-icon name="close"/>
       <MDropdown placement="topLeft">
         <MButton type="link">下拉</MButton>
         <template #content>

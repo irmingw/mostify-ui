@@ -2,24 +2,6 @@
 
 图标组件是一系列图标集合，系统会提供一部分基础图标，图标需要单独安装
 
-## 安装图标
-
-```bash
-npm install mostify-ui-icon --save
-```
-
-## 全局引入
-
-```js
-// main.js
-import Vue from "vue";
-import MostifyIcon from "mostify-ui-icon";
-import App from "./App.vue";
-
-const app = Vue.createApp(App);
-app.use(MostifyIcon);
-```
-
 ## 使用图标
 
 ```html
@@ -34,9 +16,9 @@ app.use(MostifyIcon);
 import iconList from "../../json/iconfont.json";
   </script>
 <div class="icon_list_demo">
-      <section class="item" v-for="item in iconList.glyphs" :key="item.name">
-          <m-icon :name="item.name" size="36px"></m-icon>
-          <span>{{item.name}}</span>
+      <section class="item" v-for="item in iconList.glyphs" :key="item.font_class">
+          <m-icon :name="item.font_class" size="36px"></m-icon>
+          <div>{{item.font_class}}</div>
       </section>
 </div>
 
@@ -52,13 +34,13 @@ import iconList from "../../json/iconfont.json";
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      width: 120px;
-      height: 80px;
-      font-size: 14px;
+      width: 140px;
+      height: 90px;
       border-radius: 4px;
-      padding: 16px 8px;
+      padding: 20px 8px;
       transition: all 0.3s;
       cursor: pointer;
+      font-size: 12px;
 
       &:hover {
         background-color: var(--m-primary-200);

@@ -10,6 +10,7 @@ import { default as MDivider } from './MDivider';
 import { default as MDropdown } from './MDropdown';
 import { MFooter } from './MLayout';
 import { MHeader } from './MLayout';
+import { default as MIcon } from './MIcon';
 import { MInput } from './MInput';
 import { MLayout } from './MLayout';
 import { MMain } from './MLayout';
@@ -46,6 +47,8 @@ export { MDropdown }
 export { MFooter }
 
 export { MHeader }
+
+export { MIcon }
 
 export { MInput }
 

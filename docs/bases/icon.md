@@ -2,24 +2,6 @@
 
 Icon components are a collection of icons, and the system provides some basic icons that need to be installed separately
 
-## Installation icon
-
-```bash
-npm install mostify-ui-icon --save
-```
-
-## Global Introduction
-
-```js
-// main.js
-import Vue from "vue";
-import MostifyIcon from "mostify-ui-icon";
-import App from "./App.vue";
-
-const app = Vue.createApp(App);
-app.use(MostifyIcon);
-```
-
 ## Use Icons
 
 ```html
@@ -34,9 +16,9 @@ app.use(MostifyIcon);
 import iconList from "../json/iconfont.json";
   </script>
 <div class="icon_list_demo">
-      <section class="item" v-for="item in iconList.glyphs" :key="item.name">
-          <m-icon :name="item.name" size="36px"></m-icon>
-          <span>{{item.name}}</span>
+      <section class="item" v-for="item in iconList.glyphs" :key="item.font_class">
+          <m-icon :name="item.font_class" size="36px"></m-icon>
+          <span>{{item.font_class}}</span>
       </section>
 </div>
 
@@ -52,18 +34,17 @@ import iconList from "../json/iconfont.json";
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      width: 120px;
-      height: 80px;
-      font-size: 14px;
+      width: 140px;
+      height: 90px;
       border-radius: 4px;
-      padding: 16px 8px;
+      padding: 20px 8px;
       transition: all 0.3s;
       cursor: pointer;
+      font-size: 14px;
 
       &:hover {
         background-color: var(--m-primary-200);
         color: var(--m-primary-600);
-        font-weight: bold;
       }
     }
   }
