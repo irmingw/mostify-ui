@@ -10,17 +10,17 @@ export default {
     },
 
     nav: [
-      { text: 'Home', link: '/en/' },
-      { text: 'Get Start', link: '/en/config/start' },
-      { text: 'Components', link: '/en/bases/button' }
+      { text: 'Home', link: '/' },
+      { text: 'Get Start', link: '/config/start' },
+      { text: 'Components', link: '/bases/button' }
     ],
 
     sidebar: [
       {
         text: 'Settings',
         items: [
-          { text: 'Get Start', link: '/en/config/start' },
-          { text: 'Theme Setting', link: '/en/config/theme' },
+          { text: 'Get Start', link: '/config/start' },
+          { text: 'Theme Setting', link: '/config/theme' },
         ]
       },
       {
@@ -30,15 +30,15 @@ export default {
           {
             text: 'Bases',
             items: [
-              { text: 'Button', link: '/en/bases/button' },
-              { text: 'Icon', link: '/en/bases/icon' },
-              { text: 'Colors', link: '/en/bases/colors' },
+              { text: 'Button', link: '/bases/button' },
+              { text: 'Icon', link: '/bases/icon' },
+              { text: 'Colors', link: '/bases/colors' },
             ]
           },
           {
             text: 'Forms',
             items: [
-              { text: 'Input', link: '/en/form/input' },
+              { text: 'Input', link: '/form/input' },
             ]
           },
           {
@@ -50,7 +50,7 @@ export default {
           {
             text: 'Feedback',
             items: [
-              { text: 'Dialog', link: '/en/feedback/dialog' },
+              { text: 'Dialog', link: '/feedback/dialog' },
             ]
           }
         ]
