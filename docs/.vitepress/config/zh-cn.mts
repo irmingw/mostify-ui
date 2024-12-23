@@ -46,6 +46,7 @@ export default {
       {
         text: '反馈',
         items: [
+          { text: 'Alert提示', link: '/zh-cn/feedback/alert' },
           { text: '对话框', link: '/zh-cn/feedback/dialog' },
         ]
       }

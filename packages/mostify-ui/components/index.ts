@@ -12,6 +12,7 @@ import MMenuItem from './MMenuItem'
 import MDialog, { Dialog } from './MDialog'
 import { MInput } from './MInput'
 import MIcon from './MIcon'
+import MAlert from './MAlert/MAlert'
 
 const components = [
   MButton,
@@ -27,6 +28,7 @@ const components = [
   MDialog,
   MInput,
   MIcon,
+  MAlert
 ].map(item => {
   item.install = function (app) {
     app.component(item.name, item)
@@ -57,4 +59,5 @@ export {
   Dialog,
   MInput,
   MIcon,
+  MAlert
 }

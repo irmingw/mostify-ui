@@ -5,6 +5,12 @@
   height: $w;
   max-height: $w;
   padding: 0;
+  .m-button-icon-left {
+    margin-right: 0;
+  }
+  .m-button-icon-right {
+    margin-left: 0;
+  }
 }
 @mixin btnSize($btnHeight: 36px) {
   height: $btnHeight;
@@ -205,4 +211,11 @@ button,
   .m-button-icon-loading {
     animation: alternate-loading 1.2s infinite linear;
   }
+}
+
+.m-button-icon-left {
+  margin-right: 8px;
+}
+.m-button-icon-right {
+  margin-left: 8px;
 }

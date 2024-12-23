@@ -3,20 +3,23 @@ import type { PropType } from "vue";
 import type { BtnTypes, BtnSizes, BtnShapes } from "./types";
 import { useBtn } from "./hooks/useBtn";
 import "./styles/btn.scss";
+import MIcon from "../MIcon";
 
 export default defineComponent({
   name: "MButton",
   props: {
     type: {
       type: String as PropType<BtnTypes>,
-      default: "default",
+      default: "default"
     },
     size: String as PropType<BtnSizes>,
     shape: String as PropType<BtnShapes>,
     disabled: Boolean,
     loading: Boolean,
     border: Boolean,
-    light: Boolean
+    light: Boolean,
+    leftIcon: String,
+    rightIcon: String
   },
   emits: ["click", "focus", "blur"],
   setup(props, { slots, emit }) {
@@ -33,9 +36,22 @@ export default defineComponent({
       e.preventDefault();
       if (props.loading || props.disabled) return;
       setClickXEvent(e);
-      
     };
     return () => {
+      const leftIcon = slots.leftIcon ? (
+        slots.leftIcon()
+      ) : props.leftIcon ? (
+        <MIcon name={props.leftIcon} />
+      ) : (
+        ""
+      );
+      const rightIcon = slots.rightIcon ? (
+        slots.rightIcon()
+      ) : props.rightIcon ? (
+        <MIcon name={props.rightIcon} />
+      ) : (
+        ""
+      );
       return (
         <button
           class={btnClass.value}
@@ -67,7 +83,15 @@ export default defineComponent({
                 </svg>
               </span>
             )}
-            {contentShow.value ? slots.default && slots.default() : null}
+            {contentShow.value && (
+              <>
+                {leftIcon && <span class="m-button-icon-left">{leftIcon}</span>}
+                {slots.default && slots.default()}
+                {rightIcon && (
+                  <span class="m-button-icon-right">{rightIcon}</span>
+                )}
+              </>
+            )}
           </span>
         </button>
       );

@@ -48,6 +48,7 @@ export default {
       {
         text: 'Feedback',
         items: [
+          { text: 'Alert', link: '/feedback/alert' },
           { text: 'Dialog', link: '/feedback/dialog' },
         ]
       }
