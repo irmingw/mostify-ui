@@ -1,0 +1,37 @@
+.m-checkbox {
+  display: inline-flex;
+  --m-checkbox-size: 14px;
+}
+
+.m-checkbox-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  line-height: 32px;
+
+  .m-checkbox-input {
+    display: none;
+  }
+  .m-checkbox-state {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 50%;
+    &:hover {
+      background-color: rgba(0,0,0,0.2);
+    }
+  }
+
+  .m-checkbox-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--m-theme-500);
+    border-radius: 4px;
+    width: var(--m-checkbox-size);
+    height: var(--m-checkbox-size);
+    cursor: pointer;
+    position: relative;
+  }
+}

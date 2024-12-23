@@ -1,18 +1,6 @@
 <template>
   <div class="app">
-    <MAlert style="width: 400px" title="提示" showClose
-      >这是一段文字这是一段文字这是一段文字
-      <div>这是一段文字这是一段文字这是一段文字</div></MAlert
-    >
-    <MAlert type="danger" style="width: 400px" showClose
-      >这是一段文字这是一段文字这是一段文字</MAlert
-    >
-    <MAlert type="warning" style="width: 400px"
-      >这是一段文字这是一段文字这是一段文字</MAlert
-    >
-    <MAlert type="success" style="width: 400px"
-      >这是一段文字这是一段文字这是一段文字</MAlert
-    >
+    <m-checkbox>Hello vue</m-checkbox>
   </div>
 </template>
 

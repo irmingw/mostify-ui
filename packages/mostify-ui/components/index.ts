@@ -13,6 +13,7 @@ import MDialog, { Dialog } from './MDialog'
 import { MInput } from './MInput'
 import MIcon from './MIcon'
 import MAlert from './MAlert/MAlert'
+import MCheckbox from './MCheckbox'
 
 const components = [
   MButton,
@@ -28,7 +29,8 @@ const components = [
   MDialog,
   MInput,
   MIcon,
-  MAlert
+  MAlert,
+  MCheckbox
 ].map(item => {
   item.install = function (app) {
     app.component(item.name, item)
@@ -59,5 +61,6 @@ export {
   Dialog,
   MInput,
   MIcon,
-  MAlert
+  MAlert,
+  MCheckbox
 }
