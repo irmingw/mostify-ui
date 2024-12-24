@@ -1,61 +1,4 @@
-@font-face {
-  font-family: "MostifyText";
-  src: url("@/mostify-ui/styles/font/MuiText.woff2") format("woff2");
-}
-@font-face {
-  font-family: "MostifyBoldText";
-  src: url("@/mostify-ui/styles/font/MuiBoldText.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "MostifyBolderText";
-  src: url("@/mostify-ui/styles/font/MuiBolderText.woff2") format("woff2");
-}
-
-$defaultFontFamily:
-  system-ui,
-  -apple-system,
-  sans-serif;
-// 字体设置
-$font-family: (
-  "h1": "MostifyBolderText",
-  "h2": "MostifyBolderText",
-  "h3": "MostifyBolderText",
-  "h4": "MostifyBoldText",
-  "h5": "MostifyBoldText",
-  "h6": "MostifyBoldText",
-  "body": "MostifyText",
-  "*": "MostifyText"
-);
-@each $key, $value in $font-family {
-  #{$key} {
-    font-family: $value, $defaultFontFamily;
-  }
-}
-
-h1 {
-  font-size: 3rem;
-  line-height: 5.6rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-  line-height: 4.6rem;
-}
-
-h3 {
-  font-size: 2rem;
-  line-height: 3.6rem;
-}
-
-h4,
-h5,
-h6 {
-  font-size: 1.5rem;
-  line-height: 2.6rem;
-}
 * {
-  line-height: 22px;
   box-sizing: border-box;
 }
 
@@ -65,49 +8,19 @@ h6 {
   left: 0;
   width: 100%;
 }
-@keyframes ripple-animation {
-  from {
-    transform: scale(0.33);
-  }
-  to {
-    transform: scale(4);
-    opacity: 0.8;
-  }
-}
 
 .m-box-shadow {
   box-shadow:
-    0px 1px 3px var(--m-box-shadow-300),
-    0px 5px 8px var(--m-box-shadow-200),
-    0px 8px 15px var(--m-box-shadow-100);
+    0px 1px 3px var(--m-rgba-200),
+    0px 5px 8px var(--m-rgba-100),
+    0px 8px 15px var(--m-rgba-50);
 }
 
 html[data-overflow="hidden"],
 body[data-overflow="hidden"] {
   overflow: hidden;
-}
-
-/* 为滚动条整体设置样式 */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-/* 为滚动条的轨道设置样式 */
-::-webkit-scrollbar-track {
-  background: transparent;
-  border-radius: 6px;
-}
-
-/* 为滚动条的滑块设置样式 */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.25);
-  border-radius: 6px;
-  transition: background-color 0.2s;
-  cursor: pointer;
-}
-
-/* 当鼠标悬停在滑块上时改变滑块的颜色 */
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.45);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--m-theme-700);
 }

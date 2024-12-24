@@ -6,7 +6,7 @@ $primary: (
   500: #3e93de,
   600: #1976d2,
   700: #0c56ab,
-  800: #033b85,
+  800: #033b85
 );
 
 $warning: (
@@ -42,19 +42,6 @@ $error: (
   800: #8f003b
 );
 
-$theme: (
-  50: #ffffff,
-  100: #fafafa,
-  200: #f5f5f5,
-  300: #f0f0f0,
-  400: #d9d9d9,
-  500: #bfbfbf,
-  600: #8c8c8c,
-  700: #595959,
-  800: #434343,
-  900: #262626,
-);
-
 :root {
   @each $name, $value in $primary {
     --m-primary-#{$name}: #{$value};
@@ -68,22 +55,39 @@ $theme: (
   @each $name, $value in $success {
     --m-success-#{$name}: #{$value};
   }
+}
+
+$theme: (
+  50: #ffffff,
+  100: #fafafa,
+  200: #f5f5f5,
+  300: #f0f0f0,
+  400: #d9d9d9,
+  500: #bfbfbf,
+  600: #8c8c8c,
+  700: #595959,
+  800: #434343,
+  900: #262626
+);
+
+$rgba: (
+  50: rgba(0, 0, 0, 0.05),
+  100: rgba(0, 0, 0, 0.15),
+  200: rgba(0, 0, 0, 0.25),
+  300: rgba(0, 0, 0, 0.35),
+  400: rgba(0, 0, 0, 0.45),
+  500: rgba(0, 0, 0, 0.55),
+  600: rgba(0, 0, 0, 0.65),
+  700: rgba(0, 0, 0, 0.75),
+  800: rgba(0, 0, 0, 0.85),
+  900: rgba(0, 0, 0, 0.95)
+);
+
+:root {
   @each $name, $value in $theme {
     --m-theme-#{$name}: #{$value};
   }
-  --m-action-50: rgba(0,0,0,0.06);
-  --m-action-100: rgba(0,0,0,0.15);
-  --m-action-200: rgba(0,0,0,0.25);
-  --m-action-300: rgba(0,0,0,0.45);
-
-  --m-mask-color: rgba(0, 0, 0, 0.35);
-
-  --m-box-shadow-100: rgba(0,0,0,.08);
-  --m-box-shadow-200: rgba(0,0,0,0.12);
-  --m-box-shadow-300: rgba(0,0,0,0.15);
-
-  --m-disabled-100: rgba(0, 0, 0, 0.1);
-  --m-disabled-200: rgba(0, 0, 0, 0.25);
-  --m-disabled-300: rgba(0, 0, 0, 0.35);
-  --m-disabled-400: rgba(0, 0, 0, 0.45);
+  @each $name, $value in $rgba {
+    --m-rgba-#{$name}: #{$value};
+  }
 }

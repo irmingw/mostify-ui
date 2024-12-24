@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  color: var(--m-action-900);
+  color: var(--m-theme-700);
   white-space: nowrap;
 }
 
@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 10px;
-  color: var(--m-action-900);
+  color: var(--m-theme-700);
   white-space: nowrap;
 }
 
@@ -54,10 +54,10 @@
   align-items: center;
   justify-content: center;
   margin-left: 8px;
-  color: var(--m-action-200);
+  color: var(--m-rgba-100);
   transition: all 120ms ease-out;
   &:hover {
-    color: var(--m-action-300);
+    color: var(--m-rgba-300);
   }
   .m-input-clear-icon {
     width: 1.2em;

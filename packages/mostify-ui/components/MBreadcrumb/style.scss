@@ -4,8 +4,8 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: center;
-  --textColor: var(--color, var(--m-action-1200));
-  --hoverColor: var(--activeColor, var(--m-action-1500));
+  --textColor: var(--color, var(--m-rgba-600));
+  --hoverColor: var(--activeColor, var(--m-rgba-500));
   color: var(--textColor);
 
   &__item {
@@ -17,15 +17,15 @@
     cursor: pointer;
     border-radius: 4px;
     line-height: 1;
-    font-size: var(--m-font-size-sm);
+    font-size: 14px;
 
     &:hover {
       color: var(--hoverColor);
-      background-color: var(--m-action-100);
+      background-color: var(--m-rgba-100);
     }
 
     &[data-disabled="true"] {
-      color: var(--m-action-500);
+      color: var(--m-rgba-500);
       cursor: not-allowed;
       &:hover {
         background-color: transparent;
@@ -34,7 +34,7 @@
   }
 
   .is__disabled {
-    color: var(--m-action-500);
+    color: var(--m-rgba-500);
     cursor: not-allowed;
     &:hover {
       background-color: transparent;

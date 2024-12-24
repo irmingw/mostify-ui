@@ -8,9 +8,10 @@ export const useCheckbox = (props, emit) => {
     if(props.disabled) return;
     checked.value = !checked.value;
     indeterminate.value = false;
-
+    emit('update:checked', checked.value);
+    emit('update:indeterminate', indeterminate.value);
+    emit('change', checked.value);
     console.log('checked.value', checked.value);
-    
   }
 
 

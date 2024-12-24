@@ -1,11 +1,19 @@
 <template>
   <div class="app">
-    <m-checkbox>Hello vue</m-checkbox>
+    <MButton disabled>DEOMO</MButton>
+    <MButton type="text">DEOMO</MButton>
+    <MButton type="default">DEOMO</MButton>
+    <m-dialog :visible="visible" title="Title Text" @close="visible = false">
+  This is a dialog box component
+</m-dialog>
+<m-button @click="visible = true" type="primary">open a dialog box</m-button>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 
+const visible = ref(false)
 </script>
 
 <style>

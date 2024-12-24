@@ -1,9 +1,11 @@
 import { Dialog } from './MDialog';
+import { default as MAlert } from './MAlert/MAlert';
 import { default as MAnchor } from './MAnchor';
 import { default as MBreadcrumb } from './MBreadcrumb';
 import { default as MBreadcrumbItem } from './MBreadcrumbItem';
 import { default as MButton } from './MButton';
 import { default as MButtonGroup } from './MButtonGroup';
+import { default as MCheckbox } from './MCheckbox';
 import { default as MConfigProvider } from './MConfigProvider';
 import { default as MDialog } from './MDialog';
 import { default as MDivider } from './MDivider';
@@ -20,6 +22,8 @@ export default _default;
 
 export { Dialog }
 
+export { MAlert }
+
 export { MAnchor }
 
 export { MBreadcrumb }
@@ -29,6 +33,8 @@ export { MBreadcrumbItem }
 export { MButton }
 
 export { MButtonGroup }
+
+export { MCheckbox }
 
 export { MConfigProvider }
 
