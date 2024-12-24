@@ -44,7 +44,7 @@
 
 @mixin defaultBtn() {
   background: var(--m-theme-50);
-  color: var(--m-theme-700);
+  color: var(--m-theme-900);
   --m-btn-ripple-color: var(--m-primary-400);
   &:hover {
     background: var(--m-primary-100);
@@ -76,7 +76,7 @@ button,
 }
 .m-button-type-text {
   background: transparent;
-  color: var(--m-theme-700);
+  color: var(--m-theme-900);
   border: none;
 
   &:hover {

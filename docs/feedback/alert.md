@@ -32,8 +32,6 @@ The `type` attribute allows you to specify the type of alert to display. The ava
 </template>
 ```
 
-
-
 ## Show Icon
 
 By setting the `showIcon` property, an icon can be displayed in the warning message.
@@ -50,11 +48,11 @@ By setting the `showIcon` property, an icon can be displayed in the warning mess
 
 The `icon` attribute allows you to customize the icon. You can use either a slot or an attribute to achieve this.
 
-<MAlert showIcon icon="close">Hello Alert</MAlert>
+<MAlert showIcon> <template #icon><m-icon name="close" /></template>Hello Alert</MAlert>
 
 ```html
 <template>
-    <MAlert showIcon icon="close">Hello Alert</MAlert>
+    <MAlert showIcon> <template #icon><m-icon name="close" /></template>Hello Alert</MAlert>
 </template>
 ```
 
@@ -127,4 +125,3 @@ export default {
 }
 </script>
 ```
-

@@ -60,10 +60,8 @@ export default defineComponent({
       const defaultSlot = slots.default ? slots.default() : props.description;
       const iconSlot = slots.icon ? (
         slots.icon()
-      ) : props.icon ? (
-        <AlertIcon type={props.type} />
       ) : (
-        ""
+        <AlertIcon type={props.type} />
       );
       return (
         <div

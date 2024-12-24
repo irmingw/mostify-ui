@@ -3,11 +3,6 @@ export default {
   title: "Mostify UI 一个 Vue3 UI 组件库",
   description: "Mostify UI 一个 Vue3 UI 组件库，提供精美的 UI 组件",
   themeConfig: {
-
-    carbonAds: {
-      code: 'your-carbon-code',
-      placement: 'your-carbon-placement',
-    },
     nav: [
       { text: '首页', link: '/zh-cn/' },
       { text: '快手上手', link: '/zh-cn/config/start' },

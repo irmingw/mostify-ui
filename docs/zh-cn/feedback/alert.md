@@ -48,11 +48,21 @@ Alert提示组件用于在页面上显示重要通知或警告信息。它们通
 
 `icon` 属性允许您自定义图标。您可以使用插槽或属性来实现这一点。
 
-<MAlert showIcon icon="close">Hello Alert</MAlert>
+<MAlert showIcon>
+  <template #icon>
+    <m-icon name="close" />
+  </template>
+  Hello Alert Component
+</MAlert>
 
 ```html
 <template>
-  <MAlert showIcon icon="close">Hello Alert</MAlert>
+  <MAlert showIcon>
+    <template #icon>
+      <m-icon name="close" />
+    </template>
+    Hello Alert Component
+  </MAlert>
 </template>
 ```
 

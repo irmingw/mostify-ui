@@ -108,10 +108,14 @@ textarea {
 .m-input-prepend {
   @include prependAppendStyle();
   border-right: 0;
+  border-top-left-radius: var(--m-radius-small);
+  border-bottom-left-radius: var(--m-radius-small);
 }
 .m-input-append {
   @include prependAppendStyle();
   border-left: 0;
+  border-top-right-radius: var(--m-radius-small);
+  border-bottom-right-radius: var(--m-radius-small);
 }
 .has-prepend {
   .m-input {

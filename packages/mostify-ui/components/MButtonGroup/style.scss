@@ -43,6 +43,7 @@
     position: relative;
     z-index: 1;
     margin-top: -1px;
+    width: 100%;
 
     &:first-child {
       border-top-left-radius: var(--m-radius-small);

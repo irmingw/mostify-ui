@@ -1,16 +1,33 @@
 <template>
   <div class="app">
+    <MButton type="default" block disabled left-icon="close">BUTTON</MButton>
+    <MButton type="text" >BUTTON</MButton>
+
+    <m-button-group layout="y">
+      <m-button>xxx</m-button>
+      <m-button>xxxxx</m-button>
+      <m-button>xxxxxxxx</m-button>
+    </m-button-group>
+    <m-button-group layout="x">
+      <m-button>xxx</m-button>
+      <m-button>xxxxx</m-button>
+      <m-button>xxxxxxxx</m-button>
+    </m-button-group>
     <m-input type="text"></m-input>
     <m-input type="number"></m-input>
 
     <m-input disabled placeholder="disabled"></m-input>
-    
+
     <m-input type="text" placeholder="readonly" readonly></m-input>
     <m-input type="text" clearable></m-input>
 
     <m-input prefix="Prefix" placeholder="Hello"></m-input>
     <m-input suffix="suffix" placeholder="Hello suffix"></m-input>
-    <m-input prefix="Prefix" suffix="suffix" placeholder="Hello prefix and suffix"></m-input>
+    <m-input
+      prefix="Prefix"
+      suffix="suffix"
+      placeholder="Hello prefix and suffix"
+    ></m-input>
 
     <m-input prepend="prepend" placeholder="Hello prepend"></m-input>
     <m-input append="append" placeholder="Hello append"></m-input>
@@ -25,19 +42,13 @@
   </div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <style>
 .app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 0 32px;
+  padding: 32px;
 }
 
 html,

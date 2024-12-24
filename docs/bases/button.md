@@ -14,37 +14,37 @@ Design concept of Button component: A button consists of color, shape, and size.
 
 Among them, buttons also have attribute control states, such as disabled, loading in progress, etc.
 
-<MAlert>Button Support water ripple effect, making the feedback effect more obvious</MAlert>
+<MAlert showIcon title="Tips !">Button Support water ripple effect, making the feedback effect more obvious</MAlert>
 
-## Button Type
+## Type
 
 Ensure that your components have been installed and imported, see [Quick Start](/zh-cn/config/start.html) for details. If you have already installed and imported the components, you can start using them now
 
 Type rendering effect:
 
 <div class="button_test">
-  <m-button type="default">TEST_BUTTON</m-button>
-  <m-button type="primary">TEST_BUTTON</m-button>
-  <m-button type="danger">TEST_BUTTON</m-button>
-  <m-button type="warning">TEST_BUTTON</m-button>
-  <m-button type="success">TEST_BUTTON</m-button>
-  <m-button type="text">TEST_BUTTON</m-button>
-  <m-button type="link">TEST_BUTTON</m-button>
+  <m-button type="default">MOSTIFY BUTTON</m-button>
+  <m-button type="primary">MOSTIFY BUTTON</m-button>
+  <m-button type="danger">MOSTIFY BUTTON</m-button>
+  <m-button type="warning">MOSTIFY BUTTON</m-button>
+  <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="text">MOSTIFY BUTTON</m-button>
+  <m-button type="link">MOSTIFY BUTTON</m-button>
 </div>
 
 ```html
 <template>
-  <m-button type="default">TEST_BUTTON</m-button>
-  <m-button type="primary">TEST_BUTTON</m-button>
-  <m-button type="danger">TEST_BUTTON</m-button>
-  <m-button type="warning">TEST_BUTTON</m-button>
-  <m-button type="success">TEST_BUTTON</m-button>
-  <m-button type="text">TEST_BUTTON</m-button>
-  <m-button type="link">TEST_BUTTON</m-button>
+  <m-button type="default">MOSTIFY BUTTON</m-button>
+  <m-button type="primary">MOSTIFY BUTTON</m-button>
+  <m-button type="danger">MOSTIFY BUTTON</m-button>
+  <m-button type="warning">MOSTIFY BUTTON</m-button>
+  <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="text">MOSTIFY BUTTON</m-button>
+  <m-button type="link">MOSTIFY BUTTON</m-button>
 </template>
 ```
 
-## Button Shape
+## Shape
 
 Note: The circular and square buttons in the shape attribute will control the width and height equally, and the round will automatically expand according to the content.
 
@@ -66,7 +66,7 @@ Shape rendering effect:
 </template>
 ```
 
-## Button Size
+## Size
 
 Size rendering effect:
 
@@ -84,7 +84,7 @@ Size rendering effect:
 </template>
 ```
 
-## Button Status
+## Status
 
 State rendering effect:
 
@@ -120,18 +120,54 @@ Light colored theme rendering effect:
 </template>
 ```
 
+## Icon Button
+
+<div class="button_test">
+ <m-button type="link" leftIcon="like-fill" shape="circle" />
+<m-button type="primary" leftIcon="like-fill" shape="circle" />
+<m-button type="danger" light rightIcon="like-fill" shape="circle" />
+<m-button type="text" light rightIcon="like-fill" shape="circle" />
+<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+</div>
+
+```html
+<template>
+  <m-button type="link" leftIcon="like-fill" shape="circle" />
+<m-button type="primary" leftIcon="like-fill" shape="circle" />
+<m-button type="danger" light rightIcon="like-fill" shape="circle" />
+<m-button type="text" light rightIcon="like-fill" shape="circle" />
+<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+</template>
+
+```
+
+## Block
+
+<m-button type="primary" block >MOSTIFY BLOCK BUTTON</m-button>
+
+```html
+<template>
+  <m-button type="primary" block >MOSTIFY BLOCK BUTTON</m-button>
+</template>
+```
+
 Attribute Description Type Optional Value Default Value
 
 ## API
 
 | Attribute | Description | Type    | Optional Value                                   | Default Value |
 | --------- | ----------- | ------- | ------------------------------------------------ | ------------- |
-| type      | 按钮类型    | string  | default/primary/danger/warning/success/text/link | default       |
-| shape     | 按钮形状    | string  | round/square/circle                              | -             |
-| size      | 按钮大小    | string  | large/small/mini                                 | small         |
-| disabled  | 禁用按钮    | boolean | -                                                | false         |
-| loading   | 加载中      | boolean | -                                                | false         |
-| light     | 浅色主题    | boolean | -                                                | false         |
+| type      | Button Type    | string  | default/primary/danger/warning/success/text/link | default       |
+| shape     | Button Shape    | string  | round/square/circle                              | -             |
+| size      | Button Size    | string  | large/small/mini                                 | small         |
+| disabled  | Button Disabled    | boolean | -                                                | false         |
+| loading   | Loading Button      | boolean | -                                                | false         |
+| light     | Light Theme    | boolean | -                                                | false         |
+| Block     | full WIdth Button    | string | -                                                | -         |
+| leftIcon     | Button Left Icon    | string | -                                                | -         |
+| rightIcon     | Button Right Icon    | string | -                                                | -         |
 
 ## Event
 

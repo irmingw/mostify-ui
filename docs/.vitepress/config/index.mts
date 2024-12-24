@@ -7,12 +7,15 @@ export default defineConfig({
   lastUpdated: true,
   base: '/mostify-ui/',
   head: [['link', { rel: 'icon', href: '/mostify-ui/logo.svg' }]],
-
   themeConfig: {
     siteTitle: 'Mostify UI',
     logo: {
       dark: '/logo.svg',
       light: '/dark-logo.svg'
+    },
+    carbonAds: {
+      code: 'https://irmingw.github.io/mostify-ui/form/input.html',
+      placement: 'Hello',
     },
     search: {
       provider: 'local',

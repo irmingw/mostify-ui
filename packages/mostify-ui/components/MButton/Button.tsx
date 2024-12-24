@@ -12,14 +12,15 @@ export default defineComponent({
       type: String as PropType<BtnTypes>,
       default: "default"
     },
-    size: String as PropType<BtnSizes>,
-    shape: String as PropType<BtnShapes>,
+    size: { type: String as PropType<BtnSizes>, default: "small" },
+    shape: { type: String as PropType<BtnShapes>, default: "" },
     disabled: Boolean,
     loading: Boolean,
     border: Boolean,
     light: Boolean,
     leftIcon: String,
-    rightIcon: String
+    rightIcon: String,
+    block: { type: Boolean, default: false }
   },
   emits: ["click", "focus", "blur"],
   setup(props, { slots, emit }) {
@@ -58,7 +59,8 @@ export default defineComponent({
           onMousedown={onmousedown}
           ref={btnRef}
           style={{
-            "--border-width": props.border ? "1px" : "0px"
+            "--border-width": props.border ? "1px" : "0px",
+            width: props.block ? "100%" : ""
           }}
           data-light={props.light ? "on" : "off"}
           onClick={e => onChangeByType(e, "click")}

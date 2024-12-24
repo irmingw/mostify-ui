@@ -2,12 +2,6 @@ export default {
   title: "Mostify UI a Vue3 UI component library",
   description: "Mostify UI a Vue3 UI component library that provides exquisite UI components",
   themeConfig: {
-    
-
-    carbonAds: {
-      code: 'your-carbon-code',
-      placement: 'your-carbon-placement',
-    },
 
     nav: [
       { text: 'Home', link: '/' },
