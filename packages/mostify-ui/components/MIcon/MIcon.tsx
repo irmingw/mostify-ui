@@ -16,14 +16,16 @@ export default defineComponent({
       default: "currentColor"
     }
   },
-  setup(props) {
+
+  setup(props, { emit }) {
     const iconName = computed(() => `mostifyiconfont m-icon-${props.name}`);
     return () => (
       <i
         class={iconName.value}
+        onClick={e => emit("click", e)}
         style={{
           color: props.color,
-          fontSize: props.size,
+          fontSize: props.size ? props.size : "16px",
           lineHeight: "inherit"
         }}
       />

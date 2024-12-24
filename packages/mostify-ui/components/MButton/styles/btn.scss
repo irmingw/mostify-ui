@@ -41,11 +41,7 @@
   border-color: var(--m-theme-400);
   border-width: 1px;
 }
-@mixin btnDisabled() {
-  color: var(--m-rgba-500);
-  background-color: var(--m-rgba-100);
-  border-color: var(--m-rgba-100);
-}
+
 @mixin defaultBtn() {
   background: var(--m-theme-50);
   color: var(--m-theme-700);
@@ -73,14 +69,6 @@ button,
   &.is-loading {
     pointer-events: none;
     opacity: 0.75;
-  }
-  &.is-disabled {
-    cursor: not-allowed;
-    @include btnDisabled();
-    &:hover,
-    &:active {
-      @include btnDisabled();
-    }
   }
 }
 .m-button-type-default {

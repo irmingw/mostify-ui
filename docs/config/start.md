@@ -55,7 +55,7 @@ Using Components in Vue Files
 
 ## On demand introduction
 
-```js{4}
+```js
 // main.js
 import { createApp } from "vue";
 // 引入组件样式
@@ -67,7 +67,7 @@ app.mount("#app");
 
 Using Components in Vue Files
 
-```js{4}
+```js
 <script setup>
   import { MButton } from "mostify-ui";
 </script>

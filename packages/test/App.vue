@@ -1,19 +1,32 @@
 <template>
   <div class="app">
-    <MButton disabled>DEOMO</MButton>
-    <MButton type="text">DEOMO</MButton>
-    <MButton type="default">DEOMO</MButton>
-    <m-dialog :visible="visible" title="Title Text" @close="visible = false">
-  This is a dialog box component
-</m-dialog>
-<m-button @click="visible = true" type="primary">open a dialog box</m-button>
+    <m-input type="text"></m-input>
+    <m-input type="number"></m-input>
+
+    <m-input disabled placeholder="disabled"></m-input>
+    
+    <m-input type="text" placeholder="readonly" readonly></m-input>
+    <m-input type="text" clearable></m-input>
+
+    <m-input prefix="Prefix" placeholder="Hello"></m-input>
+    <m-input suffix="suffix" placeholder="Hello suffix"></m-input>
+    <m-input prefix="Prefix" suffix="suffix" placeholder="Hello prefix and suffix"></m-input>
+
+    <m-input prepend="prepend" placeholder="Hello prepend"></m-input>
+    <m-input append="append" placeholder="Hello append"></m-input>
+    <m-input prepend="prepend" append="append" placeholder="Hello prepend"></m-input>
+
+    <m-input type="password" showPasswordIcon clearable></m-input>
+    <m-input type="text" showLimitCount clearable maxlength="12"></m-input>
+
+    <m-input type="text" size="mini" placeholder="mini"></m-input>
+    <m-input type="text" size="small" placeholder="small"></m-input>
+    <m-input type="text" size="large" placeholder="large"></m-input>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 
-const visible = ref(false)
 </script>
 
 <style>
