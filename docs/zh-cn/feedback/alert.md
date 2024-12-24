@@ -16,17 +16,17 @@ Alert提示组件用于在页面上显示重要通知或警告信息。它们通
 
 ## 类型
 
-`type` 属性允许您指定要显示的警报类型。可用的类型有 `success`、`info`、`warning` 和 `danger`。
+`type` 属性允许您指定要显示的警报类型。可用的类型有 `success`、`primary`、`warning` 和 `danger`。
 
 <MAlert type="success">成功警报</MAlert>
-<MAlert type="info">信息警报</MAlert>
+<MAlert type="primary">信息警报</MAlert>
 <MAlert type="warning">警告警报</MAlert>
 <MAlert type="danger">错误警报</MAlert>
 
 ```html
 <template>
   <MAlert type="success">成功警报</MAlert>
-  <MAlert type="info">信息警报</MAlert>
+  <MAlert type="primary">信息警报</MAlert>
   <MAlert type="warning">警告警报</MAlert>
   <MAlert type="danger">错误警报</MAlert>
 </template>
@@ -101,7 +101,7 @@ Alert提示组件用于在页面上显示重要通知或警告信息。它们通
 
 | 名称     | 类型     | 描述                                              | 默认值 |
 |----------|----------|---------------------------------------------------|--------|
-| `type`   | string   | 要显示的警报类型。可能的值有 `success`、`error`、`warning` 和 `info`。 | -      |
+| `type`   | string   | 要显示的警报类型。可能的值有 `success`、`error`、`warning` 和 `primary`。 | -      |
 | `title`  | string   | 在警报中显示的标题。                              | -      |
 | `closable`| boolean | 如果为 true，用户可以关闭警报。                   | false  |
 | `close`  | function | 当警报关闭时调用的回调函数。                      | -      |

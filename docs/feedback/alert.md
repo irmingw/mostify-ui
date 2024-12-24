@@ -16,17 +16,17 @@ The `MAlert` component can display a simple warning or notification message on t
 
 ## Type
 
-The `type` attribute allows you to specify the type of alert to display. The available types are `success`, `info`, `warning`, and `danger`.
+The `type` attribute allows you to specify the type of alert to display. The available types are `success`, `primary`, `warning`, and `danger`.
 
 <MAlert type="success">Success Alert</MAlert>
-<MAlert type="info">Info Alert</MAlert>
+<MAlert type="primary">Primary Alert</MAlert>
 <MAlert type="warning">Warning Alert</MAlert>
 <MAlert type="danger">Error Alert</MAlert>
 
 ```html
 <template>
   <MAlert type="success">Success Alert</MAlert>
-  <MAlert type="info">Info Alert</MAlert>
+  <MAlert type="primary">Primary Alert</MAlert>
   <MAlert type="warning">Warning Alert</MAlert>
   <MAlert type="danger">Danger Alert</MAlert>
 </template>

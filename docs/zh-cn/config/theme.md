@@ -51,14 +51,16 @@ Mostify UI 使用 css 变量来控制主题。
   --m-theme-700: #595959;
   --m-theme-800: #434343;
   --m-theme-900: #262626;
-  --m-action-50: rgba(0, 0, 0, 0.06);
-  --m-action-100: rgba(0, 0, 0, 0.15);
-  --m-action-200: rgba(0, 0, 0, 0.25);
-  --m-action-300: rgba(0, 0, 0, 0.45);
-  --m-disabled-100: rgba(0, 0, 0, 0.1);
-  --m-disabled-200: rgba(0, 0, 0, 0.25);
-  --m-disabled-300: rgba(0, 0, 0, 0.35);
-  --m-disabled-400: rgba(0, 0, 0, 0.45);
+  --m-rgba-50: rgba(0, 0, 0, .05);
+  --m-rgba-100: rgba(0, 0, 0, .15);
+  --m-rgba-200: rgba(0, 0, 0, .25);
+  --m-rgba-300: rgba(0, 0, 0, .35);
+  --m-rgba-400: rgba(0, 0, 0, .45);
+  --m-rgba-500: rgba(0, 0, 0, .55);
+  --m-rgba-600: rgba(0, 0, 0, .65);
+  --m-rgba-700: rgba(0, 0, 0, .75);
+  --m-rgba-800: rgba(0, 0, 0, .85);
+  --m-rgba-900: rgba(0, 0, 0, .95);
 }
 ```
 
