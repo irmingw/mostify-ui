@@ -66,14 +66,24 @@ append
 
 ```
 
-## Size
+## Readonly
 
-Size values: `mini`、`small`、`large`, Default `small`
-<m-input v-model="msg" placeholder="Please enter text" size="small"></m-input>
+<m-input v-model="msg" placeholder="Please enter text" readonly></m-input>
 
 ```js
 <template>
-   <m-input v-model="msg" placeholder="Please enter text" size="small"></m-input>
+   <m-input v-model="msg" placeholder="Please enter text" readonly></m-input>
+</template>
+```
+
+## Size
+
+Size values: `mini`、`small`、`large`, Default `small`
+<m-input v-model="msg" placeholder="Please enter text" size="large"></m-input>
+
+```js
+<template>
+   <m-input v-model="msg" placeholder="Please enter text" size="large"></m-input>
 </template>
 ```
 
@@ -86,3 +96,60 @@ Size values: `mini`、`small`、`large`, Default `small`
    <m-input v-model="msg" placeholder="Please enter text" clearable></m-input>
 </template>
 ```
+
+## Password
+
+<m-input v-model="msg" type="password" showPasswordIcon placeholder="Please enter text" show-password></m-input>
+
+```js
+<template>
+   <m-input v-model="msg" type="password" showPasswordIcon placeholder="Please enter text" show-password></m-input>
+</template>
+```
+
+## Limit Count
+
+<m-input v-model="msg" placeholder="Please enter text" :maxlength="10" showLimitCount></m-input>
+
+```js
+<template>
+   <m-input v-model="msg" placeholder="Please enter text" :maxlength="10" showLimitCount></m-input>
+</template>
+```
+
+## API
+| Property | Description                   | Type    | Default |
+| -------- | --------------------------- | ------- | ------- |
+| v-model  | Binding value               | string  | -       |
+| value  | Binding value               | string  | -       |
+| type     | Input box type             | string  | text    |
+| placeholder | Placeholder text          | string  | -       |
+| disabled | Disabled state of input box | boolean | false   |
+| readonly | Readonly state of input box | boolean | false   |
+| size    | Size of input box, optional values: `mini`、`small`、`large` | string | small   |
+| showPasswordIcon | Show password icon | boolean | false   |
+| showLimitCount | Show limit count | boolean | false   |
+| maxLength | Maximum number of characters allowed | number | -       |
+| prepend | Prepend slot | string  | -       |
+| append | Append slot | string  | -       |
+| prefix | Prefix slot | string  | -       |
+| suffix | Suffix slot | string  | -       |
+| clearable | Whether to show the clear button | boolean | false   |
+
+
+## Events
+
+| Event Name | Description                   | Parameters    |
+| ---------- | --------------------------- | ------------- |
+| change     | Triggered when the value changes | (value: string) |
+| focus      | Triggered when the input box gets focus | (event: Event)  |
+| blur       | Triggered when the input box loses focus | (event: Event)  |
+
+## Slots
+
+| Name | Description    |
+| ---- | ------------- |
+| prepend | Prepend slot |
+| append | Append slot   |
+| prefix | Prefix slot   |
+| suffix | Suffix slot   |
