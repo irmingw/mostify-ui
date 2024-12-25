@@ -29,7 +29,7 @@ pnpm install mostify-ui --save
 
 Write the following content in main.exe:
 
-```js{4}
+```js
 // main.js
 import { createApp } from "vue";
 import MostifyUI from "mostify-ui";
@@ -44,7 +44,7 @@ app.mount("#app");
 
 Using Components in Vue Files
 
-```html
+```vue
 <!-- Home.vue -->
 <template>
   <div id="app">
@@ -67,7 +67,7 @@ app.mount("#app");
 
 Using Components in Vue Files
 
-```js
+```vue
 <script setup>
   import { MButton } from "mostify-ui";
 </script>
@@ -76,7 +76,7 @@ Using Components in Vue Files
 
 Rendering to page
 
-```html
+```vue
 <!-- Home.vue -->
 <template>
   <div id="app">

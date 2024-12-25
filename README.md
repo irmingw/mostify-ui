@@ -5,7 +5,6 @@ Mostify UI is a Vue component library that provides developers with a robust set
 ## Features
 
 - **Well-Designed:** Adhere to ergonomic principles and create the ultimate user experience.
-- **Flexible Design:** Mostify UI provides a wide range of components that can be customized to fit your specific needs. You can modify the look and feel of each component to create an interface that perfectly suits your branding.
 - **Easy to use:** The operation is intuitive and convenient, immediately embarking on an efficient development journey.
 - **Flexible Expansion:** Highly customizable to easily meet various development needs.
 
@@ -40,7 +39,7 @@ pnpm install mostify-ui --save
 
 ### Global Introduction
 
-Write the following content in main.exe:
+Write the following content in main.js:
 
 ```js
 // main.js

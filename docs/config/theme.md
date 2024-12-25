@@ -68,7 +68,7 @@ In Mostify UI, all colors are controlled through the following variables, which 
 
 Mostify UI uses CSS variables to control themes. So you can change the theme by overriding CSS variables.
 
-```html
+```vue
 <template>
   <m-button class="reset_button">Button</m-button>
 </template>
