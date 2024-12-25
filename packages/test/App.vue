@@ -1,54 +1,33 @@
 <template>
   <div class="app">
-    <MButton type="default" block disabled left-icon="close">BUTTON</MButton>
-    <MButton type="text" >BUTTON</MButton>
-
-    <m-button-group layout="y">
-      <m-button>xxx</m-button>
-      <m-button>xxxxx</m-button>
-      <m-button>xxxxxxxx</m-button>
-    </m-button-group>
-    <m-button-group layout="x">
-      <m-button>xxx</m-button>
-      <m-button>xxxxx</m-button>
-      <m-button>xxxxxxxx</m-button>
-    </m-button-group>
-    <m-input type="text"></m-input>
-    <m-input type="number"></m-input>
-
-    <m-input disabled placeholder="disabled"></m-input>
-
-    <m-input type="text" placeholder="readonly" readonly></m-input>
-    <m-input type="text" clearable></m-input>
-
-    <m-input prefix="Prefix" placeholder="Hello"></m-input>
-    <m-input suffix="suffix" placeholder="Hello suffix"></m-input>
-    <m-input
-      prefix="Prefix"
-      suffix="suffix"
-      placeholder="Hello prefix and suffix"
-    ></m-input>
-
-    <m-input prepend="prepend" placeholder="Hello prepend"></m-input>
-    <m-input append="append" placeholder="Hello append"></m-input>
-    <m-input prepend="prepend" append="append" placeholder="Hello prepend"></m-input>
-
-    <m-input type="password" showPasswordIcon clearable></m-input>
-    <m-input type="text" showLimitCount clearable maxlength="12"></m-input>
-
-    <m-input type="text" size="mini" placeholder="mini"></m-input>
-    <m-input type="text" size="small" placeholder="small"></m-input>
-    <m-input type="text" size="large" placeholder="large"></m-input>
+    <MAvatar icon="user" shape="square" />
+    <m-divider />
+    <MAvatar icon="user" size="24px" />
+    <m-divider />
+    <MAvatar
+      src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+      shape="square"
+    />
+    <m-divider layout="y" />
+    <m-divider layout="y" borderStyle="dashed" />
+    <m-divider layout="y" />
+    <MAvatar>admin</MAvatar>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+
+</script>
 
 <style>
 .app {
   width: 100%;
   height: 100%;
   padding: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 html,

@@ -20,31 +20,47 @@ export default {
       {
         text: '通用',
         items: [
-          { text: '按钮', link: '/zh-cn/bases/button' },
-          { text: '按钮组', link: '/zh-cn/bases/button-group' },
-          { text: '图标', link: '/zh-cn/bases/icon' },
-          { text: '色彩', link: '/zh-cn/bases/colors' },
-          { text: '间距', link: '/zh-cn/bases/space' },
+          { text: 'Button 按钮', link: '/zh-cn/bases/button' },
+          { text: 'ButtonGroup 按钮组', link: '/zh-cn/bases/button-group' },
+          { text: 'Icon 图标', link: '/zh-cn/bases/icon' },
+          { text: 'Colors 色彩', link: '/zh-cn/bases/colors' },
+          { text: 'Space 间距', link: '/zh-cn/bases/space' },
         ]
       },
       {
         text: '表单',
         items: [
-          { text: '输入框', link: '/zh-cn/form/input' },
+          { text: 'Input 输入框', link: '/zh-cn/form/input' },
+          { text: 'Checkbox 多选框', link: '/zh-cn/form/checkbox' },
         ]
       },
+      
       {
         text: '数据展示',
         items: [
+          { text: 'Avatar头像', link: '/zh-cn/data/avatar' },
+          { text: 'Badge徽章', link: '/zh-cn/navigation/badge' },
+        ]
+      },
+      {
+        text: '导航菜单',
+        items: [
+          { text: 'Breadcrumb 面包屑', link: '/zh-cn/navigation/breadcrumb' },
         ]
       },
       {
         text: '反馈',
         items: [
-          { text: 'Alert提示', link: '/zh-cn/feedback/alert' },
-          { text: '对话框', link: '/zh-cn/feedback/dialog' },
+          { text: 'Alert 提示', link: '/zh-cn/feedback/alert' },
+          { text: 'Dialog 对话框', link: '/zh-cn/feedback/dialog' },
         ]
-      }
+      },
+      {
+        text: '其他',
+        items: [
+          { text: '分割线 Divider', link: '/zh-cn/other/divider' },
+        ]
+       }
     ],
 
     socialLinks: [

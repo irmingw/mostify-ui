@@ -1,0 +1,30 @@
+.m-avatar {
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  background: var(--m-rgba-100);
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--m-rgba-400);
+  vertical-align: middle;
+  overflow: hidden;
+  box-sizing: border-box;
+  text-align: center;
+
+  .m-avatar-image {
+    width: 100%;
+  }
+
+  .m-avatar-icon {
+    font-size: inherit;
+    color: inherit;
+  }
+
+  &.m-avatar-shape-circle {
+    border-radius: 50%;
+  }
+  &.m-avatar-shape-square {
+    border-radius: var(--m-radius-small);
+  }
+}

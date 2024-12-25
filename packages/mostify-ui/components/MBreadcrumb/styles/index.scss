@@ -1,0 +1,12 @@
+.m-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 20px;
+  font-size: 14px;
+}
+.m-breadcrumb-separator {
+  margin: 0 4px;
+  color: var(--m-theme-500);
+}

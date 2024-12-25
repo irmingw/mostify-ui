@@ -31,12 +31,20 @@ export default {
         text: 'Forms',
         items: [
           { text: 'Input', link: '/form/input' },
+          { text: 'Checkbox', link: '/form/checkbox' },
         ]
       },
       {
         text: 'Data',
         items: [
-          { text: 'Button', link: '/' },
+          { text: 'Avatar', link: '/data/avatar' },
+          { text: 'Badge', link: '/navigation/badge' },
+        ]
+      },
+      {
+        text: 'Navigation',
+        items: [
+          { text: 'Breadcrumb', link: '/navigation/breadcrumb' },
         ]
       },
       {
@@ -45,7 +53,13 @@ export default {
           { text: 'Alert', link: '/feedback/alert' },
           { text: 'Dialog', link: '/feedback/dialog' },
         ]
-      }
+      },
+      {
+        text: 'Others',
+        items: [
+          { text: 'Divider', link: '/other/divider' },
+        ]
+       }
     ],
 
     socialLinks: [

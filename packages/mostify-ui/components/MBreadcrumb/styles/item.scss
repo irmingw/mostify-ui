@@ -1,0 +1,23 @@
+.m-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--m-theme-700);
+  padding: 0 4px;
+  border-radius: var(--m-radius-small);
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+  cursor: default;
+  &[data-disabled="true"] {
+    color: var(--m-rgba-400);
+    cursor: not-allowed;
+  }
+}
+
+.m-breadcrumb-link {
+  cursor: pointer;
+  color: var(--m-theme-900);
+  &:hover {
+    background-color: var(--m-rgba-100);
+  }
+}

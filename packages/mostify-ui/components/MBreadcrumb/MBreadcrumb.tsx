@@ -1,38 +1,29 @@
-import { defineComponent, computed } from "vue";
-import "./style.scss";
+import { defineComponent } from "vue";
+import "./styles/index.scss";
 
 export default defineComponent({
   name: "MBreadcrumb",
   props: {
     separator: {
       type: String,
-      default: "/",
-    },
-    color: String,
-    activeColor: String,
+      default: "/"
+    }
   },
   setup(props, { slots }) {
-    const length = computed(() => slots?.default?.()?.length || 0);
+    const defaultSlots = slots.default?.();
+    const separator = slots.separator ? slots.separator?.() : props.separator;
 
     return () => (
-      <div
-        class="m-breadcrumb"
-        style={{
-          "--color": props.color,
-          "--activeColor": props.activeColor,
-        }}
-      >
-        {slots?.default?.()?.map((item, index) => (
+      <div class="m-breadcrumb">
+        {defaultSlots?.map((item, index) => (
           <>
             {item}
-            {index >= 0 && index < length.value - 1 && (
-              <span>
-                {(slots.separator && slots.separator?.()) || props.separator}
-              </span>
+            {index >= 0 && index < defaultSlots.length - 1 && (
+              <span class="m-breadcrumb-separator">{separator}</span>
             )}
           </>
         ))}
       </div>
     );
-  },
+  }
 });

@@ -14,7 +14,7 @@ Design concept of Button component: A button consists of color, shape, and size.
 
 Among them, buttons also have attribute control states, such as disabled, loading in progress, etc.
 
-<MAlert showIcon title="Tips !">Button Support water ripple effect, making the feedback effect more obvious</MAlert>
+<MAlert showIcon title="Tips">Button Support water ripple effect, making the feedback effect more obvious</MAlert>
 
 ## Type
 

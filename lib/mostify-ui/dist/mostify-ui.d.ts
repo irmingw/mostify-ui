@@ -1,8 +1,9 @@
 import { Dialog } from './MDialog';
 import { default as MAlert } from './MAlert/MAlert';
 import { default as MAnchor } from './MAnchor';
-import { default as MBreadcrumb } from './MBreadcrumb';
-import { default as MBreadcrumbItem } from './MBreadcrumbItem';
+import { default as MAvatar } from './MAvatar';
+import { MBreadcrumb } from './MBreadcrumb';
+import { MBreadcrumbItem } from './MBreadcrumb';
 import { default as MButton } from './MButton';
 import { default as MButtonGroup } from './MButtonGroup';
 import { default as MCheckbox } from './MCheckbox';
@@ -25,6 +26,8 @@ export { Dialog }
 export { MAlert }
 
 export { MAnchor }
+
+export { MAvatar }
 
 export { MBreadcrumb }
 

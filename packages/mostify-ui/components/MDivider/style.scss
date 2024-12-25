@@ -1,20 +1,16 @@
 .m-divider {
-  width: 0;
-  height: 0;
+  box-sizing: border-box;
 }
 
 .m-divider-x {
-  height: 0.982em;
+  height: 1em;
   display: inline-flex;
-  width: 1px;
-  background-color: var(--color,var(--m-text-500));
-  margin: 0 var(--size,12px);
+  margin: 0 var(--size, 12px);
+  border-left: 1px var(--border-style, solid) var(--color, var(--m-theme-400));
 }
-
 .m-divider-y {
   display: block;
-  height: 1px;
   width: 100%;
-  background-color: var(--color,var(--m-text-500));
-  margin: var(--size,12px) 0;
+  margin: var(--size, 12px) 0;
+  border-top: 1px var(--border-style, solid) var(--color, var(--m-theme-400));
 }

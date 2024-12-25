@@ -4,8 +4,7 @@ import MSpace from './MSpace'
 import MDivider from './MDivider'
 import MAnchor from './MAnchor'
 import MConfigProvider from './MConfigProvider'
-import MBreadcrumb from './MBreadcrumb'
-import MBreadcrumbItem from './MBreadcrumbItem'
+import {MBreadcrumb,MBreadcrumbItem} from './MBreadcrumb'
 import MDropdown from './MDropdown'
 import MButtonGroup from './MButtonGroup'
 import MMenuItem from './MMenuItem'
@@ -14,6 +13,7 @@ import { MInput } from './MInput'
 import MIcon from './MIcon'
 import MAlert from './MAlert/MAlert'
 import MCheckbox from './MCheckbox'
+import MAvatar from './MAvatar'
 
 const components = [
   MButton,
@@ -30,7 +30,8 @@ const components = [
   MInput,
   MIcon,
   MAlert,
-  MCheckbox
+  MCheckbox,
+  MAvatar
 ].map(item => {
   item.install = function (app) {
     app.component(item.name, item)
@@ -62,5 +63,6 @@ export {
   MInput,
   MIcon,
   MAlert,
-  MCheckbox
+  MCheckbox,
+  MAvatar
 }
