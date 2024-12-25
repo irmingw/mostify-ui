@@ -103,6 +103,24 @@ Alert提示组件用于在页面上显示重要通知或警告信息。它们通
 </template>
 ```
 
+## 深色主题
+
+设置 `dark` 属性
+
+<MAlert dark>Hello Alert</MAlert>
+<MAlert dark type="warning">Hello Alert</MAlert>
+<MAlert dark type="danger">Hello Alert</MAlert>
+<MAlert dark type="success">Hello Alert</MAlert>
+
+```html
+<template>
+  <MAlert dark>Hello Alert</MAlert>
+  <MAlert dark type="warning">Hello Alert</MAlert>
+  <MAlert dark type="danger">Hello Alert</MAlert>
+  <MAlert dark type="success">Hello Alert</MAlert>
+</template>
+```
+
 ## API
 
 `Alert` 组件用于向用户显示重要信息。它可以用于显示成功、错误、警告或信息性消息。
@@ -115,6 +133,7 @@ Alert提示组件用于在页面上显示重要通知或警告信息。它们通
 | `title`  | string   | 在警报中显示的标题。                              | -      |
 | `closable`| boolean | 如果为 true，用户可以关闭警报。                   | false  |
 | `close`  | function | 当警报关闭时调用的回调函数。                      | -      |
+| `dark` | boolean | 深色主题 | - |
 
 #### 示例
 

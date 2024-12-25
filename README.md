@@ -83,7 +83,6 @@ Using Components in Vue Files
 <script setup>
   import { MButton } from "mostify-ui";
 </script>
-
 ```
 
 Rendering to page

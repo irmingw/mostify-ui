@@ -93,6 +93,25 @@ By setting the `showClose` property, a close icon can be displayed, allowing use
 </template>
 ```
 
+
+## Dark
+
+By setting the `dark` property, a close icon can be displayed, allowing users to dismiss the alert.
+
+<MAlert dark>Hello Alert</MAlert>
+<MAlert dark type="warning">Hello Alert</MAlert>
+<MAlert dark type="danger">Hello Alert</MAlert>
+<MAlert dark type="success">Hello Alert</MAlert>
+
+```html
+<template>
+  <MAlert dark>Hello Alert</MAlert>
+  <MAlert dark type="warning">Hello Alert</MAlert>
+  <MAlert dark type="danger">Hello Alert</MAlert>
+  <MAlert dark type="success">Hello Alert</MAlert>
+</template>
+```
+
 ## API
 
 ### Alert Component
@@ -107,6 +126,7 @@ The `Alert` component is used to display important messages to the user. It can 
 | `title`| string   | The title to display inside the alert.                 | -       |
 | `closable`| boolean | If true, the alert can be closed by the user.            | false   |
 | `close`| function | Callback function that is called when the alert is closed.| -       |
+| `dark` | boolean | theme dark of Alerts | - |
 
 #### Example
 

@@ -43,7 +43,7 @@
 }
 
 @mixin defaultBtn() {
-  background: var(--m-theme-50);
+  background: var(--m-theme-bg);
   color: var(--m-theme-900);
   --m-btn-ripple-color: var(--m-primary-400);
   &:hover {

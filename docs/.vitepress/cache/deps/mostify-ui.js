@@ -359,12 +359,13 @@ var G = defineComponent({ name: "MCheckbox", props: { size: { type: String, defa
     return createVNode("div", { class: { "m-checkbox": true, "m-checkbox-disabled": t2.disabled, "m-checkbox-checked": o2.value, "m-checkbox-indeterminate": i2.value, "m-checkbox-size-mini": "mini" === t2.size, "m-checkbox-size-small": "small" === t2.size, "m-checkbox-size-large": "large" === t2.size }, "data-disabled": t2.disabled, "data-checked": o2.value, "data-indeterminate": i2.value, "data-value": t2.value, onClick: s2 }, [createVNode("div", { class: "m-checkbox-wrapper" }, [createVNode("span", { class: "m-checkbox-control-wrapper" }, [createVNode("div", { class: "m-checkbox-control-main" }, [createVNode("div", { class: "m-checkbox-control-inner" }, [Z({ checked: o2.value, indeterminate: i2.value })])])]), createVNode("span", { class: "m-checkbox-label" }, [e2]), createVNode("input", { type: "checkbox", class: "m-checkbox-input", checked: o2.value, disabled: t2.disabled, value: t2.value }, null)])]);
   };
 } });
-var J = defineComponent({ name: "MAvatar", components: { MIcon: w }, props: { src: { type: String, default: "" }, size: { type: String, default: "36px" }, alt: { type: String, default: "" }, srcSet: { type: String, default: "" }, fit: { type: String, default: "cover" }, icon: { type: String, default: "" }, shape: { type: String, default: "circle" }, loading: { type: String, default: "eager" } }, setup(e2, { slots: t2 }) {
-  const a2 = (e3) => {
+var J = defineComponent({ name: "MAvatar", components: { MIcon: w }, props: { src: { type: String, default: "" }, size: { type: String, default: "36px" }, alt: { type: String, default: "" }, srcSet: { type: String, default: "" }, fit: { type: String, default: "cover" }, icon: { type: String, default: "" }, shape: { type: String, default: "circle" }, loading: { type: String, default: "eager" } }, emits: ["error"], setup(e2, { slots: t2, emit: a2 }) {
+  const l2 = (e3) => {
+    a2("error", e3);
   };
   return () => {
-    const l2 = t2.icon ? t2.icon() : e2.icon ? createVNode(w, { name: e2.icon, class: "m-avatar-icon", size: String(0.6 * parseInt(e2.size)) + "px" }, null) : "", o2 = t2.default ? t2.default() : "";
-    return createVNode("div", { class: { "m-avatar": true, "m-avatar-shape-square": "square" === e2.shape, "m-avatar-shape-circle": "circle" === e2.shape }, style: { "--size": e2.size, "--shape": e2.shape } }, [l2 || (o2 || createVNode("img", { src: e2.src, alt: e2.alt, srcset: e2.srcSet, class: "m-avatar-image", style: { "object-fit": e2.fit || "none" }, loading: e2.loading, width: e2.size, height: e2.size, onError: a2 }, null))]);
+    const a3 = t2.icon ? t2.icon() : e2.icon ? createVNode(w, { name: e2.icon, class: "m-avatar-icon", size: String(0.6 * parseInt(e2.size)) + "px" }, null) : "", o2 = t2.default ? t2.default() : "";
+    return createVNode("div", { class: { "m-avatar": true, "m-avatar-shape-square": "square" === e2.shape, "m-avatar-shape-circle": "circle" === e2.shape }, style: { "--size": e2.size, "--shape": e2.shape } }, [a3 || (o2 || createVNode("img", { src: e2.src, alt: e2.alt, srcset: e2.srcSet, class: "m-avatar-image", style: { "object-fit": e2.fit || "none" }, loading: e2.loading, width: e2.size, height: e2.size, onError: l2 }, null))]);
   };
 } });
 var K = [x, k, S, C, B, z, _, T, I, H, F, D, w, W, G, J].map((e2) => (e2.install = function(t2) {
@@ -398,6 +399,6 @@ export {
 /*! Bundled license information:
 
 mostify-ui/dist/mostify-ui.js:
-  (* @license Mostify UI By <tmwang>*)
+  (* @license Mostify UI By <Irming>*)
 */
 //# sourceMappingURL=mostify-ui.js.map

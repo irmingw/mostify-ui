@@ -14,7 +14,7 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
 
 其中，按钮还有属性控制状态，如禁用 <code>disabled</code>、加载中<code>loading</code>等。
 
-<MAlert>Button 支持水波纹效果，使得反馈效果更加明显</MAlert>
+<MAlert show-icon title="提示">Button 支持水波纹效果，使得反馈效果更加明显</MAlert>
 
 ## 按钮类型 type
 
@@ -23,24 +23,24 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
 类型渲染效果：
 
 <div class="button_test">
-  <m-button type="default">类型按钮</m-button>
-  <m-button type="primary">类型按钮</m-button>
-  <m-button type="danger">类型按钮</m-button>
-  <m-button type="warning">类型按钮</m-button>
-  <m-button type="success">类型按钮</m-button>
-  <m-button type="text">类型按钮</m-button>
-  <m-button type="link">类型按钮</m-button>
+  <m-button type="default">MOSTIFY BUTTON</m-button>
+  <m-button type="primary">MOSTIFY BUTTON</m-button>
+  <m-button type="danger">MOSTIFY BUTTON</m-button>
+  <m-button type="warning">MOSTIFY BUTTON</m-button>
+  <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="text">MOSTIFY BUTTON</m-button>
+  <m-button type="link">MOSTIFY BUTTON</m-button>
 </div>
 
 ```html
 <template>
-  <m-button type="default">类型按钮</m-button>
-  <m-button type="primary">类型按钮</m-button>
-  <m-button type="danger">类型按钮</m-button>
-  <m-button type="warning">类型按钮</m-button>
-  <m-button type="success">类型按钮</m-button>
-  <m-button type="text">类型按钮</m-button>
-  <m-button type="link">类型按钮</m-button>
+  <m-button type="default">MOSTIFY BUTTON</m-button>
+  <m-button type="primary">MOSTIFY BUTTON</m-button>
+  <m-button type="danger">MOSTIFY BUTTON</m-button>
+  <m-button type="warning">MOSTIFY BUTTON</m-button>
+  <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="text">MOSTIFY BUTTON</m-button>
+  <m-button type="link">MOSTIFY BUTTON</m-button>
 </template>
 ```
 
@@ -118,6 +118,30 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
   <m-button light type="warning">类型按钮</m-button>
   <m-button light type="success">类型按钮</m-button>
 </template>
+```
+
+## 按钮图标
+
+<div class="button_test">
+ <m-button type="link" leftIcon="like-fill" shape="circle" />
+<m-button type="primary" leftIcon="like-fill" shape="circle" />
+<m-button type="danger" light rightIcon="like-fill" shape="circle" />
+<m-button type="text" light rightIcon="like-fill" shape="circle" />
+<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+</div>
+
+
+```html
+<template>
+  <m-button type="link" leftIcon="like-fill" shape="circle" />
+  <m-button type="primary" leftIcon="like-fill" shape="circle" />
+  <m-button type="danger" light rightIcon="like-fill" shape="circle" />
+  <m-button type="text" light rightIcon="like-fill" shape="circle" />
+  <m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
+  <m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+</template>
+
 ```
 
 ## API

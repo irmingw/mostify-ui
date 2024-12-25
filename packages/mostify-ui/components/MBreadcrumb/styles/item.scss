@@ -17,6 +17,7 @@
 .m-breadcrumb-link {
   cursor: pointer;
   color: var(--m-theme-900);
+  text-decoration: none;
   &:hover {
     background-color: var(--m-rgba-100);
   }

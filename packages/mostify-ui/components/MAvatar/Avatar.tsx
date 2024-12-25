@@ -20,9 +20,10 @@ export default defineComponent({
     shape: { type: String, default: "circle" },
     loading: { type: String as PropType<"lazy" | "eager">, default: "eager" }
   },
-  setup(props, { slots }) {
+  emits:['error'],
+  setup(props, { slots,emit }) {
     const onError = e => {
-      console.log(e);
+      emit('error',e)
     };
 
     return () => {

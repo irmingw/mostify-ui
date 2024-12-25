@@ -4,7 +4,7 @@
 
   &:hover,
   &:active {
-    background: var(--m-theme-50);
+    background: var(--m-theme-bg);
   }
 }
 
@@ -16,7 +16,7 @@
   width: 100%;
   color: var(--m-theme-900);
   cursor: pointer;
-  background: var(--m-theme-50);
+  background: var(--m-theme-bg);
   transition: all 120ms linear;
   border-radius: var(--m-radius-small);
 

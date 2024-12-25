@@ -4,7 +4,7 @@
 
 <script setup >
   const colors = ["800",'700',600,500,400,300,200,100]
-  const themeColors = [900,800,700,600,500,400,300,200,100,50]
+  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg']
 </script>
 
 ## 主色彩
@@ -56,7 +56,8 @@
 <div class="colors">
   <div class="color_item" v-for="item in themeColors":key="item">
   <section class="color_bar" :style="{
-    'background-color': `var(--m-theme-${item})`,
+     'background-color': `var(--m-theme-${item})`,
+      border: '1px solid #d9d9d9',
     }"></section>
     <div class="text">--m-theme-{{ item }}</div>
   </div>
@@ -74,13 +75,6 @@
 
   .color_item {
     width: 220px;
-
-    &:last-child {
-      .color_bar {
-          border: 1px solid var(--m-theme-400);
-       }
-    }
-
     .color_bar {
       width: 100%;
       height: 90px;
@@ -95,7 +89,6 @@
     }
   }
 
-  
   @media (max-width: 728px) {
     .color_item {
       width: 100%;

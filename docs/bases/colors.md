@@ -4,7 +4,7 @@ Color is an important source of information in visual perception, which has an i
 
 <script setup >
   const colors = ["800",'700',600,500,400,300,200,100]
-  const themeColors = [900,800,700,600,500,400,300,200,100,50]
+  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg']
 </script>
 
 ## Primary Colors
@@ -57,6 +57,7 @@ Color is an important source of information in visual perception, which has an i
   <div class="color_item" v-for="item in themeColors":key="item">
   <section class="color_bar" :style="{
     'background-color': `var(--m-theme-${item})`,
+    border: '1px solid #d9d9d9',
     }"></section>
     <div class="text">--m-theme-{{ item }}</div>
   </div>
@@ -74,13 +75,6 @@ Color is an important source of information in visual perception, which has an i
 
   .color_item {
     width: calc(50% - 20px);
-
-    &:last-child {
-      .color_bar {
-          border: 1px solid var(--m-theme-400);
-       }
-    }
-
     .color_bar {
       width: 100%;
       height: 120px;

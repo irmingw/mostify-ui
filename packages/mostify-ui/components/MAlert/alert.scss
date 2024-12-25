@@ -46,7 +46,7 @@
         $type: error;
       }
       .m-alert-main {
-        background: var(--m-#{$type}-200);
+        background: var(--m-#{$type}-100);
         color: var(--m-#{$type}-600);
       }
 
