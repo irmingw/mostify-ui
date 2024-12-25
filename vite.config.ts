@@ -83,7 +83,7 @@ export default defineConfig(({ mode }) => {
         ],
         output: {
           exports: "named",
-          banner: "/* @license Mostify UI By <tmwang>*/",
+          banner: "/* @license Mostify UI By <Irming>*/",
           globals: {
             vue: "Vue",
           },
