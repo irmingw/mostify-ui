@@ -48,7 +48,7 @@
   }
   &.is-disabled {
     cursor: not-allowed;
-    --border-color: var(--m-rgba-200);
+    --border-color: var(--m-rgba-100);
     .m-input-base {
       cursor: not-allowed;
     }
@@ -57,6 +57,7 @@
     pointer-events: none;
     .m-input-base {
       pointer-events: none;
+      resize: none;
     }
   }
   @each $size in (small, mini, large) {

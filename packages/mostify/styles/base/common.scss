@@ -62,6 +62,7 @@ textarea {
 }
 .is-disabled {
   @include disabledMixin();
+  --border-color: var(--m-rgba-100); 
   &:hover,
   &:active {
     @include disabledMixin();

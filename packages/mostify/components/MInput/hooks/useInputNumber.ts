@@ -3,7 +3,7 @@ import { add, subtract } from "@/mostify/utils/common";
 
 export const useControl = props => {
   const showControl = computed(() => {
-    return props.controls;
+    return !!props.controls;
   });
   const isRight = computed(() => props.controlsPosition === "right");
   return { showControl, isRight };
@@ -39,6 +39,11 @@ export const useIncreaseDecrease = (props, value, setValue) => {
 
     if (val < props.min) {
       setValue(props.min);
+      return;
+    }
+
+    if(val > props.max){
+      setValue(props.max);
       return;
     }
     setValue(val.toFixed(precision));

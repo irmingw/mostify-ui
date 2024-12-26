@@ -305,7 +305,7 @@ var G = (e2, t2) => {
     return e2.disabled && a2.push("is-disabled"), e2.readonly && a2.push("is-readonly"), t2.value && a2.push("is-focus"), a2;
   }) };
 };
-var J = (e2) => ({ showLimitCount: computed(() => e2.showLimitCount && !e2.disabled && !e2.readonly && e2.maxlength) });
+var J = (e2) => ({ showLimitCount: computed(() => e2.showLimitCount && e2.maxlength) });
 var K = (e2) => {
   const a2 = ref(null), l2 = ref(false);
   return { domRef: a2, isFocus: l2, setIsFocus: (e3) => {
@@ -346,11 +346,11 @@ var U = (e2, t2, l2) => {
     if (o2.value || e2.disabled || e2.readonly) return;
     const a2 = parseFloat(e2.step) || 1, n3 = parseInt(e2.precision) || 0, s2 = (i2 = parseFloat(t2.value), T(i2, a2, false));
     var i2;
-    s2 < e2.min ? l2(e2.min) : l2(s2.toFixed(n3));
+    s2 < e2.min ? l2(e2.min) : s2 > e2.max ? l2(e2.max) : l2(s2.toFixed(n3));
   }, decreaseDisabled: o2, increaseDisabled: n2 };
 };
 var ee = defineComponent({ name: "MInputNumber", components: { MIcon: S }, props: { modelValue: Number, min: Number, max: Number, step: Number, disabled: Boolean, controlsPosition: { type: String, default: "" }, controls: { type: Boolean, default: true }, size: String, readonly: Boolean, placeholder: String, name: String, id: String, autofocus: Boolean, tabindex: Number, prefix: String, suffix: String, precision: Number }, emits: ["update:modelValue", "change", "blur", "focus"], setup(e2, { emit: t2, expose: l2, slots: s2 }) {
-  const { domRef: i2, isFocus: r2, setIsFocus: u2 } = K(), { showControl: c2, isRight: d2 } = ((e3) => ({ showControl: computed(() => e3.controls), isRight: computed(() => "right" === e3.controlsPosition) }))(e2), { value: p2, setValue: m2 } = Z(e2, t2), { classNames: f2 } = G(e2, r2), { increase: g2, decrease: h2, decreaseDisabled: v2, increaseDisabled: y2 } = U(e2, p2, m2);
+  const { domRef: i2, isFocus: r2, setIsFocus: u2 } = K(), { showControl: c2, isRight: d2 } = ((e3) => ({ showControl: computed(() => !!e3.controls), isRight: computed(() => "right" === e3.controlsPosition) }))(e2), { value: p2, setValue: m2 } = Z(e2, t2), { classNames: f2 } = G(e2, r2), { increase: g2, decrease: h2, decreaseDisabled: v2, increaseDisabled: y2 } = U(e2, p2, m2);
   return l2({ focus: () => u2(true), blur: () => u2(false) }), () => {
     var _a, _b, _c, _d;
     const t3 = (_a = s2.decreaseIcon) == null ? void 0 : _a.call(s2), a2 = (_b = s2.increaseIcon) == null ? void 0 : _b.call(s2), l3 = s2.prefix ? (_c = s2.prefix) == null ? void 0 : _c.call(s2) : e2.prefix, r3 = s2.suffix ? (_d = s2.suffix) == null ? void 0 : _d.call(s2) : e2.suffix, b2 = () => createVNode(Fragment, null, [l3 && createVNode("div", { class: "m-input-prefix" }, [l3]), createVNode("input", { type: "number", name: e2.name, value: p2.value, autofocus: e2.autofocus, tabindex: e2.tabindex, class: "m-input-base", ref: i2, disabled: e2.disabled, placeholder: e2.placeholder, readonly: e2.readonly, max: e2.max, min: e2.min, step: e2.step, onInput: (e3) => {

@@ -10,6 +10,7 @@
   justify-content: center;
   min-width: var(--size);
   cursor: pointer;
+  border-radius: var(--m-radius-small);
   &:hover {
     color: var(--m-primary-600);
   }
@@ -31,16 +32,13 @@
   }
   &.has-right-control {
     padding-right: 0;
-    .m-icon {
-      font-size: 14px;
-    }
+  }
+  .m-icon {
+    font-size: 14px;
   }
 
   &.has-control {
     padding: 0;
-    .m-icon {
-      font-size: 14px;
-    }
   }
   &.m-input-size-mini {
     .m-icon {
@@ -59,11 +57,15 @@
     @include defaultControl();
     border-right: 1px solid var(--border-color);
     margin-right: 12px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
   .m-input-number-control-right {
     @include defaultControl();
     border-left: 1px solid var(--border-color);
     margin-left: 12px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
   }
 }
 

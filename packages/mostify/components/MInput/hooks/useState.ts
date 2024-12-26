@@ -68,12 +68,7 @@ export const usePwd = props => {
 
 export const useLimitCount = props => {
   const showLimitCount = computed(() => {
-    return (
-      props.showLimitCount &&
-      !props.disabled &&
-      !props.readonly &&
-      props.maxlength
-    );
+    return props.showLimitCount && props.maxlength;
   });
 
   return {

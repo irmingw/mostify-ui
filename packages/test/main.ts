@@ -3,5 +3,5 @@ import Mostify from "@/mostify/components";
 import App from "./App.vue";
 
 const app = createApp(App);
-app.use(Mostify, { size: "mini", zIndex: 1000 });
+app.use(Mostify, { size: "small", zIndex: 1000 });
 app.mount("#app");

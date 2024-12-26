@@ -1,16 +1,17 @@
 <template>
   <div class="app">
-    <m-input-number v-model="val" :max="12"/>
-    <m-input-number v-model="val" :max="12" controlsPosition="right" />
+    <m-input-number v-model="val" :max="12" />
+    <m-input-number v-model="val" disabled :max="12" controlsPosition="right" />
     <m-input-number v-model="val" max="12" controlsPosition="right" prefix="M" />
+    <m-textarea v-model="val" showLimitCount maxlength="15" />
+    <m-textarea disabled v-model="val" showLimitCount maxlength="15" />
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import { ref } from "vue";
 
-const val = ref(10)
-
+const val = ref(10);
 </script>
 
 <style>
