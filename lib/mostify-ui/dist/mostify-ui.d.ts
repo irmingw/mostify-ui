@@ -13,11 +13,14 @@ import { default as MDivider } from './MDivider';
 import { default as MDropdown } from './MDropdown';
 import { default as MIcon } from './MIcon';
 import { MInput } from './MInput';
+import { MInputNumber } from './MInput';
 import { default as MMenuItem } from './MMenuItem';
+import { MMTextarea } from './MInput';
 import { default as MSpace } from './MSpace';
+import { PluginOptionTypes } from '../types/types';
 
 declare const _default: {
-    install(app: any): void;
+    install(app: any, options?: PluginOptionTypes | undefined): void;
 };
 export default _default;
 
@@ -51,7 +54,11 @@ export { MIcon }
 
 export { MInput }
 
+export { MInputNumber }
+
 export { MMenuItem }
+
+export { MMTextarea }
 
 export { MSpace }
 

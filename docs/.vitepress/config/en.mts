@@ -31,6 +31,8 @@ export default {
         text: 'Forms',
         items: [
           { text: 'Input', link: '/form/input' },
+          { text: 'InputNumber', link: '/form/input-number' },
+          { text: 'Textarea', link: '/form/textarea' },
           { text: 'Checkbox', link: '/form/checkbox' },
         ]
       },

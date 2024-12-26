@@ -31,6 +31,8 @@ export default {
         text: '表单',
         items: [
           { text: 'Input 输入框', link: '/zh-cn/form/input' },
+          { text: 'InputNumber 数字输入', link: '/zh-cn/form/input-number' },
+          { text: 'Textarea 文本域', link: '/zh-cn/form/textarea' },
           { text: 'Checkbox 多选框', link: '/zh-cn/form/checkbox' },
         ]
       },

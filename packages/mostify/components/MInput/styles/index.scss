@@ -1,0 +1,160 @@
+@use "./base.scss";
+
+@mixin inputSize($s: var(--m-size-small)) {
+  height: $s;
+  line-height: $s;
+  max-height: $s;
+  height: $s;
+}
+
+@mixin suffixPrefixStyle() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--m-theme-600);
+}
+
+@mixin prependAppendStyle() {
+  @include suffixPrefixStyle();
+  padding: 0 10px;
+  background-color: var(--m-rgba-50);
+  border: 1px solid var(--m-theme-400);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background-color: var(--m-rgba-100);
+  }
+}
+
+.m-input-wrapper,
+.m-input {
+  @include base.wrapperStyle();
+  @include inputSize();
+  --border-color: var(--m-theme-400);
+}
+
+.m-input {
+  border: 1px solid var(--border-color);
+  padding: 0 10px;
+  --size: var(--m-size-small);
+  &:hover {
+    --border-color: var(--m-primary-600);
+    .m-clearable {
+      display: inline-flex;
+    }
+  }
+  &.is-focus {
+    --border-color: var(--m-primary-600);
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    --border-color: var(--m-rgba-200);
+    .m-input-base {
+      cursor: not-allowed;
+    }
+  }
+  &.is-readonly {
+    pointer-events: none;
+    .m-input-base {
+      pointer-events: none;
+    }
+  }
+  @each $size in (small, mini, large) {
+    &.m-input-size-#{$size} {
+      --size: var(--m-size-#{$size});
+      @include inputSize(var(--m-size-#{$size}));
+    }
+  }
+}
+.m-input-base,
+input,
+textarea {
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  padding: 0;
+  height: 100%;
+  &::placeholder {
+    color: var(--m-rgba-300);
+  }
+}
+
+/* 在Chrome浏览器下 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 在Firefox浏览器下 */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// prefix and suffix
+.m-input-prefix {
+  @include suffixPrefixStyle();
+  padding-right: 8px;
+}
+.m-input-suffix {
+  @include suffixPrefixStyle();
+  padding-left: 8px;
+}
+// prepend and append
+.m-input-prepend {
+  @include prependAppendStyle();
+  border-right: 0;
+  border-top-left-radius: var(--m-radius-small);
+  border-bottom-left-radius: var(--m-radius-small);
+}
+.m-input-append {
+  @include prependAppendStyle();
+  border-left: 0;
+  border-top-right-radius: var(--m-radius-small);
+  border-bottom-right-radius: var(--m-radius-small);
+}
+.has-prepend {
+  .m-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.has-append {
+  .m-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+// icon suffix
+.m-input-suffix-icon-wrapper {
+  cursor: pointer;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--m-rgba-300);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: var(--m-rgba-500);
+  }
+  // clearable
+  &.m-clearable {
+    display: none;
+  }
+}
+
+// count input
+.m-input-limit-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--m-rgba-300);
+  font-size: 12px;
+  height: 100%;
+  padding-left: 8px;
+}

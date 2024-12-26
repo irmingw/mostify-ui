@@ -1,14 +1,15 @@
 <template>
   <div class="app">
-    <m-alert type="warning">BUTTON</m-alert>
-    <m-alert type="primary">BUTTON</m-alert>
-    <m-alert type="danger">BUTTON</m-alert>
-    <m-alert type="success">BUTTON</m-alert>
-    <m-alert dark type="warning">BUTTON</m-alert>
+    <m-input-number v-model="val" :max="12"/>
+    <m-input-number v-model="val" :max="12" controlsPosition="right" />
+    <m-input-number v-model="val" max="12" controlsPosition="right" prefix="M" />
   </div>
 </template>
 
 <script setup lang="ts">
+import {ref} from 'vue'
+
+const val = ref(10)
 
 </script>
 
