@@ -25,14 +25,15 @@
 
   .m-alert-content {
     flex: 1;
-    line-height: 24px;
+    line-height: 22px;
     padding-right: var(--m-size-mini);
     overflow: hidden;
     font-size: 14px;
   }
   .m-alert-title {
-    font-weight: bold;
+    font-weight: 600;
     line-height: 24px;
+    font-size: 16px;
   }
   .m-alert-icon {
     margin-right: 12px;
