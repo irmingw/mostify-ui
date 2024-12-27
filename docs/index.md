@@ -20,8 +20,11 @@ hero:
 features:
   - title: Well-Designed
     details: Adhere to ergonomic principles and create the ultimate user experience.
+    icon:  🎨
   - title: Easy to use
     details: The operation is intuitive and convenient, immediately embarking on an efficient development journey.
+    icon: 🚀
   - title: Flexible Expansion
     details: Highly customizable to easily meet various development needs.
+    icon: 🔧
 ---
