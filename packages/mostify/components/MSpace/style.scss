@@ -3,12 +3,12 @@
   gap: var(--size,0);
 }
 
-.m-space-x {
+.m-space-horizontal {
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
 
-.m-space-y {
+.m-space-vertical {
   flex-direction: column;
 }

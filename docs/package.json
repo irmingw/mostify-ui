@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "MostifyDocs",
+  "name": "app",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
@@ -10,6 +10,6 @@
     "vitepress": "^1.5.0"
   },
   "dependencies": {
-    "mostify-ui": "^0.0.33"
+    "mostify-ui": "^0.0.37"
   }
 }

@@ -66,9 +66,9 @@ You can set the style of divider.
 
   <div>
     <span>Rain</span>
-    <m-divider layout="x" />
+    <m-divider direction="vertical" />
     <span>Home</span>
-    <m-divider layout="x" border-style="dashed" />
+    <m-divider direction="vertical" border-style="dashed" />
     <span>Grass</span>
   </div>
 
@@ -76,9 +76,9 @@ You can set the style of divider.
 <template>
   <div>
     <span>Rain</span>
-    <m-divider layout="x" />
+    <m-divider direction="vertical" />
     <span>Home</span>
-    <m-divider layout="x" border-style="dashed" />
+    <m-divider direction="vertical" border-style="dashed" />
     <span>Grass</span>
   </div>
 </template>
@@ -88,7 +88,9 @@ You can set the style of divider.
 
 ### Attributes
 
-| Name         | Description                       | Type    | Values                   | Default   |
-| ------------ | ------------------------ | ------- | ---------------------- | -------- |
-| layout       | 分割线方向               | string  | x / y | y       |  
-| border-style | 分割线的样式             | string  | dashed / dotted / double | solid        |
+| Name         | Description                    | Type                    | Default            |
+| ------------ | ------------------------------ | ----------------------- | ------------------ |
+| `direction`  | Specify direction segmentation | `horizontal` `vertical` | `horizontal`       |
+| border-style | Border Style                   | `solid` `dashed` ...    | `solid`            |
+| size         | Separation line spacing        | string                  | `12px`             |
+| color        | Color of dividing line         | string                  | var(--m-theme-400) |

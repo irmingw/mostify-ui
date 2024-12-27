@@ -4,73 +4,73 @@
 
 ## 使用
 
-使用layout属性来设置按钮的布局。
-使用size属性来设置按钮的大小。
+使用 `direction` 属性来设置按钮的布局。
+使用`size`属性来设置按钮的大小。
 
-## Layout
+## Direction
 
-值: `x` | `y`
+值: `horizontal` | `vertical`
 
-<m-button-group layout="x">
+<m-button-group>
   <m-button type="primary">Button 1</m-button>
   <m-button type="primary">Button 2</m-button>
   <m-button type="primary">Button 3</m-button>
 </m-button-group>
 
 ```html
-<m-button-group layout="x">
+<m-button-group>
   <m-button type="primary">Button 1</m-button>
   <m-button type="primary">Button 2</m-button>
   <m-button type="primary">Button 3</m-button>
 </m-button-group>
 ```
 
-<m-button-group layout="y">
-  <m-button type="danger">Button 1</m-button>
-  <m-button type="danger">Button 2</m-button>
-  <m-button type="danger">Button 3</m-button>
+<m-button-group direction="vertical">
+  <m-button type="info">Button 1</m-button>
+  <m-button type="info">Button 2</m-button>
+  <m-button type="info">Button 3</m-button>
 </m-button-group>
 
 ```html
-<m-button-group layout="y">
-  <m-button type="danger">Button 1</m-button>
-  <m-button type="danger">Button 2</m-button>
-  <m-button type="danger">Button 3</m-button>
+<m-button-group direction="vertical">
+  <m-button type="info">Button 1</m-button>
+  <m-button type="info">Button 2</m-button>
+  <m-button type="info">Button 3</m-button>
 </m-button-group>
 ```
 
 ## Size
 
 值: `large` | `small` | `mini`
-<m-button-group layout="x" size="large">
-  <m-button type="warning">Button 1</m-button>
-  <m-button type="warning">Button 2</m-button>
-  <m-button type="warning">Button 3</m-button>
+<m-button-group size="large">
+<m-button type="warning">Button 1</m-button>
+<m-button type="warning">Button 2</m-button>
+<m-button type="warning">Button 3</m-button>
 </m-button-group>
 
 ```html
-<m-button-group layout="x" size="large">
+<m-button-group size="large">
   <m-button type="warning">Button 1</m-button>
   <m-button type="warning">Button 2</m-button>
   <m-button type="warning">Button 3</m-button>
 </m-button-group>
 ```
 
-<m-button-group layout="x" size="small">
+<m-button-group size="small">
   <m-button type="success">Button 1</m-button>
   <m-button type="success">Button 2</m-button>
   <m-button type="success">Button 3</m-button>
 </m-button-group>
 
 ```html
-<m-button-group layout="x" size="small">
+<m-button-group size="small">
   <m-button type="success">Button 1</m-button>
   <m-button type="success">Button 2</m-button>
   <m-button type="success">Button 3</m-button>
 </m-button-group>
 ```
 
-<m-button-group layout="x" size="mini">
+<m-button-group size="mini">
   <m-button type="default">Button 1</m-button>
   <m-button type="default">Button 2</m-button>
   <m-button type="default">Button 3</m-button>
@@ -88,7 +88,7 @@
 
 ### Button Group Props
 
-| Prop         | Type    | Default   | Description                              |
-| ------------ | ------- | --------- | ---------------------------------------- |
-| `layout`     | String  | `x`       | Layout of the buttons (x or y)         |
-| `size`       | String  | - small        | Size of the buttons (large, small, mini) |
+| Prop        | Type                    | Default      | Description                              |
+| ----------- | ----------------------- | ------------ | ---------------------------------------- |
+| `direction` | `horizontal` `vertical` | `horizontal` | Layout of the buttons (x or y)           |
+| `size`      | `small` `mini` `large`  | `small`      | Size of the buttons (large, small, mini) |

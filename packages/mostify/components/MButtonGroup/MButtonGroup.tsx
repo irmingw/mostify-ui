@@ -7,10 +7,9 @@ import "./style.scss";
 export default defineComponent({
   name: "MButtonGroup",
   props: {
-    layout: {
+    direction: {
       type: String,
-      default: "x",
-      validator: (v: string) => ["x", "y"].includes(v)
+      default: "horizontal" // vertical | horizontal
     },
     size: String as PropType<SizeType>
   },
@@ -20,12 +19,14 @@ export default defineComponent({
     provide(providerKey, { size: props.size || size, zIndex });
     return () => {
       const defaultSlot = slots.default?.();
-      
+
       return (
         <div
           class={[
             "m-button-group",
-            props.layout === "y" ? "m-button-layout-y" : "m-button-layout-x"
+            props.direction === "vertical"
+              ? "m-button-vertical"
+              : "m-button-horizontal"
           ]}>
           {defaultSlot}
         </div>

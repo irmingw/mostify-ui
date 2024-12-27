@@ -4,12 +4,12 @@ import useProvider from "@/mostify/hooks/useProvider";
 export const useBtn = props => {
   const btnRef = ref<HTMLElement | null>(null);
   const { size } = useProvider();
-
+  const btnSize = computed(() => props.size || size || "small");
   // className
   const btnClass = computed(() => {
     const arr = ["m-button"];
     props.type && arr.push("m-button-type-" + props.type);
-    arr.push("m-button-size-" + (props.size || size || "small"));
+    arr.push("m-button-size-" + btnSize.value);
     props.shape && arr.push("m-button-shape-" + props.shape);
     props.loading && arr.push("is-loading");
     props.disabled && arr.push("is-disabled");
@@ -22,7 +22,8 @@ export const useBtn = props => {
   return {
     btnClass,
     contentShow,
-    btnRef
+    btnRef,
+    btnSize
   };
 };
 
@@ -66,3 +67,23 @@ export const useRipple = (props, wrapper) => {
     rippleRef
   };
 };
+
+const pdMap = {
+  mini: "0 12px",
+  small: "0 16px",
+  large: "0 24px"
+}
+
+export const useStyle = (props,btnSize) => {
+
+  const styles = computed(() => {
+    return {
+      width: props.block ? '100%' : '',
+      '--button-height': `var(--m-size-${btnSize.value})`,
+      '--button-padding': pdMap[btnSize.value],
+    };
+  });
+  return {
+    styles,
+  };
+}

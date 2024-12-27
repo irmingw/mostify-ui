@@ -4,10 +4,9 @@ import "./style.scss";
 export default defineComponent({
   name: "MDivider",
   props: {
-    layout: {
+    direction: {
       type: String,
-      default: "y",
-      validator: (v: string) => ["x", "y"].includes(v)
+      default: "horizontal", // horizontal | vertical 
     },
     color: {
       type: String,
@@ -29,8 +28,8 @@ export default defineComponent({
         style={{ "--color": props.color, "--size": props.size,"--border-style":props.borderStyle }}
         class={{
           "m-divider": true,
-          "m-divider-y": props.layout === "y",
-          "m-divider-x": props.layout === "x"
+          "m-divider-horizontal": props.direction === "horizontal",
+          "m-divider-vertical": props.direction === "vertical"
         }} />
     );
   }

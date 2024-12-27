@@ -1,7 +1,7 @@
 import { defineComponent } from "vue";
 import type { PropType } from "vue";
 import type { BtnTypes, BtnSizes, BtnShapes } from "./types";
-import { useBtn, useRipple } from "./hooks/useBtn";
+import { useBtn, useRipple,useStyle } from "./hooks/useBtn";
 import "./styles/btn.scss";
 import MIcon from "../MIcon";
 
@@ -34,7 +34,6 @@ export default defineComponent({
     shape: { type: String as PropType<BtnShapes>, default: "" },
     disabled: Boolean,
     loading: Boolean,
-    border: Boolean,
     light: Boolean,
     leftIcon: String,
     rightIcon: String,
@@ -42,8 +41,9 @@ export default defineComponent({
   },
   emits: ["click", "focus", "blur"],
   setup(props, { slots, emit }) {
-    const { btnClass, contentShow, btnRef } = useBtn(props);
+    const { btnClass, contentShow, btnRef,btnSize } = useBtn(props);
     const { rippleRef, setRipple } = useRipple(props, btnRef);
+    const { styles } = useStyle(props,btnSize)
 
     function onChangeByType(e: Event, type: "click" | "focus" | "blur") {
       e.preventDefault();
@@ -74,10 +74,7 @@ export default defineComponent({
           class={btnClass.value}
           onMousedown={setRipple}
           ref={btnRef}
-          style={{
-            "--border-width": props.border ? "1px" : "0px",
-            width: props.block ? "100%" : ""
-          }}
+          style={styles.value}
           data-light={props.light ? "on" : "off"}
           onClick={e => onChangeByType(e, "click")}
           onFocus={e => onChangeByType(e, "focus")}

@@ -66,9 +66,9 @@
 
   <div>
     <span>Rain</span>
-    <m-divider layout="x" />
+    <m-divider direction="vertical" />
     <span>Home</span>
-    <m-divider layout="x" border-style="dashed" />
+    <m-divider direction="vertical" border-style="dashed" />
     <span>Grass</span>
   </div>
 
@@ -76,9 +76,9 @@
 <template>
   <div>
     <span>Rain</span>
-    <m-divider layout="x" />
+    <m-divider direction="vertical" />
     <span>Home</span>
-    <m-divider layout="x" border-style="dashed" />
+    <m-divider direction="vertical" border-style="dashed" />
     <span>Grass</span>
   </div>
 </template>
@@ -88,7 +88,9 @@
 
 ### Attributes
 
-| 属性名         | 说明                       | 类型    | 可选值                   | 默认值   |
-| ------------ | ------------------------ | ------- | ---------------------- | -------- |
-| layout       | 分割线方向               | string  | x / y | y       |  
-| border-style | 分割线的样式             | string  | dashed / dotted / double | solid        |
+| 属性名       | 说明         | 类型                    | 默认值             |
+| ------------ | ------------ | ----------------------- | ------------------ |
+| `direction`  | 指定方向分割 | `horizontal` `vertical` | `horizontal`       |
+| border-style | 线的样式     | `solid` `dashed` ...    | `solid`            |
+| size         | 分割线间距   | string                  | `12px`             |
+| color        | 分割线颜色   | string                  | var(--m-theme-400) |

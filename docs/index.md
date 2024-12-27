@@ -11,7 +11,7 @@ hero:
     light: /dark-logo.svg
   actions:
     - theme: brand
-      text: Get Started
+      text: Quick Started
       link: /config/start
     - theme: alt
       text: Components

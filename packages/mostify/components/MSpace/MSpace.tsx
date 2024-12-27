@@ -6,31 +6,30 @@ export default defineComponent({
   props: {
     size: {
       type: String,
-      default: "",
+      default: ""
     },
-    layout: {
-      type: String,
-      validator: (val: string) => ["x", "y"].includes(val),
-      default: "x",
+    direction: {
+      type: String, // dec 'horizontal' | 'vertical'
+      default: "horizontal"
     },
-    alignItems: { type: String, default: "flex-start" },
+    alignItems: { type: String, default: "flex-start" }
   },
   setup(props, { slots }) {
     const layoutClass = computed(() =>
-      props.layout === "y" ? "m-space-y" : "m-space-x"
+      props.direction === "horizontal"
+        ? "m-space-horizontal"
+        : "m-space-vertical"
     );
-    const defaultItems = computed(() => (slots.default ? slots.default() : []));
-
     return () => {
+      const defaultItems = slots.default ? slots.default() : [];
       return (
         <div
           class={["m-space", layoutClass.value]}
           style={{
             "--size": props.size || "",
-            'align-items': props.alignItems || "",
-          }}
-        >
-          {defaultItems.value?.map((item, index) => {
+            "align-items": props.alignItems || ""
+          }}>
+          {defaultItems?.map((item, index) => {
             return (
               <div class="m-space-item" key={index}>
                 {item}
@@ -40,5 +39,5 @@ export default defineComponent({
         </div>
       );
     };
-  },
+  }
 });

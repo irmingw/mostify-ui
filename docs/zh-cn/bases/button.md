@@ -28,6 +28,7 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
   <m-button type="danger">MOSTIFY BUTTON</m-button>
   <m-button type="warning">MOSTIFY BUTTON</m-button>
   <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="info">MOSTIFY BUTTON</m-button>
   <m-button type="text">MOSTIFY BUTTON</m-button>
   <m-button type="link">MOSTIFY BUTTON</m-button>
 </div>
@@ -39,6 +40,7 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
   <m-button type="danger">MOSTIFY BUTTON</m-button>
   <m-button type="warning">MOSTIFY BUTTON</m-button>
   <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="info">MOSTIFY BUTTON</m-button>
   <m-button type="text">MOSTIFY BUTTON</m-button>
   <m-button type="link">MOSTIFY BUTTON</m-button>
 </template>
@@ -54,7 +56,7 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
   <m-button shape="round" type="danger">基础按钮</m-button>
   <m-button shape="square" type="success">M</m-button>
   <m-button shape="circle" type="primary">M</m-button>
-  <m-button shape="circle" type="link">M</m-button>
+  <m-button shape="circle" type="info">M</m-button>
 </div>
 
 ```html
@@ -72,14 +74,14 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
 
 <div class="button_test">
   <m-button size="large" type="primary">大按钮</m-button>
-  <m-button size="small" type="danger">中按钮</m-button>
+  <m-button size="small" type="info">中按钮</m-button>
   <m-button size="mini" type="success">小按钮</m-button>
 </div>
 
 ```html
 <template>
   <m-button size="large" type="primary">大按钮</m-button>
-  <m-button size="small" type="danger">中按钮</m-button>
+  <m-button size="small" type="info">中按钮</m-button>
   <m-button size="mini" type="success">小按钮</m-button>
 </template>
 ```
@@ -127,10 +129,9 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
 <m-button type="primary" leftIcon="like-fill" shape="circle" />
 <m-button type="danger" light rightIcon="like-fill" shape="circle" />
 <m-button type="text" light rightIcon="like-fill" shape="circle" />
-<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
-<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="primary"  rightIcon="like-fill" >HELLO</m-button>
+<m-button type="success"  leftIcon="like-fill" >HELLO</m-button>
 </div>
-
 
 ```html
 <template>
@@ -138,10 +139,22 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
   <m-button type="primary" leftIcon="like-fill" shape="circle" />
   <m-button type="danger" light rightIcon="like-fill" shape="circle" />
   <m-button type="text" light rightIcon="like-fill" shape="circle" />
-  <m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
-  <m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+  <m-button type="primary"  rightIcon="like-fill" >HELLO</m-button>
+  <m-button type="success"  leftIcon="like-fill" >HELLO</m-button>
 </template>
 
+```
+
+## Block
+
+<m-button type="primary" block >MOSTIFY BLOCK BUTTON</m-button>
+<m-button type="info" block >MOSTIFY BLOCK BUTTON</m-button>
+<m-button type="danger" block >MOSTIFY BLOCK BUTTON</m-button>
+
+```html
+<template>
+  <m-button type="primary" block >MOSTIFY BLOCK BUTTON</m-button>
+</template>
 ```
 
 ## API
@@ -154,6 +167,7 @@ Button 按钮组件设计思路：一个按钮由颜色、形状、大小组成�
 | disabled | 禁用按钮 | boolean | -                                                | false   |
 | loading  | 加载中   | boolean | -                                                | false   |
 | light    | 浅色主题 | boolean | -                                                | false   |
+| Block     | 宽度100%    | boolean | - | false |
 
 ## 事件
 

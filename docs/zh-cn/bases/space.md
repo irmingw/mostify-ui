@@ -20,15 +20,16 @@
 
 ## 设置方向
 
-layout 属性可以设置间距组件的布局方式，默认为 x 轴方向，设置为 y 时为 y 轴方向。
-<m-space size="12px" layout="y">
+`direction` 属性可以设置间距组件的布局方式，默认为 `horizontal` 水平方向，设置为 `vertical` 时为垂直方向。
+<m-space size="12px" direction="vertical">
+
   <div>10px</div>
   <div>20px</div>
   <div>30px</div>
 </m-space>
 
 ```html
-<m-space size="12px" layout="y">
+<m-space size="12px" direction="vertical">
   <div>10px</div>
   <div>20px</div>
   <div>30px</div>
@@ -42,47 +43,48 @@ alignItems 属性原生css属性，用来设置元素在父元素中垂直对齐
 <m-space size="12px">
 
 <m-space size="12px">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="center">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="flex-end">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 </m-space>
 
 ```html
 <m-space size="12px">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="center">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="flex-end">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 ```
 
 ## 间距组件的属性
 
-| 属性     | 类型          | 默认值      | 说明                        |
-| -------- | ------------- | ----------- | ------------------------- |
-| size  | string | `0` | 设置间距的大小            |
-| layout | `x` `y`     | `x`          | 设置方向 |
+| attribute  | description                 | Type                    | Default Value |
+| ---------- | --------------------------- | ----------------------- | ------------- |
+| size       | Set the size of the spacing | string                  | `0`           |
+| direction  | Set direction               | `horizontal` `vertical` | `horizontal`  |
+| alignItems | Set alignment method        | string                  | `flex-start`  |

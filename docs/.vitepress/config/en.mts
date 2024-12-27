@@ -5,8 +5,8 @@ export default {
   themeConfig: {
     nav: [
       { text: "Home", link: "/" },
-      { text: "Get Start", link: "/config/start" },
-      { text: "Theme Setting", link: "/config/theme" },
+      { text: "Started", link: "/config/start" },
+      { text: "Themes", link: "/config/theme" },
       { text: "Components", link: "/bases/button" }
     ],
 
@@ -14,7 +14,7 @@ export default {
       {
         text: "Settings",
         items: [
-          { text: "Get Start", link: "/config/start" },
+          { text: "Quick Started", link: "/config/start" },
           { text: "Architecture Design", link: "/config/design" },
           { text: "Theme Setting", link: "/config/theme" },
         ]

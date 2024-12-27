@@ -3,8 +3,8 @@
 Color is an important source of information in visual perception, which has an impact on psychological activities such as emotions, behavior, and memory.
 
 <script setup >
-  const colors = ["800",'700',600,500,400,300,200,100]
-  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg']
+  const colors = [900,800,700,600,500,400,300,200,100,50]
+  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg','container']
 </script>
 
 ## Primary Colors
@@ -14,7 +14,7 @@ Color is an important source of information in visual perception, which has an i
     <section class="color_bar" :style="{
     'background-color': `var(--m-primary-${item})`,
     }"></section>
-    <div class="text">--m-primary-{{ item }}</div>
+    <div class="text">primary-{{ item }}</div>
   </div>
 </div>
 
@@ -25,7 +25,7 @@ Color is an important source of information in visual perception, which has an i
     <section class="color_bar" :style="{
       'background-color': `var(--m-error-${item})`,
     }"></section>
-    <div class="text">--m-error-{{ item }}</div>
+    <div class="text">error-{{ item }}</div>
   </div>
 </div>
 
@@ -36,7 +36,7 @@ Color is an important source of information in visual perception, which has an i
     <section class="color_bar" :style="{
       'background-color': `var(--m-warning-${item})`,
     }"></section>
-    <div class="text">--m-warning-{{ item }}</div>
+    <div class="text">warning-{{ item }}</div>
   </div>
 </div>
 
@@ -47,7 +47,7 @@ Color is an important source of information in visual perception, which has an i
     <section class="color_bar" :style="{
       'background-color': `var(--m-success-${item})`,
     }"></section>
-    <div class="text">--m-success-{{ item }}</div>
+    <div class="text">success-{{ item }}</div>
   </div>
 </div>
 
@@ -59,9 +59,13 @@ Color is an important source of information in visual perception, which has an i
     'background-color': `var(--m-theme-${item})`,
     border: '1px solid #d9d9d9',
     }"></section>
-    <div class="text">--m-theme-{{ item }}</div>
+    <div class="text">theme-{{ item }}</div>
   </div>
 </div>
+
+<m-alert title="Tips">
+  theme-bg controls the background color of the control panel and has a wide range of applications. theme-container controls the global background color, but its usage is not as widespread.
+</m-alert>
 
 <style scoped lang="scss">
   .colors {

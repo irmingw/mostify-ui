@@ -28,6 +28,7 @@ Type rendering effect:
   <m-button type="danger">MOSTIFY BUTTON</m-button>
   <m-button type="warning">MOSTIFY BUTTON</m-button>
   <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="info">MOSTIFY BUTTON</m-button>
   <m-button type="text">MOSTIFY BUTTON</m-button>
   <m-button type="link">MOSTIFY BUTTON</m-button>
 </div>
@@ -39,6 +40,7 @@ Type rendering effect:
   <m-button type="danger">MOSTIFY BUTTON</m-button>
   <m-button type="warning">MOSTIFY BUTTON</m-button>
   <m-button type="success">MOSTIFY BUTTON</m-button>
+  <m-button type="info">MOSTIFY BUTTON</m-button>
   <m-button type="text">MOSTIFY BUTTON</m-button>
   <m-button type="link">MOSTIFY BUTTON</m-button>
 </template>
@@ -54,7 +56,7 @@ Shape rendering effect:
   <m-button shape="round" type="danger">Shape Button</m-button>
   <m-button shape="square" type="success">M</m-button>
   <m-button shape="circle" type="primary">M</m-button>
-  <m-button shape="circle" type="link">M</m-button>
+  <m-button shape="circle" type="info">M</m-button>
 </div>
 
 ```html
@@ -62,7 +64,7 @@ Shape rendering effect:
   <m-button shape="round" type="danger">Shape Button</m-button>
   <m-button shape="square" type="success">M</m-button>
   <m-button shape="circle" type="primary">M</m-button>
-  <m-button shape="circle" type="link">M</m-button>
+  <m-button shape="circle" type="info">M</m-button>
 </template>
 ```
 
@@ -72,14 +74,14 @@ Size rendering effect:
 
 <div class="button_test">
   <m-button size="large" type="primary">Large Button</m-button>
-  <m-button size="small" type="danger">Small Button</m-button>
+  <m-button size="small" type="info">Small Button</m-button>
   <m-button size="mini" type="success">Mini Button</m-button>
 </div>
 
 ```html
 <template>
   <m-button size="large" type="primary">Large Button</m-button>
-  <m-button size="small" type="danger">Small Button</m-button>
+  <m-button size="small" type="info">Small Button</m-button>
   <m-button size="mini" type="success">Mini Button</m-button>
 </template>
 ```
@@ -127,8 +129,8 @@ Light colored theme rendering effect:
 <m-button type="primary" leftIcon="like-fill" shape="circle" />
 <m-button type="danger" light rightIcon="like-fill" shape="circle" />
 <m-button type="text" light rightIcon="like-fill" shape="circle" />
-<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
-<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="primary"  rightIcon="like-fill" >HELLO</m-button>
+<m-button type="info"  leftIcon="like-fill" >HELLO</m-button>
 </div>
 
 ```html
@@ -137,8 +139,8 @@ Light colored theme rendering effect:
 <m-button type="primary" leftIcon="like-fill" shape="circle" />
 <m-button type="danger" light rightIcon="like-fill" shape="circle" />
 <m-button type="text" light rightIcon="like-fill" shape="circle" />
-<m-button type="primary"  rightIcon="like-fill" >HELLO BUTTON</m-button>
-<m-button type="success"  leftIcon="like-fill" >HELLO BUTTON</m-button>
+<m-button type="primary"  rightIcon="like-fill" >HELLO</m-button>
+<m-button type="info"  leftIcon="like-fill" >HELLO</m-button>
 </template>
 
 ```
@@ -146,6 +148,8 @@ Light colored theme rendering effect:
 ## Block
 
 <m-button type="primary" block >MOSTIFY BLOCK BUTTON</m-button>
+<m-button type="info" block >MOSTIFY BLOCK BUTTON</m-button>
+<m-button type="danger" block >MOSTIFY BLOCK BUTTON</m-button>
 
 ```html
 <template>
@@ -159,13 +163,13 @@ Attribute Description Type Optional Value Default Value
 
 | Attribute | Description | Type    | Optional Value                                   | Default Value |
 | --------- | ----------- | ------- | ------------------------------------------------ | ------------- |
-| type      | Button Type    | string  | default/primary/danger/warning/success/text/link | default       |
+| type      | Button Type    | string  | default/primary/danger/warning/success/text/link/info | default       |
 | shape     | Button Shape    | string  | round/square/circle                              | -             |
 | size      | Button Size    | string  | large/small/mini                                 | small         |
 | disabled  | Button Disabled    | boolean | -                                                | false         |
 | loading   | Loading Button      | boolean | -                                                | false         |
 | light     | Light Theme    | boolean | -                                                | false         |
-| Block     | full WIdth Button    | string | -                                                | -         |
+| Block     | full WIdth Button    | boolean | -                                                | -         |
 | leftIcon     | Button Left Icon    | string | -                                                | -         |
 | rightIcon     | Button Right Icon    | string | -                                                | -         |
 

@@ -16,9 +16,19 @@
     >
   </div>
   <div class="test">
-    <m-button light v-for="(item, index) in shapes" :key="item + index" :shape="item"
+    <template v-for="type in types">
+      <m-button :type="type" v-for="(item, index) in shapes" :key="item + index" :shape="item"
       >BUTTON</m-button
     >
+    </template>
+  </div>
+
+  <div class="test">
+    <template v-for="type in types">
+      <m-button :type="type" block v-for="(item, index) in shapes" :key="item + index" :shape="item"
+      >BUTTON</m-button
+    >
+    </template>
   </div>
 
   <div class="test">
@@ -34,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-const types = ["default", "primary", "success", "warning", "danger", "link", "text"];
+const types = ["default", "primary", "success", "warning", "danger", "link", "text",'info'];
 const lights = ["primary", "success", "warning", "danger"];
 const sizes = ["mini", "small", "large"];
 const shapes = ["circle", "round", "square"];

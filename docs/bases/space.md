@@ -20,8 +20,8 @@ The spacing component is a component used to set the distance between elements.
 
 ## Set direction
 
-The layout property can be used to set the layout of spacing components, with the default being the x-axis direction and the y-axis direction when set to y.
-<m-space size="12px" layout="y">
+The `direction` property can be used to set the layout of spacing components. The default direction is `horizontal`, and when set to `vertical`, it is vertical.
+<m-space size="12px" direction="vertical">
 
   <div>10px</div>
   <div>20px</div>
@@ -29,7 +29,7 @@ The layout property can be used to set the layout of spacing components, with th
 </m-space>
 
 ```html
-<m-space size="12px" layout="y">
+<m-space size="12px" direction="vertical">
   <div>10px</div>
   <div>20px</div>
   <div>30px</div>
@@ -43,47 +43,48 @@ The alignItems property is a native CSS property used to set the vertical alignm
 <m-space size="12px">
 
 <m-space size="12px">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="center">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="flex-end">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 </m-space>
 
 ```html
 <m-space size="12px">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="center">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 
 <m-space size="12px" alignItems="flex-end">
-  <m-button>Demo</m-button>
-  <m-button size="large">Demo</m-button>
-  <m-button>Demo</m-button>
+  <m-button>Hello Space</m-button>
+  <m-button size="large">Hello Space</m-button>
+  <m-button>Hello Space</m-button>
 </m-space>
 ```
 
 ## Properties of spacing components
 
-| attribute | Type    | Default Value | describe       |
-| --------- | ------- | ------------- | -------------- |
-| size      | string  | `0`           | 设置间距的大小 |
-| layout    | `x` `y` | `x`           | 设置方向       |
+| attribute  | description                 | Type                    | Default Value |
+| ---------- | --------------------------- | ----------------------- | ------------- |
+| size       | Set the size of the spacing | string                  | `0`           |
+| direction  | Set direction               | `horizontal` `vertical` | `horizontal`  |
+| alignItems | Set alignment method        | string                  | `flex-start`  |

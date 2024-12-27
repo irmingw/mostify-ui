@@ -2,13 +2,13 @@
   box-sizing: border-box;
 }
 
-.m-divider-x {
+.m-divider-vertical {
   height: 1em;
   display: inline-flex;
   margin: 0 var(--size, 12px);
   border-left: 1px var(--border-style, solid) var(--color, var(--m-theme-400));
 }
-.m-divider-y {
+.m-divider-horizontal {
   display: block;
   width: 100%;
   margin: var(--size, 12px) 0;

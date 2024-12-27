@@ -12,14 +12,14 @@
       </m-button-group>
     </div>
 
-    <m-button-group layout="y">
+    <m-button-group direction="vertical">
       <m-button :type="item" v-for="i in 3" :key="i">BUTTON</m-button>
     </m-button-group>
   </div>
 </template>
 
 <script setup lang="ts">
-const types = ["primary", "success", "default", "warning", "danger", "link", "text"];
+const types = ["primary", "success", "default", "warning", "danger", "info"];
 </script>
 
 <style scoped>

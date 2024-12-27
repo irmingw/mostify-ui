@@ -3,8 +3,8 @@
 色彩是视觉感知中重要的信息来源，它对人的情绪、行为和记忆等心理活动产生影响。
 
 <script setup >
-  const colors = ["800",'700',600,500,400,300,200,100]
-  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg']
+  const colors = [900,800,700,600,500,400,300,200,100,50]
+  const themeColors = [1000,900,800,700,600,500,400,300,200,100,50,'bg','container']
 </script>
 
 ## 主色彩
@@ -14,7 +14,7 @@
     <section class="color_bar" :style="{
     'background-color': `var(--m-primary-${item})`,
     }"></section>
-    <div class="text">--m-primary-{{ item }}</div>
+    <div class="text">primary-{{ item }}</div>
   </div>
 </div>
 
@@ -25,7 +25,7 @@
     <section class="color_bar" :style="{
       'background-color': `var(--m-error-${item})`,
     }"></section>
-    <div class="text">--m-error-{{ item }}</div>
+    <div class="text">error-{{ item }}</div>
   </div>
 </div>
 
@@ -36,7 +36,7 @@
     <section class="color_bar" :style="{
       'background-color': `var(--m-warning-${item})`,
     }"></section>
-    <div class="text">--m-warning-{{ item }}</div>
+    <div class="text">warning-{{ item }}</div>
   </div>
 </div>
 
@@ -47,7 +47,7 @@
     <section class="color_bar" :style="{
       'background-color': `var(--m-success-${item})`,
     }"></section>
-    <div class="text">--m-success-{{ item }}</div>
+    <div class="text">success-{{ item }}</div>
   </div>
 </div>
 
@@ -59,9 +59,12 @@
      'background-color': `var(--m-theme-${item})`,
       border: '1px solid #d9d9d9',
     }"></section>
-    <div class="text">--m-theme-{{ item }}</div>
+    <div class="text">theme-{{ item }}</div>
   </div>
 </div>
+<m-alert title="温馨提示">
+  theme-bg 控制控制面板的背景颜色，具有广泛的应用。theme-container 控制全局背景颜色，但其使用并不广泛。
+</m-alert>
 
 <style scoped lang="scss">
   .colors {
@@ -74,10 +77,10 @@
   }
 
   .color_item {
-    width: 220px;
+    width: calc(50% - 20px);
     .color_bar {
       width: 100%;
-      height: 90px;
+      height: 120px;
       border-radius: 4px;
     }
 

@@ -2,7 +2,7 @@
   display: inline-flex;
 }
 
-.m-button-layout-x {
+.m-button-horizontal {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -31,7 +31,7 @@
   }
 }
 
-.m-button-layout-y {
+.m-button-vertical {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
