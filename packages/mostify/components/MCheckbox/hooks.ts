@@ -20,7 +20,7 @@ export const useCheckbox = (props, emit) => {
   });
 
   const toggle = () => {
-    if (props.disabled) return;
+    if (props.disabled || props.readonly) return;
     if (isArray(props.modelValue)) {
       const newArr = [...props.modelValue];
 

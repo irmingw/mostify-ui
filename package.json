@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^4.0.1",
-    "vue": "3.4.29"
+    "vue": "3.4.29",
+    "vue-router": "^4.5.0"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",

@@ -44,24 +44,20 @@ export const useClassNames = (props, isFocus) => {
 };
 
 export const usePwd = props => {
-  const show = ref(false);
+  const isOpenEye = ref(false);
   const type = ref(props.type);
   const toggleShowPwd = () => {
-    show.value = !show.value;
-    type.value = show.value ? "text" : props.type;
+    isOpenEye.value = !isOpenEye.value;
+    type.value = isOpenEye.value ? "text" : props.type;
   };
-  const showPwd = computed(() => {
-    return (
-      props.showPasswordIcon &&
-      !props.disabled &&
-      !props.readonly &&
-      props.type?.toLowerCase() === "password"
-    );
+  const showPwdIcon = computed(() => {
+    return props.showPasswordIcon && props.type?.toLowerCase() === "password";
   });
 
   return {
     type,
-    showPwd,
+    isOpenEye,
+    showPwdIcon,
     toggleShowPwd
   };
 };
