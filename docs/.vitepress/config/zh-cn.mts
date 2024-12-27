@@ -6,6 +6,7 @@ export default {
     nav: [
       { text: '首页', link: '/zh-cn/' },
       { text: '快手上手', link: '/zh-cn/config/start' },
+      { text: "主题配置", link: "/zh-cn/config/theme" },
       { text: '组件文档', link: '/zh-cn/bases/button' }
     ],
 
@@ -14,6 +15,7 @@ export default {
         text: '基础',
         items: [
           { text: '快手上手', link: '/zh-cn/config/start' },
+          { text: "架构设计", link: "/zh-cn/config/design" },
           { text: '主题配置', link: '/zh-cn/config/theme' },
         ]
       },

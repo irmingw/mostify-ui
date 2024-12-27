@@ -58,7 +58,7 @@ Using Components in Vue Files
 ```js
 // main.js
 import { createApp } from "vue";
-// 引入组件样式
+// import styles
 import "mostify-ui/dist/index.css";
 import App from "./App.vue";
 const app = createApp(App);

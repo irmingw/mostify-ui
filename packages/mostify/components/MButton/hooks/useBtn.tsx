@@ -2,7 +2,6 @@ import { computed, ref } from "vue";
 import useProvider from "@/mostify/hooks/useProvider";
 
 export const useBtn = props => {
-  const rippleRef = ref<HTMLElement | null>(null);
   const btnRef = ref<HTMLElement | null>(null);
   const { size } = useProvider();
 
@@ -20,18 +19,29 @@ export const useBtn = props => {
     () => !(props.loading && ["circle", "square"].includes(props.shape))
   );
 
-  // User ripple effect
+  return {
+    btnClass,
+    contentShow,
+    btnRef
+  };
+};
+
+export const useRipple = (props, wrapper) => {
+  const rippleRef = ref<HTMLElement | null>(null);
+  // rippler effect// User ripple effect
   let rippleCopy = null;
   // rippler effect
-  const setClickXEvent = async (e: MouseEvent) => {
-    if (!rippleRef.value) return;
+  const setRipple = async (e: MouseEvent) => {
+    if (!rippleRef.value || props.disabled || props.loading) return;
+    const rect = wrapper.value?.getBoundingClientRect();
+    if (!rect) return;
     if (!rippleCopy) {
       rippleCopy = document.createElement("div");
       rippleCopy.className = "m-button-ripple";
     }
     const ripple = rippleCopy.cloneNode() as HTMLElement;
     rippleRef.value.appendChild(ripple);
-    const rect = btnRef.value.getBoundingClientRect();
+
     const size = Math.max(rect.width, rect.height);
     const width = size + "px";
     const height = width;
@@ -52,10 +62,7 @@ export const useBtn = props => {
   };
 
   return {
-    btnClass,
-    contentShow,
-    setClickXEvent,
-    btnRef,
+    setRipple,
     rippleRef
   };
 };

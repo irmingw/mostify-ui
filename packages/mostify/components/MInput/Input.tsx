@@ -49,7 +49,7 @@ export default defineComponent({
     const { value, setValue } = useValue(props, emit);
     const { domRef, isFocus, setIsFocus } = useFocus();
     const { classNames } = useClassNames(props, isFocus);
-    const { type, showPwd, toggleShowPwd } = usePwd(props);
+    const { type, showPwdIcon, isOpenEye, toggleShowPwd } = usePwd(props);
     const { showLimitCount } = useLimitCount(props);
     // expose focus and blur method to parent component
     expose({ focus: () => setIsFocus(true), blur: () => setIsFocus(false) });
@@ -97,14 +97,14 @@ export default defineComponent({
             </span>
           )}
 
-          {showPwd.value && (
+          {showPwdIcon.value && (
             <span onClick={toggleShowPwd} class="m-input-suffix-icon-wrapper">
-              <MIcon name={showPwd.value ? "eye" : "eye-close"} />
+              <MIcon name={isOpenEye.value ? "eye" : "eye-close"} />
             </span>
           )}
           {showLimitCount.value && (
             <span class="m-input-limit-count">
-              {`${value.value?.length}/${props.maxlength}`}
+              {`${value.value?.length || 0}/${props.maxlength}`}
             </span>
           )}
           {suffixSlot && <div class="m-input-suffix">{suffixSlot}</div>}
@@ -114,6 +114,7 @@ export default defineComponent({
       // 是否需要包裹prepend和append插槽
       return prependSlot || appendSlot ? (
         <div
+          style={{ width: props.width }}
           class={{
             ["m-input-wrapper"]: true,
             ["has-prepend"]: prependSlot,

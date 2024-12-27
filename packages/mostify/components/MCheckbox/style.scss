@@ -17,7 +17,7 @@
   font-size: 14px;
   min-height: $size;
   line-height: 22px;
-  padding: 8px 12px 0 0;
+  padding:0 12px 0 0;
 }
 
 .m-checkbox {
@@ -33,7 +33,6 @@
     }
     .m-checkbox-label {
       @include checkboxLabelSize(var(--m-size-mini));
-      padding-top: 4px;
     }
   }
   &.m-checkbox-size-small {
@@ -49,7 +48,6 @@
     }
     .m-checkbox-label {
       @include checkboxLabelSize(var(--m-size-large));
-      padding-top: 10px;
     }
   }
 }
@@ -63,11 +61,15 @@ input[type="checkbox"] {
   align-items: flex-start;
   justify-content: flex-start;
   cursor: inherit;
+  max-width: 100%;
+  overflow: hidden;
+  height: fit-content;
   .m-checkbox-control-main {
     @include inlineFlex();
     @include checkboxSize();
     border-radius: 50%;
     transition: all 180ms ease-in-out;
+    max-width: 100%;
     &:hover {
       background-color: var(--m-rgba-50);
     }
@@ -83,6 +85,13 @@ input[type="checkbox"] {
   .m-checkbox-label {
     @include checkboxLabelSize();
     color: var(--m-theme-900);
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1;
+    overflow: hidden;
+    word-break: break-all;
   }
 }
 .m-checkbox-checked,

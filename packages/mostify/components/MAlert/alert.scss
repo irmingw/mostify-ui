@@ -9,7 +9,6 @@
   .m-alert-main {
     position: relative;
     width: 100%;
-    background: var(--m-primary-100);
     padding: 8px 12px;
     display: flex;
     align-items: center;
@@ -17,28 +16,38 @@
     border-radius: var(--m-radius-small);
     color: var(--m-theme-700);
     overflow: hidden;
+    .m-alert-close {
+      .m-button {
+        color: inherit;
+      }
+    }
   }
 
   .m-alert-content {
     flex: 1;
     line-height: 22px;
-    padding-right: 40px;
+    padding-right: var(--m-size-mini);
     overflow: hidden;
     font-size: 14px;
   }
   .m-alert-title {
-    font-weight: bold;
+    font-weight: 600;
     line-height: 24px;
+    font-size: 16px;
   }
   .m-alert-icon {
     margin-right: 12px;
     align-self: flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
   }
   .m-alert-close {
     align-self: flex-start;
     position: absolute;
-    top: 2px;
-    right: 4px;
+    top: 6px;
+    right: 12px;
   }
   @each $type in primary, success, warning, danger {
     &.m-alert-#{$type} {
@@ -47,23 +56,15 @@
       }
       .m-alert-main {
         background: var(--m-#{$type}-100);
-        color: var(--m-#{$type}-600);
+        color: var(--m-#{$type}-500);
       }
 
       &.is-dark {
         .m-alert-main {
-          background: var(--m-#{$type}-600);
+          background: var(--m-#{$type}-500);
           color: var(--m-theme-50);
-        }
-        .m-alert-close {
-          .m-button {
-            color: #fff;
-          }
         }
       }
     }
   }
-  
 }
-
-

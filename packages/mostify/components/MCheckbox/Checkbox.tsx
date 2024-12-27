@@ -59,6 +59,10 @@ export default defineComponent({
       type: Boolean,
       default: false
     },
+    readonly: {
+      type: Boolean,
+      default: false
+    },
     indeterminate: {
       type: Boolean,
       default: false
@@ -107,6 +111,7 @@ export default defineComponent({
               class="m-checkbox-input"
               checked={checked.value}
               disabled={props.disabled}
+              readonly={props.readonly}
               value={props.value}
             />
           </div>
