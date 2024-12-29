@@ -43,7 +43,7 @@
 }
 
 @mixin defaultBtn() {
-  --m-btn-ripple-color: var(--m-primary-300);
+  --m-btn-ripple-color: var(--m-primary-200);
   background: var(--m-theme-bg);
   color: var(--m-theme-900);
   
@@ -53,14 +53,14 @@
     border-color: var(--m-primary-500);
   }
   &:active {
-    background: var(--m-primary-200);
+    background: var(--m-primary-50);
     color: var(--m-primary-500);
     border-color: var(--m-primary-500);
   }
 }
 button,
 .m-button {
-  --m-btn-ripple-color: var(--m-rgba-200);
+  --m-btn-ripple-color: var(--m-rgba-100);
   --m-btn-ripple-radius: 50%;
   --m-btn-size: var(--m-size-small);
   padding: var(--button-padding);
@@ -71,7 +71,7 @@ button,
 
   &.is-loading {
     pointer-events: none;
-    opacity: 0.75;
+    opacity: 0.6;
   }
 
   &.m-button-shape-circle {
@@ -105,12 +105,13 @@ button,
 .m-button-type-info {
   background: var(--m-theme-600);
   color: var(--m-theme-50);
+  --m-btn-ripple-color: var(--m-theme-500);
   border: none;
   &:hover {
-    background: var(--m-theme-500);
+    background: var(--m-theme-700);
   }
   &:active {
-    background: var(--m-theme-700);
+    background: var(--m-theme-500);
   }
 }
 .m-button-type-link {
@@ -137,7 +138,7 @@ button,
     --m-btn-ripple-color: var(--m-#{$t}-200);
     border: none;
     &:hover {
-      background-color: var(--m-#{$t}-400);
+      background-color: var(--m-#{$t}-600);
     }
     &:active {
       background-color: var(--m-#{$t}-400);
@@ -155,17 +156,18 @@ button,
     }
   }
 }
-
-
-
+// 点击涟漪效果动画
 @keyframes rippleRunning {
-  from {
-    transform: scale(0.66);
-    opacity: 0.85;
+  0% {
+    transform: scale(0.8);
   }
-  to {
+  33% {
+    transform: scale(1.5);
+    opacity: 0.75;
+  }
+  100% {
     transform: scale(2);
-    opacity: 0.05;
+    opacity: 0;
   }
 }
 .m-button-ripple-wrapper {
@@ -209,7 +211,7 @@ button,
   width: fit-content;
   height: fit-content;
   .m-button-icon-loading {
-    animation: alternate-loading 1.2s infinite linear;
+    animation: alternate-loading 1000ms infinite linear;
   }
 }
 

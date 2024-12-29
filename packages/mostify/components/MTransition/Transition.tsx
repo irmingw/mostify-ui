@@ -6,9 +6,9 @@ export default defineComponent({
     onEnter: Function,
     onLeave: Function
   },
-  setup(props, ctx) {
+  setup(props, { slots }) {
     return () => {
-      const vNodes = ctx.slots.default && ctx.slots.default();
+      const vNodes = slots.default && slots.default();
       return (
         <Transition
           appear={false}

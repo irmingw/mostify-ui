@@ -1,20 +1,20 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
-export const useClickPosition = () => {
+export const useClickXY = () => {
   const x = ref(0);
   const y = ref(0);
 
-  const handleMouseMove = (event: MouseEvent) => {
+  const handleClick = (event: MouseEvent) => {
     x.value = event.clientX;
     y.value = event.clientY;
   };
 
   onMounted(() => {
-    window.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('click', handleClick);
   })
 
   onUnmounted(() => {
-    window.removeEventListener('mousemove', handleMouseMove);
+    document.removeEventListener('click', handleClick);
   })
 
   return { x, y };

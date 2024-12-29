@@ -24,8 +24,8 @@ export default defineComponent({
         class={iconName.value}
         onClick={e => emit("click", e)}
         style={{
-          color: props.color,
-          '--icon-size': props.size,
+          '--m-icon-text-color': props.color,
+          '--m-icon-font-size': props.size,
           lineHeight: "inherit"
         }}
       />

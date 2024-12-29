@@ -10,12 +10,13 @@ import { MBreadcrumb, MBreadcrumbItem } from "./MBreadcrumb";
 import MDropdown from "./MDropdown";
 import MButtonGroup from "./MButtonGroup";
 import MMenuItem from "./MMenuItem";
-import MDialog, { Dialog } from "./MDialog";
+import MDialog from "./MDialog";
 import { MInput, MInputNumber, MMTextarea } from "./MInput";
 import MIcon from "./MIcon";
 import MAlert from "./MAlert/MAlert";
 import MCheckbox from "./MCheckbox";
 import MAvatar from "./MAvatar";
+import MessageBox from "./MessageBox";
 
 const components = [
   MButton,
@@ -69,7 +70,7 @@ export {
   MButtonGroup,
   MMenuItem,
   MDialog,
-  Dialog,
+  MessageBox,
   MInput,
   MIcon,
   MAlert,

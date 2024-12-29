@@ -7,7 +7,8 @@
 
 .mostifyiconfont {
   font-family: "mostifyiconfont" !important;
-  font-size: var(--icon-size, 16px);
+  font-size: var(--m-icon-font-size, 16px);
+  color: var(--m-icon-text-color, inherit);
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
