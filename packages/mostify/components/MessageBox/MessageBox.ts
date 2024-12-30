@@ -1,16 +1,18 @@
 import { h, createApp } from "vue";
 import Content from "./Content.tsx";
 import { useLockScroll } from "@/mostify/hooks/useLockScroll.ts";
-
 import { MessageBoxTypes } from "./types.ts";
 
 function createMessageBox(option: MessageBoxTypes, callback: Function) {
   const div = document.createElement("div");
+  const { setLockScroll } = useLockScroll();
+
   div.role = "message-box";
   document.body.appendChild(div);
-  const { setLockScroll } = useLockScroll();
+  
   let updateOption = function () {};
   let destroyed = function () {};
+  
   createApp({
     data: () => {
       return {

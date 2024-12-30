@@ -73,8 +73,12 @@ const open3 = ref(false);
 const open4 = ref(false);
 const op5 = ref(false);
 
-const openMsg = (msg: string, title?: string) => {
-  MessageBox.alert(msg);
+const openMsg = () => {
+  MessageBox.alert('这个是一个提示框', '提示',{
+    callback: (type)=>{
+      console.log(type)
+    }
+  })
 };
 </script>
 
