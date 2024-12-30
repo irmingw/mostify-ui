@@ -18,19 +18,16 @@
     opacity: 1;
   }
 }
-@keyframes m-mask-hide {
-  from {
-    opacity: 1;
-  }
+@keyframes m-mask-close {
   to {
     opacity: 0;
   }
 }
 
 .m-mask-show {
-  animation: m-mask-show var(--m-dialog-duration, 300ms) cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  animation: m-mask-show var(--m-mask-duration, 300ms) ease-out forwards;
 }
 
-.m-mask-hide {
-  animation: m-mask-hide var(--m-dialog-duration, 300ms) cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+.m-mask-close {
+  animation: m-mask-close var(--m-mask-duration, 300ms) ease-out forwards;
 }

@@ -1,43 +1,142 @@
 import { h, createApp } from "vue";
-import "./style.scss";
-import { animate } from "@/mostify/utils/dom";
+import Content from "./Content.tsx";
+import { useLockScroll } from "@/mostify/hooks/useLockScroll.ts";
 
-function createMessageBox(msg) {
+import { MessageBoxTypes } from "./types.ts";
+
+function createMessageBox(option: MessageBoxTypes, callback: Function) {
   const div = document.createElement("div");
-  div.className = "m-message-box-fade-in m-message-box";
-
+  div.role = "message-box";
+  document.body.appendChild(div);
+  const { setLockScroll } = useLockScroll();
+  let updateOption = function () {};
+  let destroyed = function () {};
   createApp({
+    data: () => {
+      return {
+        show: true,
+        option: {
+          title: option.title,
+          type: option.type,
+          message: option.message,
+          cancelText: option.cancelText,
+          customClass: option.customClass,
+          showClose: option.showClose,
+          cancelButtonProp: option.cancelButtonProp,
+          icon: option.icon,
+          iconColor: option.iconColor,
+          iconSize: option.iconSize,
+          confirmText: option.confirmText,
+          confirmButtonProp: option.confirmButtonProp,
+          duration: option.duration,
+          zIndex: option.zIndex,
+          width: option.width,
+          showIcon: option.showIcon
+        }
+      };
+    },
+    methods: {
+      close(type) {
+        // 关闭弹窗，执行回调函数，传入类型参数，
+        try {
+          if (callback) callback(type);
+
+          this.destroyed();
+        } catch (error) {
+          console.log(error);
+        }
+      },
+      update(option: MessageBoxTypes) {
+        // 更新字段显示
+        Object.keys(this.option).forEach(key => {
+          if (option[key] !== undefined) {
+            this.option[key] = option[key];
+          }
+        });
+      },
+      destroyed() {
+        console.log("destroyed");
+        this.show = false;
+        setTimeout(() => {
+          div.remove();
+          setLockScroll(false);
+        }, option.duration || 300);
+      }
+    },
+    mounted() {
+      console.log("mounted");
+      updateOption = this.updateOption;
+      destroyed = this.destroyed;
+    },
     render() {
-      return h("div", { class: "m-message-main" },[
-        h("div", { class: "m-message-title" }, "提示"),
-        h("div", { class: "m-message-content" }, msg),
-        h("div", { class: "m-message-close",onClick:()=>{
-          console.log('关闭按钮被点击了');
-          
-        } }, "关闭"),
-        h("div", { class: "m-message-icon" }, "提示图标")
-      ]);
+      return h(
+        Content,
+        {
+          ...this.option,
+          // 内部api
+          onClose: this.close,
+          show: this.show
+        },
+        null
+      );
     }
   }).mount(div);
-  document.body.appendChild(div);
-  // setTimeout(async () => {
-  //   await animate(
-  //     div,
-  //     [
-  //       { opacity: 1, transform: "translateY(0)" },
-  //       { opacity: 0, transform: "translateY(-16px)" }
-  //     ],
-  //     {
-  //       duration: 300,
-  //       fill: "forwards"
-  //     }
-  //   );
-  //   div.remove();
-  // }, 3000);
+  setLockScroll(true);
+  return {
+    update: updateOption,
+    destroyed: destroyed
+  };
 }
 
 export default class MessageBox {
-  static alert(msg) {
+  static alert(
+    message = "",
+    title = "",
+    option?: {
+      callback: Function;
+      confirmText: string;
+      confirmButtonProp: Object;
+    }
+  ) {
+    if (!title && !message) return console.warn("title is required");
+    const obj = option || {
+      callback: () => {},
+      confirmText: "",
+      confirmButtonProp: { type: "primary" }
+    };
+    return createMessageBox(
+      {
+        type: "primary",
+        title,
+        message,
+        showIcon: false,
+        showClose: false,
+        confirmText: obj?.confirmText || "确定",
+        confirmButtonProp: obj.confirmButtonProp || {
+          type: "primary"
+        }
+      },
+      obj?.callback
+    );
+  }
+  static confirm(option={}) {
+    createMessageBox(option,()=>{});
+  }
+  static success(msg) {
     createMessageBox(msg);
+  }
+  static error(msg) {
+    createMessageBox(msg);
+  }
+  static primary(msg) {
+    createMessageBox(msg);
+  }
+  static warning(msg) {
+    createMessageBox(msg);
+  }
+
+  // 自定义配置
+  static open(option) {
+    return createMessageBox(option);
   }
 }

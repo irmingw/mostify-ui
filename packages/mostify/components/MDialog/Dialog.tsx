@@ -1,21 +1,16 @@
-import { defineComponent, Teleport } from "vue";
+import { defineComponent, Teleport, ref } from "vue";
 import MTransition from "@/mostify/components/MTransition";
 import { MIcon } from "@/mostify/components";
-import Mask from "./Mask";
 import DialogContent from "./DialogContent";
-import {
-  useDialogRef,
-  useShow,
-  useStyle,
-  useLockScroll,
-  useEscClose
-} from "./hooks/useDialog";
+import MMask from "../MMask";
+import { useShow, useEscClose } from "./hooks/useDialog";
 import useProvider from "@/mostify/hooks/useProvider";
 import "./styles/dialog.scss";
+import {useLockScroll} from '@/mostify/hooks/useLockScroll'
 
 export default defineComponent({
   name: "MDialog",
-  components: { MIcon, MTransition },
+  components: { MIcon, MTransition, MMask, DialogContent },
   props: {
     // 是否显示，默认为false。如果要显示，请设置为true。默认为false。
     modelValue: { type: Boolean, default: false },
@@ -26,7 +21,7 @@ export default defineComponent({
     // 标题名称
     title: String,
     // 显示宽度
-    width: { type: String, default: "520px" },
+    width: { type: String, default: "360px" },
     // 是否显示关闭图标，默认为false。如果要显示，请设置为true。默认为false。
     closeIcon: Boolean,
     // 关闭是否销毁DOM元素，默认不销毁。如果要销毁，请设置为true。默认为false。
@@ -55,31 +50,21 @@ export default defineComponent({
   emits: ["update:modelValue", "change"],
   setup(props, { emit, slots }) {
     const { zIndex } = useProvider();
-    const { dialogRef, mainRef, maskRef } = useDialogRef();
-    const { setShow, show } = useShow(props, emit);
-    const { wrapperStyles, dialogStyles, dialogClass, dialogIndex } = useStyle(
-      props,
-      zIndex,
-      show
-    );
-    useLockScroll(props, show);
-    useEscClose(props, show, setShow, dialogRef);
+    const dialogRef = ref<HTMLElement | null>(null);
+    const dialogIndex = ref<number>(props.zIndex || zIndex || 1000);
+    const { setClose, show } = useShow(props, emit);
+
+   const { setLockScroll } = useLockScroll();
+    useEscClose(props, show, setClose, dialogRef);
 
     const onEnter = async (_, done) => {
-      await new Promise(resolve => requestAnimationFrame(resolve));
-      // await dialogAnimationShow({
-      //   mask: maskRef.value,
-      //   content: mainRef.value
-      // });
-      await new Promise(resolve => setTimeout(resolve, props.duration || 300));
+      setLockScroll(true);
+
       done();
     };
     const onLeave = async (_, done) => {
-      // await dialogAnimationHide({
-      //   mask: maskRef.value,
-      //   content: mainRef.value
-      // });
       await new Promise(resolve => setTimeout(resolve, props.duration || 300));
+      setLockScroll(false);
       done();
     };
 
@@ -97,20 +82,21 @@ export default defineComponent({
         <Teleport to={props.appendTarget || "body"}>
           <m-transition onEnter={onEnter} onLeave={onLeave}>
             <div
-              class={dialogClass.value}
+              class={["m-dialog", props.customClass]}
               ref={dialogRef}
-              style={dialogStyles.value}
+              style={{
+                "--m-dialog-index": dialogIndex.value
+              }}
               v-show={show.value}
-              data-show={show.value ? "on" : "off"}>
-              <Mask
+              aria-modal={show.value}
+              role="dialog">
+              <MMask
                 show={show.value}
-                ref={maskRef}
                 zIndex={dialogIndex.value}
                 maskClose={props.maskClose}
-                onHide={e => {
+                onClose={e => {
                   e.preventDefault();
-                  if (!props.maskClose) return;
-                  setShow(e);
+                  setClose(e);
                 }}
               />
               <DialogContent
@@ -120,8 +106,9 @@ export default defineComponent({
                 fullscreen={props.fullscreen}
                 width={props.width}
                 zIndex={props.zIndex}
-                style={wrapperStyles.value}
-                onHide={setShow}>
+                top={props.top}
+                center={props.center}
+                onClose={setClose}>
                 {headerSlot}
                 {defaultSlot}
                 {footerSlot}

@@ -64,7 +64,7 @@ textarea {
     @include disabledMixin();
   }
 }
-
-body[data-overflow="hidden"]{
-  overflow: hidden;
+// 全局dialog 隐藏滚动条样式
+.m-body-lock-scroll {
+  overflow: hidden !important;
 }
