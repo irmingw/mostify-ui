@@ -1,1 +1,0 @@
-# Mostify UI Icon
