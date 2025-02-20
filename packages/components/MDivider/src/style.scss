@@ -1,0 +1,16 @@
+.m-divider {
+  box-sizing: border-box;
+}
+
+.m-divider--vertical {
+  height: 1em;
+  display: inline-flex;
+  margin: 0 var(--m-divider-size, 12px);
+  border-left: 1px var(--m-divider-border-style, solid) var(--m-divider-color, var(--m-color-border-400));
+}
+.m-divider--horizontal {
+  display: block;
+  width: 100%;
+  margin: var(--m-divider-size, 12px) 0;
+  border-top: 1px var(--m-divider-border-style, solid) var(--m-divider-color, var(--m-color-border-400));
+}

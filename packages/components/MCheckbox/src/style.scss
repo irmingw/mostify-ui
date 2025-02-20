@@ -1,0 +1,123 @@
+@use "@/theme-chalk/mixin/ripple.scss" as ripple;
+
+@mixin checkboxSize($size: var(--m-size-small)) {
+  width: $size;
+  max-width: $size;
+  min-width: $size;
+  max-height: $size;
+  height: $size;
+  min-height: $size;
+  overflow: hidden;
+}
+@mixin inlineFlex() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin checkboxLabelSize($size: var(--m-size-small)) {
+  font-size: 14px;
+  min-height: $size;
+  line-height: 22px;
+  padding: 0 12px 0 0;
+}
+
+.m-checkbox {
+  --m-checkbox-control-size: 20px;
+  --m-checkbox-size: var(--m-size-small);
+  --m-checkbox-color-text: var(--m-color-text-600);
+  --m-checkbox-color-control: var(--m-color-text-500);
+  --m-checkbox-control-fill-hover: var(--m-color-action-hover);
+  --m-checkbox-control-fill-active: var(--m-color-action-active);
+
+  display: inline-flex;
+  vertical-align: middle;
+  cursor: pointer;
+  .m-checkbox__control-wrapper {
+    @include inlineFlex();
+    @include checkboxSize(var(--m-checkbox-size));
+  }
+  .m-checkbox__label {
+    @include checkboxLabelSize(var(--m-checkbox-size));
+  }
+
+  &.m-checkbox--mini {
+    --m-checkbox-control-size: 18px;
+    --m-checkbox-size: var(--m-size-mini);
+  }
+  &.m-checkbox--small {
+    --m-checkbox-control-size: 20px;
+    --m-checkbox-size: var(--m-size-small);
+  }
+  &.m-checkbox--large {
+    --m-checkbox-control-size: 24px;
+    --m-checkbox-size: var(--m-size-large);
+  }
+  &.is-checked,
+  &.is-indeterminate {
+    --m-checkbox-color-control: var(--m-color-primary-500);
+  }
+  &.is-readonly {
+    pointer-events: none;
+  }
+  &.is-disabled {
+    --m-checkbox-color-control: var(--m-color-text-200);
+    --m-checkbox-color-text: var(--m-color-text-200);
+    cursor: not-allowed;
+    --m-checkbox-control-fill-hover: transparent;
+    --m-checkbox-control-fill-active: transparent;
+  }
+
+  .m-checkbox__control {
+    color: var(--m-checkbox-color-control);
+    @include inlineFlex();
+    @include checkboxSize(var(--m-checkbox-control-size));
+  }
+}
+
+.m-checkbox__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: inherit;
+  max-width: 100%;
+  overflow: hidden;
+  height: fit-content;
+}
+
+.m-checkbox__inner {
+  @include inlineFlex();
+  @include checkboxSize(var(--m-checkbox-size));
+  border-radius: 50%;
+  position: relative;
+  transition: all 0.3s ease-out;
+  &:hover {
+    background-color: var(--m-checkbox-control-fill-hover);
+  }
+  &:active {
+    background-color: var(--m-checkbox-control-fill-active);
+  }
+}
+
+.m-checkbox__label {
+  @include checkboxLabelSize();
+  color: var(--m-checkbox-color-text);
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex: 1;
+  overflow: hidden;
+  word-break: break-all;
+}
+.m-checkbox__input,
+input[type="checkbox"] {
+  display: none;
+}
+
+.m-checkbox__ripple {
+  @include ripple.rippleWrapper();
+  .m-ripple__item {
+    @include ripple.rippleItem();
+  }
+}

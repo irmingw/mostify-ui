@@ -1,0 +1,76 @@
+.m-dialog {
+  --m-dialog-box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+  z-index: var(--m-dialog-index, 1000);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .m-dialog__header {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 16px 32px 0 16px;
+  }
+  .m-dialog__body {
+    padding: 16px;
+  }
+  .m-dialog__footer {
+    padding: 0 16px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .m-dialog__wrapper {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    z-index: var(--m-dialog-index, 1000);
+  }
+  .m-dialog__inner {
+    position: relative;
+    width: var(--m-dialog-width, 50%);
+    max-width: var(--m-dialog-width, 50%);
+    margin: var(--m-dialog-top, 80px) auto 24px;
+    border-radius: var(--m-radius-100);
+    overflow: visible;
+  }
+  .m-dialog__fill {
+    background-color: var(--m-color-fill-100);
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: var(--m-dialog-box-shadow);
+  }
+  .m-dialog__content {
+    border-radius: inherit;
+    width: 100%;
+    position: relative;
+    z-index: 1000;
+    overflow: auto;
+  }
+
+  &.is-fullscreen {
+    .m-dialog__inner {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+
+  &.is-center {
+    .m-dialog__wrapper {
+      display: flex;
+    }
+    .m-dialog__inner {
+      margin: auto;
+      align-self: center;
+    }
+  }
+}

@@ -1,18 +1,19 @@
 {
-  "name": "tomi-ui-project",
+  "name": "project",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build --mode lib",
-    "preview": "vite preview",
-    "build:icon": "vite build --mode icon",
-    "ins": "npm install --no-save"
+    "build": "vue-tsc -b && vite build",
+    "build:lib": "node build.config.cjs",
+    "publish": "cd ./npm && npm version patch && npm publish",
+    "dev:docs": "cd ./docs && npm uninstall mostify-ui && npm i mostify-ui && npm run dev",
+    "build:docs": "cd ./docs && npm run build",
+    "view:docs": "cd ./docs && npm run preview"
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^4.0.1",
-    "mostify-ui": "^0.0.37",
     "vue": "3.4.29",
     "vue-router": "^4.5.0"
   },

@@ -1,0 +1,30 @@
+// 点击涟漪效果动画
+@keyframes rippleRunning {
+  from {
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0.1;
+    transform: scale(2);
+  }
+}
+
+@mixin rippleItem($bg: rgba(0, 0, 0, 0.35)) {
+  position: absolute;
+  border-radius: 50%;
+  background-color: $bg;
+  animation: rippleRunning 500ms ease-out forwards;
+}
+
+
+@mixin rippleWrapper(){
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background-color: transparent;
+  overflow: hidden;
+  z-index: 0;
+}

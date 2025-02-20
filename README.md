@@ -21,7 +21,7 @@ Use the npm tool to install Mostify Ui. If the installation is slow, you can try
 ```bash
 # npm
 
-npm install mostify-ui --save
+npm install mostify-ui
 
 # yarn
 
@@ -29,11 +29,11 @@ yarn add mostify-ui
 
 # cnpm
 
-cnpm install mostify-ui --save
+cnpm install mostify-ui
 
 # pnpm
 
-pnpm install mostify-ui --save
+pnpm install mostify-ui
 
 ```
 
@@ -70,7 +70,6 @@ Using Components in Vue Files
 ```js
 // main.js
 import { createApp } from "vue";
-// 引入组件样式
 import "mostify-ui/dist/index.css";
 import App from "./App.vue";
 const app = createApp(App);

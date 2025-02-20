@@ -1,0 +1,102 @@
+$primary: (
+  100: #E3F2FD,
+  200: #BBDEFB,
+  300: #90CAF9,
+  400: #1E88E5,
+  500: #1976D2,
+  600: #0D47A1,
+);
+
+$warning: (
+  100: #fcf9de,
+  200: #fbf5b7,
+  300: #eee384,
+  400: #FDD835,
+  500: #FBC02D,
+  600: #F57F17
+);
+
+$success: (
+  100: #E8F5E9,
+  200: #C8E6C9,
+  300: #A5D6A7,
+  400: #66BB6A,
+  500: #43A047,
+  600: #2E7D32
+);
+
+$error: (
+  100: #FFEBEE,
+  200: #fddade,
+  300: #fac1c1,
+  400: #FF6E40,
+  500: #FF3D00,
+  600: #DD2C00
+);
+
+$info: (
+  100: #ebe3e3,
+  200: #dedee9,
+  300: #cecedc,
+  400: #71717a,
+  500: #52525b,
+  600: #3f3f46
+);
+// text color
+$text: (
+  100: #ffffff,
+  200: #c0c4cc,
+  300: #a8abb2,
+  400: #8d8f91,
+  500: #56585b,
+  600: #212123
+);
+// border color
+$border: (
+  100: #f2f6fc,
+  200: #ebeef5,
+  300: #e4e7ed,
+  400: #dcdfe6,
+  500: #ced2da,
+  600: #a7abb2
+);
+// background color
+$fill: (
+  100: #fff,
+  200: #FAFAFA,
+  300: #F5F5F5,
+  400: #EEEEEE,
+  500: #E0E0E0,
+  600: #BDBDBD
+);
+
+:root {
+  @each $name, $value in $primary {
+    --m-color-primary-#{$name}: #{$value};
+  }
+  @each $name, $value in $warning {
+    --m-color-warning-#{$name}: #{$value};
+  }
+  @each $name, $value in $error {
+    --m-color-error-#{$name}: #{$value};
+  }
+  @each $name, $value in $success {
+    --m-color-success-#{$name}: #{$value};
+  }
+  @each $name, $value in $info {
+    --m-color-info-#{$name}: #{$value};
+  }
+  @each $name, $value in $text {
+    --m-color-text-#{$name}: #{$value};
+  }
+  @each $name, $value in $border {
+    --m-color-border-#{$name}: #{$value};
+  }
+  @each $name, $value in $fill {
+    --m-color-fill-#{$name}: #{$value};
+  }
+
+  --m-color-action: rgba(0, 0, 0, 0.08);
+  --m-color-action-hover: rgba(0, 0, 0, 0.05);
+  --m-color-action-active: rgba(0, 0, 0, 0.18);
+}

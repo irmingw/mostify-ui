@@ -1,0 +1,59 @@
+.m-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  overflow-x: auto;
+  white-space: nowrap;
+  --m-breadcrumb-color: var(--m-color-text-400);
+  --m-breadcrumb-link-color: var(--m-color-text-600);
+  gap: 4px;
+}
+.m-breadcrumb__separator {
+  color: var(--m-breadcrumb-color);
+}
+
+.m-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--m-breadcrumb-color);
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+  cursor: default;
+  padding: 0 4px;
+  .m-breadcrumb-item__link {
+    cursor: pointer;
+    padding: 0 4px;
+    color: var(--m-breadcrumb-link-color);
+    border-radius: var(--m-radius-100);
+    text-decoration: none;
+  }
+
+  &.is-link {
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 600;
+    &:hover {
+      background-color: var(--m-color-action-hover);
+    }
+    &:active {
+      background-color: var(--m-color-action-active);
+    }
+  }
+
+  &.is-disabled,
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    color: var(--m-color-text-200);
+    &:hover {
+      background-color: transparent;
+    }
+    &:active {
+      background-color: transparent;
+    }
+  }
+}

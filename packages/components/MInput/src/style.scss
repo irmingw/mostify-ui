@@ -1,0 +1,186 @@
+@mixin wrapperStyle() {
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--m-input-border-radius);
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: var(--m-input-color);
+  height: fit-content;
+  transition: all 0.2s ease-in-out;
+  font-size: 14px;
+}
+
+@mixin suffixPrefixStyle() {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--m-input-color);
+}
+
+@mixin prependAppendStyle() {
+  @include suffixPrefixStyle();
+  padding: 0 10px;
+}
+.m-input__main,
+input,
+textarea {
+  outline: none;
+  border: 0;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+  padding: 0;
+  height: 100%;
+  &::placeholder {
+    color: var(--m-input-placeholder-color);
+  }
+}
+
+.m-input-wrapper,
+.m-input {
+  @include wrapperStyle();
+  --m-input-border-color: var(--m-color-border-500);
+  --m-input-border-color-hover: var(--m-color-primary-500);
+  --m-input-border-color-active: var(--m-color-primary-500);
+  --m-input-color-limit: var(--m-color-text-300);
+
+  --m-input-color: var(--m-color-text-500);
+  --m-input-placeholder-color: var(--m-color-text-300);
+  --m-input-icon-color: var(--m-color-text-400);
+  --m-input-icon-color-hover: var(--m-color-primary-500);
+
+  --m-input-fill: var(--m-color-fill-100);
+  --m-input-size: var(--m-size-small);
+  --m-input-border-radius: var(--m-radius-100);
+
+  height: var(--m-input-size);
+  line-height: var(--m-input-size);
+  &.is-focus {
+    border-color: var(--m-input-border-color-active);
+  }
+  &.is-disabled {
+    cursor: not-allowed;
+    --m-input-border-color: var(--m-color-border-200);
+    --m-input-border-color-hover: var(--m-input-border-color);
+    --m-input-border-color-active: var(--m-input-border-color);
+    --m-input-fill: var(--m-color-fill-200);
+    .m-input-base,.m-input__main,.m-input__clear {
+      cursor: not-allowed;
+    }
+  }
+  &.is-readonly {
+    pointer-events: none;
+    .m-input-base {
+      pointer-events: none;
+      resize: none;
+    }
+  }
+}
+
+.m-input {
+  border: 1px solid var(--m-input-border-color);
+  padding: 0 12px;
+  background-color: var(--m-input-fill);
+
+  &:hover {
+    border-color: var(--m-input-border-color-hover);
+    .m-input__clear {
+      display: inline-flex;
+    }
+  }
+  &:focus-within {
+    border-color: var(--m-input-border-color-active);
+  }
+  &.m-input--large {
+    --m-input-size: var(--m-size-large);
+    font-size: 16px;
+  }
+  &.m-input--mini {
+    --m-input-size: var(--m-size-mini);
+    font-size: 13px;
+  }
+}
+
+/* 在Chrome浏览器下 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 在Firefox浏览器下 */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+// prefix and suffix
+.m-input__prefix {
+  @include suffixPrefixStyle();
+  padding-right: 8px;
+}
+.m-input__suffix {
+  @include suffixPrefixStyle();
+  padding-left: 8px;
+}
+// prepend and append
+.m-input__prepend {
+  @include prependAppendStyle();
+  background-color: var(--m-color-action-hover);
+  border: 1px solid var(--m-input-border-color);
+  border-right: 0;
+  border-top-left-radius: var(--m-input-border-radius);
+  border-bottom-left-radius: var(--m-input-border-radius);
+}
+.m-input__append {
+  @include prependAppendStyle();
+  background-color: var(--m-color-action-hover);
+  border: 1px solid var(--m-input-border-color);
+  border-left: 0;
+  border-top-right-radius: var(--m-input-border-radius);
+  border-bottom-right-radius: var(--m-input-border-radius);
+}
+.is-prepend {
+  .m-input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+.is-append {
+  .m-input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+// icon suffix
+.m-input__base-icon {
+  cursor: pointer;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--m-input-icon-color);
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: var(--m-input-icon-color-hover);
+  }
+  // clearable
+  &.m-input__clear {
+    display: none;
+  }
+}
+
+// count input
+.m-input__limit-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--m-input-color-limit);
+  font-size: 12px;
+  height: 100%;
+  padding-left: 8px;
+}

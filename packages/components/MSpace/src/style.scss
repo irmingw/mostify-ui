@@ -1,0 +1,14 @@
+.m-space {
+  display: inline-flex;
+  gap: var(--m-space-size,0);
+}
+
+.m-space--horizontal {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.m-space--vertical {
+  flex-direction: column;
+}

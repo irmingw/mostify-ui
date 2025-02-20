@@ -1,0 +1,7 @@
+@mixin sizeH($size: 32px) {
+  height: $size;
+  line-height: $size;
+  min-height: $size;
+  display: inline-flex;
+  align-items: center;
+}

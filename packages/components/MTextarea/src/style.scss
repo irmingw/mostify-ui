@@ -1,0 +1,92 @@
+.m-textarea {
+  --m-textarea-border-color: var(--m-color-border-500);
+  --m-textarea-border-color-hover: var(--m-color-primary-500);
+  --m-textarea-border-color-active: var(--m-color-primary-500);
+
+  --m-textarea-color: var(--m-color-text-600);
+  --m-textarea-fill: var(--m-color-fill-100);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  border: 1px solid var(--m-textarea-border-color);
+  border-radius: var(--m-radius-100);
+  color: var(--m-textarea-color);
+  line-height: 1.5;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+  background: var(--m-textarea-fill);
+  min-height: var(--m-size-mini);
+
+  &:hover {
+    border-color: var(--m-textarea-border-color-hover);
+  }
+
+  &.is-disabled {
+    cursor: not-allowed;
+    --m-textarea-border-color: var(--m-color-border-400);
+    --m-textarea-border-color-hover: var(--m-color-border-400);
+    --m-textarea-border-color-active: var(--m-color-border-400);
+
+    --m-textarea-color: var(--m-color-text-200);
+    --m-textarea-fill: var(--m-color-fill-200);
+    .m-textarea__input {
+      cursor: not-allowed;
+      resize: none;
+    }
+  }
+
+  &.is-readonly {
+    pointer-events: none;
+  }
+
+  &.is-focus {
+    border-color: var(--m-textarea-border-color-active);
+  }
+
+  &.is-limitCount {
+    position: relative;
+  }
+}
+
+.m-textarea__limit-count {
+  position: absolute;
+  right: 10px;
+  bottom: 4px;
+  color: var(--m-color-text-300);
+  background: inherit;
+  font-size: 12px;
+  padding: 0px;
+  line-height: 12px;
+}
+.m-textarea__input,
+textarea {
+  width: 100%;
+  resize: vertical;
+  font-family: inherit;
+  padding: 5px 10px;
+  border-radius: inherit;
+  background: inherit;
+  color: inherit;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  /* 滚动条轨道样式 */
+  &::-webkit-scrollbar-track {
+    border-radius: 6px;
+    background: transparent;
+  }
+
+  /* 滚动条滑块样式 */
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: all 0.3s;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

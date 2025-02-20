@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Roboto,
+    sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+a,
+area,
+button,
+[role="button"],
+input,
+label,
+select,
+summary,
+textarea {
+  touch-action: manipulation;
+}
+
+// 公共类
+// 全局dialog 隐藏滚动条样式
+.m-body-lock-scroll {
+  overflow: hidden !important;
+}

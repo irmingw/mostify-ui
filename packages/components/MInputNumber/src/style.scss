@@ -1,0 +1,184 @@
+@mixin defaultControl() {
+  padding: 0;
+  height: 100%;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--m-input-number-size);
+  min-width: var(--m-input-number-size);
+  color: var(--m-input-number-icon-color);
+  background: var(--m-input-number-control-fill);
+  border-radius: var(--m-input-number-border-radius);
+  cursor: pointer;
+  &:hover {
+    color: var(--m-input-number-icon-color-hover);
+    border-color: var(--m-input-number-border-color-hover);
+  }
+}
+
+/* 在Chrome浏览器下 */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+/* 在Firefox浏览器下 */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+.m-input-number {
+  --m-input-number-fill: var(--m-color-fill-100);
+  --m-input-number-border-color: var(--m-color-border-500);
+  --m-input-number-border-color-hover: var(--m-color-primary-500);
+  --m-input-number-border-color-active: var(--m-color-primary-500);
+  --m-input-number-color: var(--m-color-text-500);
+  --m-input-number-placeholder-color: var(--m-color-text-300);
+  --m-input-number-icon-color: var(--m-color-text-300);
+  --m-input-number-icon-color-hover: var(--m-color-primary-500);
+  --m-input-number-control-fill: var(--m-color-fill-200);
+  --m-input-number-size: var(--m-size-small);
+  --m-input-number-border-radius: var(--m-radius-100);
+
+  border: 1px solid var(--m-input-number-border-color);
+  border-radius: var(--m-input-number-border-radius);
+  color: var(--m-input-number-color);
+  height: var(--m-input-number-size);
+  background-color: var(--m-input-number-fill);
+  &:hover {
+    border-color: var(--m-input-number-border-color-hover);
+  }
+
+  &.is-disabled {
+    --m-input-number-fill: var(--m-color-fill-200);
+    --m-input-number-border-color: var(--m-color-border-200);
+    --m-input-number-border-color-hover: var(--m-color-border-200);
+    --m-input-number-border-color-active: var(--m-color-border-200);
+
+    --m-input-number-color: var(--m-color-text-200);
+
+    --m-input-number-icon-color: var(--m-color-text-200);
+    --m-input-number-icon-color-hover: var(--m-color-text-200);
+    --m-input-number-control-fill: var(--m-color-fill-200);
+
+    cursor: not-allowed;
+    .m-input-number__input,
+    .m-input-number__control-left,
+    .m-input-number__control-right,
+    .m-input-number__rightTop,
+    .m-input-number__rightBottom {
+      cursor: not-allowed;
+    }
+  }
+
+  &.is-readonly {
+    pointer-events: none;
+  }
+
+  .m-input-number__input {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    font-size: 14px;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    &::placeholder {
+      color: var(--m-input-number-placeholder-color);
+    }
+  }
+}
+
+.m-input-number__prefix {
+  padding-right: 12px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.m-input-number__suffix {
+  padding-left: 12px;
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-input-number__control {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+
+  .m-input-number__control-left {
+    @include defaultControl();
+    border-right: 1px solid var(--m-input-number-border-color);
+    margin-right: 12px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .m-input-number__control-right {
+    @include defaultControl();
+    border-left: 1px solid var(--m-input-number-border-color);
+    margin-left: 12px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.m-input-number__controlPositionRight {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  .m-input-number__input {
+    padding-left: 12px;
+  }
+
+  .m-input-number__rightWrapper {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+    width: var(--m-input-number-size);
+    min-width: var(--m-input-number-size);
+    margin-left: 12px;
+    &:hover {
+      --m-input-number-border-color: var(--m-input-number-border-color-hover);
+    }
+  }
+
+  .m-input-number__split {
+    border-top: 1px solid var(--m-input-number-border-color);
+  }
+  .m-input-number__rightTop,
+  .m-input-number__rightBottom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100%;
+    flex: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    color: var(--m-input-number-icon-color);
+    border-left: 1px solid var(--m-input-number-border-color);
+    &:hover {
+      color: var(--m-input-number-icon-color-hover);
+    }
+  }
+}
+
+.m-input-number__control-left,
+.m-input-number__control-right,
+.m-input-number__rightTop,
+.m-input-number__rightBottom {
+  &.is-disabled {
+    cursor: not-allowed;
+    color: var(--m-color-text-200);
+    &:hover {
+      color: var(--m-color-text-200);
+    }
+  }
+}
