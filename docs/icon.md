@@ -14,12 +14,12 @@ Icon components are a collection of icons, and the system provides some basic ic
 
 <script setup>
 import iconList from "./public/json/iconfont.json";
-  </script>
+</script>
 <div class="icon_list_demo">
-      <section class="item" v-for="item in iconList.glyphs" :key="item.font_class">
-          <m-icon :name="item.font_class" size="36px"></m-icon>
-          <span>{{item.font_class}}</span>
-      </section>
+    <section class="item" v-for="item in iconList.glyphs" :key="item.font_class">
+        <m-icon :name="item.font_class" size="36px"></m-icon>
+        <span>{{item.font_class}}</span>
+    </section>
 </div>
 
 <style scoped lang="scss">
